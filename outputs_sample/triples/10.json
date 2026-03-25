@@ -1,0 +1,51 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "want": "Wants to access the CCC Agency Portal on a company-issued tablet while working in the field",
+        "experience": "Using a KKK Agency-issued iPad in the field",
+        "role": "Agency representative contacting AAA Insurance Support to resolve portal access problem"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "want": "Wants to identify the cause of the portal access problem and guide next steps",
+        "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
+        "role": "Provides system support and guidance from AAA Insurance Support"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Cannot open CCC Agency Portal on company tablet",
+        "description": "On a KKK Agency-issued iPad in the field, attempting to access the CCC Agency Portal shows 'connection is blocked' and the portal will not open."
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Contact agency IT to have MDM allow the portal via an update",
+        "description": "Because the block is enforced by KKK Agency's mobile device management on the tablet and cannot be overridden by AAA support, contact KKK Agency's local IT to push an update or approval that permits access to the CCC Agency Portal."
+      }
+    ]
+  },
+  "Relations": [
+    {
+      "source": "I1",
+      "target": "P1",
+      "type": "isHeldBy"
+    },
+    {
+      "source": "S1",
+      "target": "P2",
+      "type": "isHeldBy"
+    },
+    {
+      "source": "I1",
+      "target": "S1",
+      "type": "isResolvedBy"
+    }
+  ]
+}

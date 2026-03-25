@@ -1,0 +1,13 @@
+[Operator] AAA Insurance Helpdesk, Taylor speaking.
+[User] Yes, hello. I'm Brown with EEE Agency. I'm trying to do a premium quote but your portal is broken. It's giving me a scary warning message!
+[Operator] I apologize for the trouble, Mr. Brown. Could you read the exact warning message to me?
+[User] It says "Your connection is not private" and there is a red padlock icon. I can't get past this screen.
+[Operator] I see. Let's look into this. For security purposes, may I have your agency ID and your date of birth, please?
+[User] Agency ID is 45456767. Birth date is October 12, 1985.
+[Operator] Thank you. Let me check the system... Okay, your account is perfectly fine and active. 
+[User] Then why am I getting this privacy error?
+[Operator] This specific error typically happens when there is an issue with the web browser's security certificates on your computer, rather than our portal itself. 
+[User] So what should I do? I need to finish this quote.
+[Operator] I completely understand your urgency. However, since this is a local PC setting, you will need to contact the IT department at EEE Agency to have them update your browser certificates. 
+[User] Oh man, they always take forever to fix things. Alright, I'll submit a ticket to them. 
+[Operator] I am sorry for the inconvenience. Thank you for contacting us.

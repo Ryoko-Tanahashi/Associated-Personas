@@ -1,0 +1,67 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "want": "Wants to access the CCC Agency Portal to complete morning tasks",
+        "knowledgeLevel": "Does not know what a proxy is or what the proxy error means",
+        "role": "Agency representative contacting support about access issues"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "want": "Wants to identify the cause and guide the agency to restore portal access",
+        "knowledgeLevel": "Can check agency profile status and confirm system health; understands proxy-related connectivity issues",
+        "role": "AAA Insurance Support Desk operator providing guidance to agencies"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Cannot access CCC Agency Portal",
+        "description": "The agency representative cannot access the CCC Agency Portal due to the error 'ERR_PROXY_CONNECTION_FAILED' while trying to perform morning tasks"
+      },
+      {
+        "id": "I2",
+        "title": "Do not know what a proxy is",
+        "description": "The agency representative does not understand what a proxy is despite seeing a proxy-related error"
+      },
+      {
+        "id": "I3",
+        "title": "Do not know whether the problem is with the AAA Insurance site",
+        "description": "The agency representative is unsure if the access problem is caused by AAA Insurance systems or by their own network"
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Report to JJJ Agency IT to restart the proxy server",
+        "description": "Because the error indicates the agency's proxy server is down or misconfigured, contact JJJ Agency's IT department to restart the proxy server"
+      },
+      {
+        "id": "S2",
+        "title": "Understand that a proxy routes company internet traffic and the error indicates the agency proxy is down or misconfigured",
+        "description": "The operator explains that a proxy is a server used by the company to route internet traffic, and the error 'ERR_PROXY_CONNECTION_FAILED' indicates the agency's proxy is down or misconfigured"
+      },
+      {
+        "id": "S3",
+        "title": "Confirm that AAA Insurance systems are running normally",
+        "description": "The operator confirms that AAA Insurance systems are operating normally, so the issue is not on their side"
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "I3", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "S3", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I3", "target": "S3", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
+    {"source": "I3", "target": "I1", "type": "isGeneratedBy"}
+  ]
+}

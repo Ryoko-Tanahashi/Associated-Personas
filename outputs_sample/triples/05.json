@@ -1,0 +1,53 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "want": "Wants to access the CCC Agency Portal to log in",
+        "knowledgeLevel": "Using an old office laptop with an older browser; unsure whether it's Internet Explorer or old Edge; does not have administrator privileges to install updates",
+        "role": "Agency user from FFF Agency calling support about the CCC Agency Portal"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "want": "Wants to resolve the agency user's portal access issue quickly",
+        "knowledgeLevel": "Knows the CCC Agency Portal no longer supports older browsers and requires the latest Chrome or Edge",
+        "role": "Operator at AAA Insurance Dealer Support providing system guidance"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Cannot load the CCC Agency Portal login page",
+        "description": "On the old office laptop, the CCC Agency Portal shows a spinning white screen and the login box never appears."
+      },
+      {
+        "id": "I2",
+        "title": "Cannot install or update browser due to lack of administrator privileges",
+        "description": "When attempting to update the browser, a pop-up requests Administrator Privileges, and the caller does not have the admin password."
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Update the web browser to the latest Chrome or Edge",
+        "description": "Use a supported browser because the CCC Agency Portal no longer supports older browsers; update to the latest Chrome or Edge."
+      },
+      {
+        "id": "S2",
+        "title": "Contact the agency’s local IT administrator to authorize the browser update",
+        "description": "Ask the FFF Agency local IT admin to log in with admin rights and approve/install the necessary browser update."
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I2", "target": "S1", "type": "isGeneratedBy"}
+  ]
+}

@@ -1,0 +1,15 @@
+[Operator] Welcome to AAA Insurance Support. My name is Wilson.
+[User] Hi, this is Miller calling from DDD Agency.
+[Operator] Good morning, Mr. Miller. How can I assist you today?
+[User] I am trying to create a new policy, but I can't access the CCC Agency Portal. It says the server cannot be found.
+[Operator] I'm sorry to hear that. So the page is completely blank or showing a "Server not found" error, correct?
+[User] Yes, exactly. It was working fine yesterday.
+[Operator] I understand. Before we proceed, I need to verify your account. Could you provide your agency code and registered phone number?
+[User] It's 99887766, and the phone number is 555-0199.
+[Operator] Thank you. Please give me a moment to check your status.
+[User] Take your time.
+[Operator] Thank you for holding. I can confirm your account is active and our servers are operating normally. Are you by any chance connected to a corporate VPN or a new Wi-Fi network?
+[User] Oh, actually, our office just updated the VPN software this morning. 
+[Operator] That could be the cause. Sometimes corporate firewalls or VPNs block access to external portals. Unfortunately, I cannot change those settings from here. Could you please reach out to the IT support desk at DDD Agency to whitelist our URL?
+[User] I see. I'll have to call my internal IT team then. Thanks anyway.
+[Operator] You're very welcome. Have a great day.

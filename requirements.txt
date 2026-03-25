@@ -1,0 +1,13 @@
+langchain
+langchain-core
+langchain-openai
+langchain-community
+neo4j==5.24.0
+numpy
+openai
+openpyxl
+pydantic-settings
+scikit-learn
+pypdf
+pytest
+torch

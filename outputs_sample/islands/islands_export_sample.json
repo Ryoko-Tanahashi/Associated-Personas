@@ -1,0 +1,420 @@
+[
+  {
+    "abstract_issues": [
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "properties": {
+          "llm_id": "AI1",
+          "description": "A general state where the agency representative intends to open the CCC Agency Portal and reach the login screen to perform tasks, but page loading, network, security, or browser issues prevent the portal from opening or the login screen from appearing.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal",
+          "created_at": 1774435139769,
+          "source_call_ids": []
+        },
+        "grouped_people": []
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+        "properties": {
+          "llm_id": "AI9",
+          "description": "On a KKK Agency–issued iPad used in the field, attempting to open the CCC Agency Portal displays \"connection is blocked,\" and the portal will not open.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
+          "created_at": 1774435139790,
+          "source_call_ids": [
+            "10"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
+            "gp_id": "GP_71547fdc_Insurance_Agency_Representative",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+            "role": "Agency representative contacting insurance support to resolve portal access issues",
+            "created_at": 1774435228730,
+            "source_call_ids": [
+              "10"
+            ],
+            "experience": "Typically works in the field using a company-issued tablet",
+            "type": "insurance agency representative",
+            "want": "Wants to access the agency portal on a company-issued tablet while working in the field"
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+        "properties": {
+          "llm_id": "AI8",
+          "description": "The agency representative aims to open the CCC Agency Portal, but the browser shows \"ERR_PROXY_CONNECTION_FAILED,\" so the portal cannot be accessed.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to proxy connection failure",
+          "created_at": 1774435139789,
+          "source_call_ids": [
+            "09"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to proxy connection failure",
+            "gp_id": "GP_0be52536_Insurance_Agency_Representative",
+            "knowledgeLevel": "Unfamiliar with proxy/network concepts and the meaning of related error messages; needs guidance for resolving such access issues.",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+            "role": "Agency representative contacting support about access issues",
+            "created_at": 1774435228658,
+            "source_call_ids": [
+              "09"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to access the agency portal to complete routine work tasks promptly."
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
+        "properties": {
+          "llm_id": "AI7",
+          "description": "Attempting to open the CCC Agency Portal results in the page refreshing repeatedly and never reaching the login screen.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to endless refresh loop",
+          "created_at": 1774435139787,
+          "source_call_ids": [
+            "08"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to endless refresh loop",
+            "gp_id": "GP_9c6ade2b_Insurance_Agency_Representative",
+            "knowledgeLevel": "Can operate the agency portal but cannot change browser settings due to organization-managed restrictions.",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
+            "role": "Agency staff user contacting support for portal access.",
+            "created_at": 1774435228528,
+            "source_call_ids": [
+              "08"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to access and use the CCC Agency Portal, starting from the login screen.",
+            "character": "Tends to express frustration when blocked by device or browser restrictions."
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+        "properties": {
+          "llm_id": "AI6",
+          "description": "The agency representative tries to open the CCC Agency Portal, but after a prolonged load the browser shows \"Connection Timed Out,\" preventing access to the login screen.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to connection timeout",
+          "created_at": 1774435139786,
+          "source_call_ids": [
+            "07"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to connection timeout",
+            "gp_id": "GP_029848a9_Insurance_Agency_Representative",
+            "knowledgeLevel": "Able to report exact error messages but unsure about underlying network routing causes",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+            "role": "Agency representative contacting the insurance helpdesk about portal access",
+            "created_at": 1774435228693,
+            "source_call_ids": [
+              "07"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to access the CCC portal successfully without timeouts"
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+        "properties": {
+          "llm_id": "AI5",
+          "description": "While attempting to reach the CCC Agency Portal to log in, a message \"Access Denied by Corporate Policy\" appears and the login page does not load.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to corporate policy block",
+          "created_at": 1774435139784,
+          "source_call_ids": [
+            "06"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to corporate policy block",
+            "gp_id": "GP_e454d721_Insurance_Agency_Representative",
+            "knowledgeLevel": "Can accurately relay on-screen messages and report when the login screen does not appear",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+            "role": "Agency representative contacting support about a portal login block",
+            "created_at": 1774435228749,
+            "source_call_ids": [
+              "06"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to log in to the agency portal to issue a policy"
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
+        "properties": {
+          "llm_id": "AI4",
+          "description": "The user wants to reach the CCC Agency Portal login screen, but on an office laptop the page remains a white screen with a spinning loader and the login box never appears.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to infinite loading spinner",
+          "created_at": 1774435139782,
+          "source_call_ids": [
+            "05"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to infinite loading spinner",
+            "gp_id": "GP_7cbdd2d3_Insurance_Agency_Representative",
+            "knowledgeLevel": "Tends to use older office equipment with an outdated browser, is unsure about the exact browser, and lacks administrator privileges to perform updates.",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
+            "role": "Agency user contacting support regarding the CCC Agency Portal.",
+            "created_at": 1774435228680,
+            "source_call_ids": [
+              "05"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to log in to the CCC Agency Portal without technical barriers."
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+        "properties": {
+          "llm_id": "AI3",
+          "description": "When attempting to open the CCC Agency Portal, the browser shows a \"Server not found\" error, so the site cannot be located and the login screen cannot be reached.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to 'Server not found' error",
+          "created_at": 1774435139780,
+          "source_call_ids": [
+            "03"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to 'Server not found' error",
+            "gp_id": "GP_08521984_Insurance_Agency_Representative",
+            "knowledgeLevel": "Familiar with portal operations and able to provide account details; limited awareness of how network/security changes can impact access.",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+            "role": "Contacts insurer support regarding access issues to continue policy creation tasks.",
+            "created_at": 1774435228742,
+            "source_call_ids": [
+              "03"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants reliable access to the agency portal to proceed with policy creation without delays.",
+            "character": "Cooperative and straightforward when reporting issues."
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
+        "properties": {
+          "llm_id": "AI2",
+          "description": "The agency representative tries to open the CCC Agency Portal to reach the login screen, but the browser displays a warning such as \"This connection is not secure,\" preventing access to the portal.",
+          "validity": true,
+          "name": "Cannot access the CCC Agency Portal due to browser security warning",
+          "created_at": 1774435139778,
+          "source_call_ids": [
+            "01"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Cannot access the CCC Agency Portal due to browser security warning",
+            "gp_id": "GP_8750757d_Insurance_Agency_Representative",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
+            "role": "Insurance agency representative contacting the insurance company's support desk about access to the agency portal",
+            "created_at": 1774435228738,
+            "source_call_ids": [
+              "01"
+            ],
+            "type": "insurance agency representative",
+            "want": "Wants to calculate insurance estimates using the system"
+          }
+        ]
+      }
+    ],
+    "abstract_solutions": [
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+        "properties": {
+          "llm_id": "AS2",
+          "description": "Ask the agency’s IT to push an MDM approval or policy update that permits portal access on the managed device",
+          "validity": true,
+          "name": "Update MDM policy to allow the portal",
+          "created_at": 1774435188190,
+          "source_call_ids": [
+            "10"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Update MDM policy to allow the portal",
+            "gp_id": "GP_ea5b1e68_Insurance_Company_System_Administrator",
+            "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+            "role": "Provides system support and guidance",
+            "created_at": 1774435228757,
+            "source_call_ids": [
+              "10"
+            ],
+            "type": "insurance company system administrator",
+            "want": "Wants to diagnose portal access issues and guide next steps"
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+        "properties": {
+          "llm_id": "AS3",
+          "description": "Open a ticket with the agency’s IT to diagnose and resolve local network or ISP routing problems reaching the service",
+          "validity": true,
+          "name": "Investigate and fix office network/ISP routing",
+          "created_at": 1774435188193,
+          "source_call_ids": [
+            "07"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Investigate and fix office network/ISP routing",
+            "gp_id": "GP_0bdeaa4f_Insurance_Company_System_Administrator",
+            "knowledgeLevel": "Able to check server and account status and explain typical causes of timeout errors.",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+            "role": "Helpdesk operator providing system support and guidance.",
+            "created_at": 1774435228774,
+            "source_call_ids": [
+              "07"
+            ],
+            "type": "insurance company system administrator",
+            "want": "Wants to quickly identify the cause of access issues and guide callers."
+          }
+        ]
+      },
+      {
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "properties": {
+          "llm_id": "AS1",
+          "description": "Have the agency’s IT adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed",
+          "validity": true,
+          "name": "Modify corporate firewall/VPN to allow the portal",
+          "created_at": 1774435188099,
+          "source_call_ids": [
+            "06",
+            "03"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "Modify corporate firewall/VPN to allow the portal",
+            "gp_id": "GP_388ead36_Insurance_Company_System_Administrator",
+            "knowledgeLevel": "Can verify or check agency account status and server operations, and can identify issues likely caused by the agency's firewall; cannot modify or bypass the agency's VPN/firewall or other local firewalls",
+            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+            "role": "Provides technical support as an operator, checking agency accounts and giving network-related guidance for agency access to insurer systems",
+            "created_at": 1774435228761,
+            "source_call_ids": [
+              "03",
+              "06"
+            ],
+            "type": "insurance company system administrator",
+            "want": "Wants to help the agency regain portal access quickly"
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+        "type": "isResolvedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+        "type": "isResolvedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "type": "isResolvedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "type": "isResolvedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
+        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "type": "isPartOf",
+        "properties": {}
+      }
+    ],
+    "island_id": 1,
+    "statistics": {
+      "abstract_issue_count": 9,
+      "abstract_solution_count": 3,
+      "relation_count": 12,
+      "total_grouped_people": 11
+    }
+  }
+]

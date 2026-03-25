@@ -1,0 +1,516 @@
+[
+  {
+    "timestamp": "2026-03-25T10:38:12.674652",
+    "input_count": 9,
+    "input_items": [
+      {
+        "uid": "I1___01",
+        "text": "The agency representative cannot reach the CCC Agency Portal login screen; opening the URL shows a browser security warning \"This connection is not secure\", preventing system access."
+      },
+      {
+        "uid": "I2___02",
+        "text": "When attempting to log in, the agency representative received an 'account is locked' message and requested immediate unlocking to proceed with the client"
+      },
+      {
+        "uid": "I2___03",
+        "text": "The agency representative receives a 'Server not found' error when trying to open the CCC Agency Portal; it worked yesterday, the account is active, and servers are normal. The office VPN software was updated this morning."
+      },
+      {
+        "uid": "I1___05",
+        "text": "On the old office laptop, the CCC Agency Portal shows a spinning white screen and the login box never appears."
+      },
+      {
+        "uid": "I1___06",
+        "text": "When attempting to log in to issue a policy, the screen shows 'Access Denied by Corporate Policy' and the login page does not appear"
+      },
+      {
+        "uid": "I1___07",
+        "text": "The agency representative reports that the CCC portal loads for about two minutes and then shows a 'Connection Timed Out' message."
+      },
+      {
+        "uid": "I1___08",
+        "text": "When attempting to open the CCC Agency Portal, the page refreshes endlessly and never reaches the login screen."
+      },
+      {
+        "uid": "I1___09",
+        "text": "The agency representative cannot access the CCC Agency Portal due to the error 'ERR_PROXY_CONNECTION_FAILED' while trying to perform morning tasks"
+      },
+      {
+        "uid": "I1___10",
+        "text": "On a KKK Agency-issued iPad in the field, attempting to access the CCC Agency Portal shows 'connection is blocked' and the portal will not open."
+      }
+    ],
+    "llm_response": {
+      "Nodes": [
+        {
+          "id": "AI1",
+          "label": "Cannot access the CCC Agency Portal",
+          "description": "A general state where the agency representative intends to open the CCC Agency Portal and reach the login screen to perform tasks, but page loading, network, security, or browser issues prevent the portal from opening or the login screen from appearing.",
+          "ids": []
+        },
+        {
+          "id": "AI2",
+          "label": "Cannot access the CCC Agency Portal due to browser security warning",
+          "description": "The agency representative tries to open the CCC Agency Portal to reach the login screen, but the browser displays a warning such as \"This connection is not secure,\" preventing access to the portal.",
+          "ids": [
+            "I1___01"
+          ]
+        },
+        {
+          "id": "AI3",
+          "label": "Cannot access the CCC Agency Portal due to 'Server not found' error",
+          "description": "When attempting to open the CCC Agency Portal, the browser shows a \"Server not found\" error, so the site cannot be located and the login screen cannot be reached.",
+          "ids": [
+            "I2___03"
+          ]
+        },
+        {
+          "id": "AI4",
+          "label": "Cannot access the CCC Agency Portal due to infinite loading spinner",
+          "description": "The user wants to reach the CCC Agency Portal login screen, but on an office laptop the page remains a white screen with a spinning loader and the login box never appears.",
+          "ids": [
+            "I1___05"
+          ]
+        },
+        {
+          "id": "AI5",
+          "label": "Cannot access the CCC Agency Portal due to corporate policy block",
+          "description": "While attempting to reach the CCC Agency Portal to log in, a message \"Access Denied by Corporate Policy\" appears and the login page does not load.",
+          "ids": [
+            "I1___06"
+          ]
+        },
+        {
+          "id": "AI6",
+          "label": "Cannot access the CCC Agency Portal due to connection timeout",
+          "description": "The agency representative tries to open the CCC Agency Portal, but after a prolonged load the browser shows \"Connection Timed Out,\" preventing access to the login screen.",
+          "ids": [
+            "I1___07"
+          ]
+        },
+        {
+          "id": "AI7",
+          "label": "Cannot access the CCC Agency Portal due to endless refresh loop",
+          "description": "Attempting to open the CCC Agency Portal results in the page refreshing repeatedly and never reaching the login screen.",
+          "ids": [
+            "I1___08"
+          ]
+        },
+        {
+          "id": "AI8",
+          "label": "Cannot access the CCC Agency Portal due to proxy connection failure",
+          "description": "The agency representative aims to open the CCC Agency Portal, but the browser shows \"ERR_PROXY_CONNECTION_FAILED,\" so the portal cannot be accessed.",
+          "ids": [
+            "I1___09"
+          ]
+        },
+        {
+          "id": "AI9",
+          "label": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
+          "description": "On a KKK Agency–issued iPad used in the field, attempting to open the CCC Agency Portal displays \"connection is blocked,\" and the portal will not open.",
+          "ids": [
+            "I1___10"
+          ]
+        },
+        {
+          "id": "AI10",
+          "label": "Cannot log in to the CCC Agency Portal because the account is locked",
+          "description": "The agency representative reaches the CCC Agency Portal login page and attempts to authenticate to proceed, but a message indicates the account is locked, preventing successful login.",
+          "ids": [
+            "I2___02"
+          ]
+        }
+      ],
+      "Relations": [
+        {
+          "source": "AI2",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI3",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI4",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI5",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI6",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI7",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI8",
+          "target": "AI1",
+          "type": "isPartOf"
+        },
+        {
+          "source": "AI9",
+          "target": "AI1",
+          "type": "isPartOf"
+        }
+      ]
+    },
+    "created_groups": [
+      {
+        "llm_id": "AI1",
+        "label": "Cannot access the CCC Agency Portal",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "members": [],
+        "source_call_ids": []
+      },
+      {
+        "llm_id": "AI2",
+        "label": "Cannot access the CCC Agency Portal due to browser security warning",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
+        "members": [
+          "I1___01"
+        ],
+        "source_call_ids": [
+          "01"
+        ]
+      },
+      {
+        "llm_id": "AI3",
+        "label": "Cannot access the CCC Agency Portal due to 'Server not found' error",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+        "members": [
+          "I2___03"
+        ],
+        "source_call_ids": [
+          "03"
+        ]
+      },
+      {
+        "llm_id": "AI4",
+        "label": "Cannot access the CCC Agency Portal due to infinite loading spinner",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
+        "members": [
+          "I1___05"
+        ],
+        "source_call_ids": [
+          "05"
+        ]
+      },
+      {
+        "llm_id": "AI5",
+        "label": "Cannot access the CCC Agency Portal due to corporate policy block",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+        "members": [
+          "I1___06"
+        ],
+        "source_call_ids": [
+          "06"
+        ]
+      },
+      {
+        "llm_id": "AI6",
+        "label": "Cannot access the CCC Agency Portal due to connection timeout",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+        "members": [
+          "I1___07"
+        ],
+        "source_call_ids": [
+          "07"
+        ]
+      },
+      {
+        "llm_id": "AI7",
+        "label": "Cannot access the CCC Agency Portal due to endless refresh loop",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
+        "members": [
+          "I1___08"
+        ],
+        "source_call_ids": [
+          "08"
+        ]
+      },
+      {
+        "llm_id": "AI8",
+        "label": "Cannot access the CCC Agency Portal due to proxy connection failure",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+        "members": [
+          "I1___09"
+        ],
+        "source_call_ids": [
+          "09"
+        ]
+      },
+      {
+        "llm_id": "AI9",
+        "label": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+        "members": [
+          "I1___10"
+        ],
+        "source_call_ids": [
+          "10"
+        ]
+      },
+      {
+        "llm_id": "AI10",
+        "label": "Cannot log in to the CCC Agency Portal because the account is locked",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:70",
+        "members": [
+          "I2___02"
+        ],
+        "source_call_ids": [
+          "02"
+        ]
+      }
+    ],
+    "created_relations": [
+      {
+        "source_llm_id": "AI2",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI3",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI4",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI5",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI6",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI7",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI8",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      },
+      {
+        "source_llm_id": "AI9",
+        "target_llm_id": "AI1",
+        "type": "isPartOf",
+        "source_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
+        "target_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61"
+      }
+    ],
+    "status": "success",
+    "cluster_index": 0,
+    "cluster_type": "Issue"
+  },
+  {
+    "timestamp": "2026-03-25T10:38:59.821796",
+    "input_count": 3,
+    "input_items": [
+      {
+        "uid": "S1___04",
+        "text": "Because the error is due to local PC settings, the representative should submit a request to EEE Agency's IT to update/fix the browser security certificates so the portal can be accessed"
+      },
+      {
+        "uid": "S2___05",
+        "text": "Ask the FFF Agency local IT admin to log in with admin rights and approve/install the necessary browser update."
+      },
+      {
+        "uid": "S2___04",
+        "text": "The helpdesk confirms the account is active and explains that this specific warning typically results from issues with the web browser's security certificates on the representative's computer"
+      }
+    ],
+    "llm_response": {
+      "Nodes": [
+        {
+          "id": "AS1",
+          "label": "Update browser security certificates via IT",
+          "description": "Have the agency’s IT update or repair the browser’s security certificates on the user’s PC",
+          "ids": [
+            "S1___04"
+          ]
+        },
+        {
+          "id": "AS2",
+          "label": "Install browser update with admin rights",
+          "description": "Ask the local IT administrator to sign in with administrator privileges and approve or install the required browser update",
+          "ids": [
+            "S2___05"
+          ]
+        },
+        {
+          "id": "AS3",
+          "label": "Provide diagnostic communication",
+          "description": "Helpdesk confirms the account is active and informs the user that the behavior stems from the browser’s security certificates on the local machine",
+          "ids": [
+            "S2___04"
+          ]
+        }
+      ],
+      "Relations": []
+    },
+    "created_groups": [
+      {
+        "llm_id": "AS1",
+        "label": "Update browser security certificates via IT",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:71",
+        "members": [
+          "S1___04"
+        ],
+        "source_call_ids": [
+          "04"
+        ]
+      },
+      {
+        "llm_id": "AS2",
+        "label": "Install browser update with admin rights",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:72",
+        "members": [
+          "S2___05"
+        ],
+        "source_call_ids": [
+          "05"
+        ]
+      },
+      {
+        "llm_id": "AS3",
+        "label": "Provide diagnostic communication",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:73",
+        "members": [
+          "S2___04"
+        ],
+        "source_call_ids": [
+          "04"
+        ]
+      }
+    ],
+    "created_relations": [],
+    "status": "success",
+    "cluster_index": 0,
+    "cluster_type": "Solution"
+  },
+  {
+    "timestamp": "2026-03-25T10:38:59.822452",
+    "input_count": 4,
+    "input_items": [
+      {
+        "uid": "S1___06",
+        "text": "Ask GGG Agency's IT department to whitelist AAA Insurance's CCC Agency Portal URL in the corporate firewall, as the block is caused by local network security and cannot be bypassed by the insurer"
+      },
+      {
+        "uid": "S1___10",
+        "text": "Because the block is enforced by KKK Agency's mobile device management on the tablet and cannot be overridden by AAA support, contact KKK Agency's local IT to push an update or approval that permits access to the CCC Agency Portal."
+      },
+      {
+        "uid": "S1___03",
+        "text": "Reach out to DDD Agency's IT support to whitelist the CCC Agency Portal URL or adjust VPN/firewall settings that may be blocking access. The insurer cannot change these corporate network settings."
+      },
+      {
+        "uid": "S1___07",
+        "text": "Open a ticket with HHH Agency's IT support so they can investigate office network or ISP routing issues preventing the computer from reaching AAA's servers; AAA cannot resolve local network timeouts."
+      }
+    ],
+    "llm_response": {
+      "Nodes": [
+        {
+          "id": "AS1",
+          "label": "Modify corporate firewall/VPN to allow the portal",
+          "description": "Have the agency’s IT adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed",
+          "ids": [
+            "S1___06",
+            "S1___03"
+          ]
+        },
+        {
+          "id": "AS2",
+          "label": "Update MDM policy to allow the portal",
+          "description": "Ask the agency’s IT to push an MDM approval or policy update that permits portal access on the managed device",
+          "ids": [
+            "S1___10"
+          ]
+        },
+        {
+          "id": "AS3",
+          "label": "Investigate and fix office network/ISP routing",
+          "description": "Open a ticket with the agency’s IT to diagnose and resolve local network or ISP routing problems reaching the service",
+          "ids": [
+            "S1___07"
+          ]
+        }
+      ],
+      "Relations": []
+    },
+    "created_groups": [
+      {
+        "llm_id": "AS1",
+        "label": "Modify corporate firewall/VPN to allow the portal",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "members": [
+          "S1___06",
+          "S1___03"
+        ],
+        "source_call_ids": [
+          "06",
+          "03"
+        ]
+      },
+      {
+        "llm_id": "AS2",
+        "label": "Update MDM policy to allow the portal",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+        "members": [
+          "S1___10"
+        ],
+        "source_call_ids": [
+          "10"
+        ]
+      },
+      {
+        "llm_id": "AS3",
+        "label": "Investigate and fix office network/ISP routing",
+        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+        "members": [
+          "S1___07"
+        ],
+        "source_call_ids": [
+          "07"
+        ]
+      }
+    ],
+    "created_relations": [],
+    "status": "success",
+    "cluster_index": 1,
+    "cluster_type": "Solution"
+  }
+]

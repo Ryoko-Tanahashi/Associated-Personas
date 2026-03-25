@@ -1,0 +1,59 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Customer",
+        "want": "Wants to sign the insurance contract today",
+        "role": "Customer waiting with the agency representative to sign the contract"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Agency Representative",
+        "want": "Wants the locked CCC Agency Portal account unlocked immediately to proceed with the client's contract today",
+        "role": "Representative of BBB Agency contacting support to resolve an account lock and continue the contract process"
+      },
+      {
+        "id": "P3",
+        "type": "Insurance Company System Administrator",
+        "want": "Wants to verify identity per security policy and unlock the account securely",
+        "role": "AAA Insurance support desk operator who authenticates and unlocks accounts"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Want to sign the insurance contract today",
+        "description": "The customer is present and wants to sign immediately, and the agency representative wants to close the deal today"
+      },
+      {
+        "id": "I2",
+        "title": "Cannot log in to the CCC Agency Portal due to account lock",
+        "description": "When attempting to log in, the agency representative received an 'account is locked' message and requested immediate unlocking to proceed with the client"
+      },
+      {
+        "id": "I3",
+        "title": "Cannot answer the registered secret question for identity verification",
+        "description": "The agency representative does not remember the answer to the secret question required for unlocking over the phone and asks for another verification method"
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Use app-based login approval for identity verification",
+        "description": "The operator sends a 'Login Approval' push notification to the AAA Insurance official smartphone app; the agency representative taps 'Approve', after which the operator verifies the identity, unlocks the account, and resets the password"
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHeldBy"},
+    {"source": "I2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I3", "target": "P2", "type": "isHeldBy"},
+    {"source": "S1", "target": "P3", "type": "isHeldBy"},
+    {"source": "I2", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I3", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
+    {"source": "I3", "target": "I2", "type": "isGeneratedBy"}
+  ]
+}

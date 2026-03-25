@@ -1,0 +1,89 @@
+Below is a list of data entries (ID and text) with similar content.
+Please classify and organize them according to the following steps.
+
+1. Read each text and create groups for entries that refer to the same issue. “The same issue” means the same barrier that occurs for the same objective within the same target system or service.
+2. If an entry does not belong to any group (i.e., is isolated), create a group containing only that issue and do not include it in any other group. Each data entry must belong to exactly one group. Do not assign a single entry to multiple groups.
+3. For each group, create a "label" that expresses the issue in a single concise phrase. Do not make it a list of multiple issues. Also, do not include solutions to the issue in the label.
+4. For each group, create a "description" that concretely explains the issue. Include the target system/service, objective, and barrier.
+5. For each pair of groups, if the target and objective are the same and one barrier fully contains the other, create an `isPartOf` relation.
+6. For each set of groups where the target and objective are the same but barriers differ, create an empty parent group (with no data IDs) whose barrier conceptually contains each of those barriers, and create `isPartOf` relations from the original groups to that parent group.
+7. Output the final result in the same format as the output example.
+
+## Notes
+- Ensure that no single data entry belongs to more than one group.
+- Ensure that neither label nor description includes solutions to the issue.
+- In label and description, do not create expressions that combine multiple issues (e.g., “Issue 1 or Issue 2”). Each group must represent only one issue.
+
+## Concrete Examples
+- Example that should belong to different groups (different target systems)
+    - Data:
+        - ID_01: "Tried to log in to the attendance management system, but cannot enter due to a password error."
+        - ID_02: "Tried to log in to the expense reimbursement system, but cannot enter due to a password error."
+    - Explanation:
+        - Both have the exact same objective and barrier (“cannot log in due to a password error”), but the target systems are different (attendance management vs. expense reimbursement).
+        - Because they do not satisfy Step 1’s condition of targeting the same system/service, they must not be merged. Create separate independent groups (e.g., “Cannot log in to attendance system” and “Cannot log in to expense system”).
+
+- Example where `isPartOf` is created between existing groups (containment relationship)
+    - Data:
+        - ID_03: "In the electronic application system, pressing the submit button gives no response, so the application cannot be completed."
+        - ID_04: "Want to submit in the electronic application system, but cannot complete submission."
+    - Explanation:
+        - Both share the same objective (“complete submission in the electronic application system”) and barrier context (“cannot complete”).
+        - ID_03 has a specific barrier (“button is unresponsive”), while ID_04 has a broader barrier (“cannot complete”).
+        - Since ID_03 is a subset case of ID_04, create an `isPartOf` relation from ID_03’s group to ID_04’s group.
+
+- Example where an empty group should be created (common parent issue required)
+    - Data:
+        - ID_05: "In the product ordering app, tried to pay but cannot purchase due to a credit card expiration error."
+        - ID_06: "In the product ordering app, tried to pay but cannot purchase due to a communication timeout."
+    - Explanation:
+        - ID_05 and ID_06 share the same target and objective (“purchase in the product ordering app”).
+        - However, the barriers are different (“expired card” vs. “communication error”), and neither contains the other.
+        - Therefore, do not place them directly in the same group; keep them as separate groups.
+        - Then create a new empty parent group (with no data IDs) representing an abstract barrier (e.g., “cannot complete purchase due to payment failure”) and add `isPartOf` relations from both groups to that parent group.
+
+## Output Example (JSON only)
+Always output in the JSON format below. Do not use a Markdown code block.
+
+{
+  "Nodes": [
+    {
+      "id": "AI1",
+      "label": "Cannot log in to My Page because the password is unknown",
+      "description": "The user is trying to log in to a policyholder-only My Page to complete procedures or check contract details, but cannot pass authentication because they forgot the password they set or the entered password is judged incorrect.",
+      "ids": ["id_001", "id_005"]
+    },
+    {
+      "id": "AI2",
+      "label": "Cannot log in to My Page due to a system error",
+      "description": "Even though the correct ID and password are entered on the policyholder My Page, internal system errors (e.g., \"E-503\") or messages such as \"Cannot connect to server\" appear during login processing, preventing successful login due to technical issues.",
+      "ids": ["id_006"]
+    },
+    {
+      "id": "AI3",
+      "label": "Cannot log in to My Page",
+      "description": "A general state in which there is a clear objective to access the policyholder My Page and use services, but login fails due to some barrier such as forgotten password, system error, or unknown loading failure.",
+      "ids": []
+    },
+    {
+      "id": "AI4",
+      "label": "Cannot reissue a deduction certificate because address change has not been completed",
+      "description": "The user needs to reissue a deduction certificate for year-end tax adjustment documents, but the registered address is still outdated (before moving), which conflicts with system constraints, so the reissue request cannot be completed until the address is updated first.",
+      "ids": ["id_002", "id_008"]
+    },
+    {
+      "id": "AI5",
+      "label": "Cannot reissue a deduction certificate",
+      "description": "The user needs a deduction certificate for year-end tax adjustment or tax filing and wants a reissue, but does not know the procedure.",
+      "ids": ["id_003", "id_004"]
+    }
+  ],
+  "Relations": [
+    {"source": "AI1", "target": "AI3", "type": "isPartOf"},
+    {"source": "AI2", "target": "AI3", "type": "isPartOf"},
+    {"source": "AI4", "target": "AI5", "type": "isPartOf"}
+  ]
+}
+
+## Data List
+{items_json}

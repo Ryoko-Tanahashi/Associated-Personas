@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.devcontainer/.env
+.env
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Neo4j runtime data (keep placeholder only)
+data/neo4j/*
+!data/neo4j/.gitkeep
