@@ -1,0 +1,38 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Associated Personas
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Ryoko
+    family-names: Tanahashi
+    email: ry.tana@fuji.waseda.jp
+    affiliation: 'Waseda University, Tokyo, Japan'
+  - given-names: Hironori
+    family-names: Washizaki
+    email: washizaki@waseda.jp
+    affiliation: 'Waseda University, Tokyo, Japan'
+  - given-names: Naoyasu
+    family-names: Ubayashi
+    email: ubayashi@aoni.waseda.jp
+    affiliation: 'Waseda University, Tokyo, Japan'
+  - given-names: Ryota
+    family-names: Sugiyama
+    affiliation: 'Waseda University, Tokyo, Japan'
+  - given-names: Satoshi
+    family-names: Okuda
+    email: okuda@primestyle.co.jp
+    affiliation: 'PRIMESTYLE Co., Ltd., Shinjuku, Tokyo, Japan'
+  - given-names: Ken
+    family-names: Toriumi
+    email: toriumi@primestyle.co.jp
+    affiliation: 'PRIMESTYLE Co., Ltd., Shinjuku, Tokyo, Japan'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20508104
+repository-code: 'https://github.com/Ryoko-Tanahashi/Associated-Personas'
+license: AGPL-3.0-or-later
