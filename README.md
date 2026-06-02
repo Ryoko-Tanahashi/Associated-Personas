@@ -52,6 +52,7 @@ code landing page.
 
 ## Repository Structure
 
+```
 ├─ .devcontainer/
 │ ├─ .env.sample
 │ ├─ Dockerfile
@@ -79,6 +80,7 @@ code landing page.
 │ └─ openai_client.py
 ├─ README.md
 └─ requirements.txt
+```
 
 ---
 
@@ -93,7 +95,7 @@ These materials preserve the structure and key characteristics of the original d
 
 ## Language and Translation
 
-In the original study, all materials were written in Japanese.
+In the original study, all materials were written in another language.
 For this replication package, these materials have been translated into English to improve accessibility for international audience.
 
 Due to linguistic differences, running the same prompts under otherwise identical conditions do not necessarily produce identical outputs.
