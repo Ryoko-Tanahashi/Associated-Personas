@@ -42,7 +42,7 @@ software, datasets, generated outputs, or evaluation materials.
 
 - Source repository:
   <https://github.com/Ryoko-Tanahashi/Associated-Personas>
-- Archival DOI: <https://doi.org/10.5281/zenodo.20508105>
+- Archival DOI: <https://doi.org/10.5281/zenodo.20508229>
 
 The artifact should be evaluated from the archived DOI version for the final
 submission. The GitHub repository is provided as a development mirror and source
