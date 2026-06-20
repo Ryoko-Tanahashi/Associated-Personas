@@ -125,3 +125,18 @@ Researchers and practitioners are encouraged to apply this framework to their ow
 2. Place them into a new directory (e.g., `data_custom/`).
 3. Update the data loading path in the Phase 1 cell of `src/pipeline.ipynb` to point to your new directory.
 4. Execute the pipeline. The framework will automatically construct a new Context Graph in Neo4j and generate the corresponding Associated Personas.
+
+---
+
+**Optional: Using OpenAI API for Free (Free Daily Token Settings)**
+
+If you want to try the pipeline without incurring API costs, you can opt-in to OpenAI's free daily token allowance by agreeing to share your API input and output data for their model improvement. This allows you to use 10 million to 100 million tokens per day for free, depending on the model.
+
+To enable this feature, follow these steps:
+
+1. Access your OpenAI Data Controls page: [https://platform.openai.com/settings/organization/data-controls/sharing](https://platform.openai.com/settings/organization/data-controls/sharing).
+2. Check the "Share inputs and outputs with OpenAI" option at the bottom of the page.
+3. Select "Enabled for all projects" to apply it globally, or "Enabled for selected projects" to restrict it to specific projects.
+4. Click "Save" to finish the setup.
+
+_Warning: By enabling this setting, the data exchanged via the API will be sent to OpenAI for model training. If you plan to run the pipeline with your own proprietary, sensitive, or confidential datasets, we strongly recommend keeping this setting disabled._
