@@ -3,47 +3,44 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "character": "Cooperative and straightforward in reporting issues.",
-        "want": "Wants to create a new policy and needs access to the CCC Agency Portal.",
-        "knowledgeLevel": "Can use the CCC Agency Portal and provide account details; was not aware that recent VPN/firewall changes could block access.",
-        "role": "Contacts insurer support about access issues to proceed with policy creation"
+        "type": "保険代理店担当者",
+        "want": "CCC代理店ポータルにアクセスして新しい保険契約を作成したい",
+        "experience": "昨日は問題なくCCC代理店ポータルを利用できていた",
+        "role": "DDD代理店の担当者として保険会社サポートにアクセス障害を問い合わせる"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "character": "Helpful and methodical in troubleshooting.",
-        "want": "Wants to help the agency regain portal access quickly.",
-        "experience": "Accustomed to verifying account status and system health for agencies.",
-        "knowledgeLevel": "Can check agency account status and server operations; cannot modify the agency's VPN/firewall settings.",
-        "role": "Provides technical support for agency access to insurer systems as an operator"
+        "type": "保険会社システム管理者",
+        "want": "代理店のポータルアクセス問題を特定し解決に導きたい",
+        "role": "AAA保険サポートのオペレーターとして代理店からの問い合わせに対応する"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Want to create a new policy",
-        "description": "The agency representative is attempting to create a new policy via the CCC Agency Portal."
+        "title": "CCC代理店ポータルにアクセスできない",
+        "description": "新しい保険契約を作成しようとしたが、CCC代理店ポータルに接続できず「サーバーが見つかりません」と表示される。前日までは問題なく利用できていた。"
       },
       {
         "id": "I2",
-        "title": "Cannot access the CCC Agency Portal",
-        "description": "The agency representative receives a 'Server not found' error when trying to open the CCC Agency Portal; it worked yesterday, the account is active, and servers are normal. The office VPN software was updated this morning."
+        "title": "新しい保険契約を作成したい",
+        "description": "代理店として顧客の新規契約を作成するため、CCC代理店ポータルを利用したい。"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Contact internal IT to whitelist the CCC Agency Portal URL",
-        "description": "Reach out to DDD Agency's IT support to whitelist the CCC Agency Portal URL or adjust VPN/firewall settings that may be blocking access. The insurer cannot change these corporate network settings."
+        "title": "社内ITにポータルURLのホワイトリスト追加を依頼する",
+        "description": "今朝更新したVPN/社内ファイアウォールの影響で外部ポータル（CCC代理店ポータル）へのアクセスがブロックされている可能性が高いため、DDD代理店のITサポート窓口に連絡し、当社ポータルのURLをVPN/ファイアウォールのホワイトリストに追加してもらう。保険会社側では当該設定を変更できない旨を案内。"
       }
     ]
   },
   "Relations": [
     {"source": "I1", "target": "P1", "type": "isHeldBy"},
     {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHandledBy"},
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
-    {"source": "I2", "target": "S1", "type": "isResolvedBy"},
-    {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "I1", "target": "S1", "type": "isResolvedBy"}
   ]
 }

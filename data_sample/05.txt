@@ -1,11 +1,11 @@
-[Operator] Thank you for calling AAA Insurance Dealer Support. This is Clark.
-[User] Hi Clark, Garcia here from FFF Agency. The CCC Agency Portal is just spinning on a white screen and won't load the login box.
-[Operator] Hello, Mr. Garcia. A spinning white screen, you said. Let me help you with that. First, could you verify your identity by providing your agency code?
-[User] Sure, it's 11223344.
-[Operator] Thank you. Let me pull up your profile. ... Everything looks good on our end. Your status is active. What web browser are you currently using?
-[User] I think it's Internet Explorer, or maybe an old version of Edge. It's whatever came with this old office laptop.
-[Operator] Ah, I see. We recently updated the CCC Agency Portal, and it no longer supports older browsers for security reasons. You will need to update your browser to the latest version of Chrome or Edge.
-[User] Let me try... wait, a pop-up says I need "Administrator Privileges" to install updates. I don't have the admin password.
-[Operator] In that case, you will need to contact your local IT administrator at FFF Agency. They will need to log in and authorize the browser update for you.
-[User] That makes sense, but it's a hassle. I'll get in touch with them. Thanks for figuring it out.
-[Operator] My pleasure. Let us know if you need anything else once it's updated.
+[オペレーター] AAA保険ディーラーサポートにお電話いただきありがとうございます。クラークです。
+[ユーザー] こんにちは、クラークさん。FFF代理店のガルシアです。CCC代理店ポータルが白い画面のまま回り続けて、ログイン欄が表示されません。
+[オペレーター] こんにちは、ガルシア様。白い画面のまま読み込みが続いているのですね。お手伝いします。まず、代理店コードをお知らせいただき、ご本人確認をさせてください。
+[ユーザー] はい、11223344です。
+[オペレーター] ありがとうございます。プロフィールを確認します……すべて問題ありません。アカウントの状態は有効です。現在お使いのWebブラウザは何ですか。
+[ユーザー] Internet Explorerだったと思います。もしくは古いEdgeかもしれません。古い業務用ノートPCに最初から入っていたものです。
+[オペレーター] なるほど。CCC代理店ポータルは最近更新され、セキュリティ上の理由で古いブラウザはサポートされなくなりました。ChromeまたはEdgeの最新バージョンに更新する必要があります。
+[ユーザー] やってみます……あ、アップデートを入れるには「管理者権限」が必要だというポップアップが出ました。管理者パスワードがありません。
+[オペレーター] その場合は、FFF代理店のローカルIT管理者にご連絡ください。管理者としてログインし、ブラウザ更新を許可してもらう必要があります。
+[ユーザー] それなら納得ですけど、面倒ですね。連絡してみます。解決方法を教えてくれてありがとうございます。
+[オペレーター] どういたしまして。更新後に何かあればお知らせください。

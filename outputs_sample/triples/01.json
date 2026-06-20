@@ -3,34 +3,43 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "want": "Wants to calculate an estimate using the AAA Insurance system",
-        "role": "Representative of BBB Agency contacting AAA Insurance Support Desk about access to the CCC Agency Portal"
+        "type": "保険代理店担当者",
+        "want": "CCC代理店ポータルを使ってAAA保険システムで見積りを作成したい",
+        "knowledgeLevel": "システム名（CCC代理店ポータル）を把握しているが、ログイン画面に到達できていない",
+        "role": "BBB代理店の担当者としてサポートに問い合わせを行う"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "want": "Wants to resolve the agency's portal access issue",
-        "role": "Operator at AAA Insurance Support Desk providing system support and guidance"
+        "type": "保険会社システム管理者",
+        "want": "代理店のアクセス問題を迅速に解決したい",
+        "experience": "サポートデスクのオペレーターとして代理店からの問い合わせ対応に従事",
+        "knowledgeLevel": "システム障害状況やアカウント状態を確認できる",
+        "role": "AAA保険サポートデスクのオペレーターとして代理店に案内を提供する"
+      },
+      {
+        "id": "P3",
+        "type": "保険代理店担当者",
+        "want": "代理店内のネットワークやセキュリティ設定の問題を解消してポータルにアクセスできる状態にしたい",
+        "role": "BBB代理店本社のIT部門としてネットワーク・セキュリティ設定を管理する"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Cannot display CCC Agency Portal login screen",
-        "description": "The agency representative cannot reach the CCC Agency Portal login screen; opening the URL shows a browser security warning \"This connection is not secure\", preventing system access."
+        "title": "AAA保険システムで見積りを作成したい",
+        "description": "BBB代理店の担当者がCCC代理店ポータルを利用して見積りを作成したいと考えている"
       },
       {
         "id": "I2",
-        "title": "Want to calculate an estimate in the AAA Insurance system",
-        "description": "The agency representative called because they need to calculate an estimate, but cannot proceed since the CCC Agency Portal cannot be opened."
+        "title": "CCC代理店ポータルのログイン画面にアクセスできない",
+        "description": "ログイン画面にたどり着けず、URLを開くと「この接続は安全ではありません」というブラウザのセキュリティ警告が表示され、見積り作成に進めない"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Contact BBB Agency IT department to address network/security settings",
-        "description": "As there are no outages on AAA Insurance's side and the account status is Active, the browser's \"This connection is not secure\" warning likely stems from local network or security settings. The agency representative should contact BBB Agency headquarters' IT team to adjust settings so the login page can be displayed."
+        "title": "代理店本社IT部門にネットワークやブラウザのセキュリティ設定を確認してもらう",
+        "description": "システム障害は発生しておらず、アカウント状態も有効であるため、ネットワークや端末のセキュリティ設定が原因である可能性が高い。BBB代理店本社のIT部門に相談し、ネットワークやブラウザのセキュリティ設定を確認・調整してポータルにアクセス可能にする"
       }
     ]
   },
@@ -38,7 +47,10 @@
     {"source": "I1", "target": "P1", "type": "isHeldBy"},
     {"source": "I2", "target": "P1", "type": "isHeldBy"},
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
-    {"source": "I1", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P3", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "I2", "target": "S1", "type": "isResolvedBy"},
     {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
   ]
 }

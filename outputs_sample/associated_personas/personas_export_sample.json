@@ -3,194 +3,52 @@
     "scenario_pairs": [
       {
         "scenario_id": "SCENARIO_01",
-        "context_summary": "Field agent on a company-managed iPad sees 'connection is blocked' when trying to open the CCC Agency Portal while between client visits.",
+        "context_summary": "代理店ポータル接続時にブラウザのセキュリティ警告が出てログインできず、見積り作成が開始できない状況への対応",
         "agent_persona": {
           "persona_id": "AGENT_01",
           "basic_profile": {
-            "name": "Maya Torres",
+            "name": "佐藤 翔太",
             "age": "34",
-            "role": "Agency Field Representative",
-            "digital_literacy": "Comfortable using the company-issued iPad and portal features; limited control over managed device settings.",
-            "character": "Practical and patient, but grows tense when field work is delayed.",
-            "experience": "Typically works in the field using a company-issued tablet."
+            "role": "保険代理店の営業担当（ポータルで見積り作成を行う利用者）",
+            "digital_literacy": "システム名や基本的な操作は把握しているが、技術的な接続トラブルの切り分けは不得手",
+            "character": "責任感が強く、顧客対応を急ぐタイプ。状況共有は丁寧だが、技術詳細の説明は苦手。",
+            "experience": "日常的に代理店ポータルで見積り・申込を行っている。ヘルプデスクへの問い合わせ経験は少ない。"
           },
           "trouble_narrative": {
-            "situation_story": "Between client appointments, Maya opened her company-issued iPad to pull up the CCC Agency Portal for a quick quote. As soon as she tapped the portal link, a message appeared saying the connection is blocked and the page would not open. She retried the link and refreshed the browser, but the same message kept appearing. With her next client waiting, she could not get the login screen to appear and felt stuck on the road.",
-            "emotion": "Frustration mixed with urgency to keep her schedule."
+            "situation_story": "午前中に来店した顧客から自動車保険の見積り依頼を受け、いつも通り代理店ポータル（CCC代理店ポータルのような業務サイト）で見積りを作成しようとした。顧客情報の確認を終え、ブラウザで業務サイトのURLを開いたところ、画面に『この接続は安全ではありません』という警告が表示され、ログイン画面に進めない。見積りの作成自体に着手できず、顧客への提示時刻も迫っているため、業務が止まってしまっている。これまで同じポータルで作業できていた認識はあるが、今回なぜ進めないのか分からず、現場で判断できることが見当たらない。",
+            "emotion": "焦りと困惑。顧客対応の遅延に対する不安。"
           },
-          "action_trigger": "After multiple retries still showed 'connection is blocked' on the managed iPad, she contacted support.",
+          "action_trigger": "ブラウザのセキュリティ警告によりログイン画面へ進めず、見積りの提出予定時刻が迫ったためサポートに連絡した。",
           "data_reference": {
             "source_call_ids": [
-              "10"
+              "01",
+              "04"
             ]
           }
         },
         "admin_persona": {
           "persona_id": "ADMIN_01",
           "basic_profile": {
-            "name": "Evan Park",
-            "age": "39",
-            "role": "Insurance Company System Administrator (Helpdesk Operator)",
-            "digital_literacy": "Advanced; verifies account status and understands device management restrictions that can block access.",
-            "character": "Methodical, calm communicator who sets clear next steps.",
-            "experience": "Provides system support and guidance, including scenarios impacted by managed device policies."
-          },
-          "response_manual": {
-            "guide_title": "Restoring portal access on a managed iPad showing 'connection is blocked'",
-            "steps": "1) Intake and verification: Confirm the caller’s identity, the agency, and that they are using a company-issued, managed iPad. Ask for the exact wording of the message ('connection is blocked') and a quick screenshot if possible. Capture the time of occurrence and the portal URL being accessed.\n\n2) Quick system checks: Verify the portal service is operational and the user’s account is active. If service and account are normal and the device is managed, proceed.\n\n3) Coordinate the fix via the agency’s IT: Inform the caller that their agency’s device management policy must be updated to permit portal access on the managed device. Open or request the agency open a ticket with their IT to push an MDM approval or policy update that allows the portal. Include in the request: the affected portal URL, the device identifier (if available), iPadOS version, screenshot of the block, and timestamps.\n\n4) Expectations and follow-up: Advise the caller that the change depends on the agency IT’s push of the updated MDM policy. Offer to remain on the ticket or provide a reference number so IT can coordinate directly for confirmation.\n\n5) Confirmation: Once agency IT confirms the MDM approval/policy update has been pushed, ask the caller to retry accessing the portal and confirm the login screen appears. Document the outcome and close the case."
-          },
-          "support_context": {
-            "difficulty_perception": "Low technical complexity once identified; main dependency is the agency IT’s turnaround for the MDM update."
-          },
-          "data_reference": {
-            "source_call_ids": [
-              "10"
-            ]
-          }
-        }
-      },
-      {
-        "scenario_id": "SCENARIO_02",
-        "context_summary": "Office user experiences prolonged loading followed by 'Connection Timed Out' when trying to reach the CCC Agency Portal.",
-        "agent_persona": {
-          "persona_id": "AGENT_02",
-          "basic_profile": {
-            "name": "Jordan Lee",
-            "age": "41",
-            "role": "Agency Account Executive",
-            "digital_literacy": "Comfortable reporting exact error messages; not familiar with underlying network routing.",
-            "character": "Calm but concerned about workflow delays.",
-            "experience": "Contacts the insurer helpdesk when access issues disrupt routine work."
-          },
-          "trouble_narrative": {
-            "situation_story": "At the start of the workday, Jordan attempted to open the CCC Agency Portal to review pending tasks. The page spun for an unusually long time before the browser displayed 'Connection Timed Out.' Jordan refreshed and retried, but each attempt ended the same way. With tasks piling up, and still unable to even reach the login screen, Jordan sought help.",
-            "emotion": "Concern and impatience due to lost time."
-          },
-          "action_trigger": "Repeated 'Connection Timed Out' prevented any access to the login page, prompting a support call.",
-          "data_reference": {
-            "source_call_ids": [
-              "07"
-            ]
-          }
-        },
-        "admin_persona": {
-          "persona_id": "ADMIN_02",
-          "basic_profile": {
-            "name": "Priya Menon",
-            "age": "36",
-            "role": "Insurance Company Helpdesk Operator",
-            "digital_literacy": "Advanced; quickly checks server and account status and explains typical timeout causes.",
-            "character": "Efficient and reassuring, keeps the user informed about next steps.",
-            "experience": "Experienced in guiding agencies through office network or ISP routing issues that affect portal reachability."
-          },
-          "response_manual": {
-            "guide_title": "Handling 'Connection Timed Out' to the portal (office network/ISP routing path)",
-            "steps": "1) Intake and triage: Confirm the caller’s identity, agency, location (office/site), timestamp of the error, and exact 'Connection Timed Out' message. Note the portal URL and whether the issue is affecting other colleagues.\n\n2) Service-side verification: Check that the portal is up and the caller’s account is in good standing. If the service is normal and timeouts persist from the caller’s location, proceed to coordination with the agency’s IT.\n\n3) Open an agency IT ticket for network/ISP routing diagnosis: Request the agency’s IT to investigate and resolve local network or ISP routing problems reaching the service. Provide them with: the portal domain/URL, timestamps, user’s office location, and contact details. Ask them to validate routing from the office network and engage the ISP as needed to correct the path.\n\n4) Communication plan: Provide a reference number and offer to share findings from any internal checks. Ask the agency IT to confirm once routing is corrected.\n\n5) Resolution confirmation: After IT confirms remediation, have the caller retry the portal and verify the login screen loads normally. Record the resolution and close the case."
-          },
-          "support_context": {
-            "difficulty_perception": "Moderate due to reliance on the agency’s IT/ISP, but the triage path is straightforward."
-          },
-          "data_reference": {
-            "source_call_ids": [
-              "07"
-            ]
-          }
-        }
-      },
-      {
-        "scenario_id": "SCENARIO_03",
-        "context_summary": "Agency user is blocked by 'Access Denied by Corporate Policy' when attempting to reach the portal to issue a policy.",
-        "agent_persona": {
-          "persona_id": "AGENT_03",
-          "basic_profile": {
-            "name": "Sofia Nguyen",
-            "age": "29",
-            "role": "Agency Producer",
-            "digital_literacy": "Able to accurately relay on-screen messages; does not handle corporate network policy settings.",
-            "character": "Goal-oriented and polite, focused on getting the policy issued.",
-            "experience": "Contacts support when portal access is blocked during policy issuance."
-          },
-          "trouble_narrative": {
-            "situation_story": "Sofia needed to access the CCC Agency Portal to issue a policy for a client who was ready to proceed. Upon navigating to the portal, the screen displayed 'Access Denied by Corporate Policy,' and the login page never appeared. She refreshed and tried again from the same workstation, but the message persisted, leaving her unable to move forward with the policy.",
-            "emotion": "Anxious about delaying the client’s policy and eager to resolve the block."
-          },
-          "action_trigger": "Seeing 'Access Denied by Corporate Policy' repeatedly, Sofia reached out to support for help.",
-          "data_reference": {
-            "source_call_ids": [
-              "06"
-            ]
-          }
-        },
-        "admin_persona": {
-          "persona_id": "ADMIN_03",
-          "basic_profile": {
-            "name": "Marcus Holt",
-            "age": "45",
-            "role": "Insurance Company System Support Operator",
-            "digital_literacy": "Advanced; can verify account/server status and identify likely firewall/VPN causes but cannot alter the agency’s controls.",
-            "character": "Direct and supportive, sets clear expectations about coordination steps.",
-            "experience": "Regularly guides agencies on network policy changes needed to restore portal access."
-          },
-          "response_manual": {
-            "guide_title": "Clearing corporate policy blocks to the portal (firewall/VPN allowlisting)",
-            "steps": "1) Intake and evidence: Confirm the caller’s identity and agency. Capture the exact 'Access Denied by Corporate Policy' message, a screenshot if possible, the portal URL, time of occurrence, and whether peers in the same office are impacted.\n\n2) Service/account verification: Confirm the portal is operational and the user’s account is active. If both are normal and the corporate policy message persists, proceed to agency IT coordination.\n\n3) Coordinate with agency IT to adjust controls: Instruct the agency’s IT to adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed. Provide IT with the official portal details they should allow and the user’s evidence (screenshot, timestamps). Request confirmation once the policy is updated and propagated to affected users.\n\n4) Follow-up and confirmation: When IT reports completion, ask the caller to retry accessing the portal and confirm the login screen appears. Document the fix and close the ticket."
-          },
-          "support_context": {
-            "difficulty_perception": "Common scenario; resolution depends on timely firewall/VPN allowlist updates by the agency’s IT."
-          },
-          "data_reference": {
-            "source_call_ids": [
-              "03",
-              "06"
-            ]
-          }
-        }
-      },
-      {
-        "scenario_id": "SCENARIO_04",
-        "context_summary": "User receives 'Server not found' when trying to open the portal and cannot reach the login screen.",
-        "agent_persona": {
-          "persona_id": "AGENT_04",
-          "basic_profile": {
-            "name": "Daniel Ortiz",
+            "name": "田中 美咲",
             "age": "38",
-            "role": "Customer Service Representative",
-            "digital_literacy": "Familiar with portal operations; limited awareness of how network/security changes impact access.",
-            "character": "Cooperative and straightforward when reporting issues.",
-            "experience": "Regularly works in the portal to create policies and reports detailed error messages to support."
-          },
-          "trouble_narrative": {
-            "situation_story": "Preparing to create a policy, Daniel entered the CCC Agency Portal’s address in the browser. Instead of the login page, the browser returned 'Server not found.' He carefully retyped the address and refreshed, but the same error kept appearing. With the portal unreachable, his work came to a halt.",
-            "emotion": "Confused but calm, focused on getting access restored."
-          },
-          "action_trigger": "Persistent 'Server not found' prevented any progress, prompting a call to support.",
-          "data_reference": {
-            "source_call_ids": [
-              "03"
-            ]
-          }
-        },
-        "admin_persona": {
-          "persona_id": "ADMIN_04",
-          "basic_profile": {
-            "name": "Elaine Brooks",
-            "age": "33",
-            "role": "Insurance Company System Support Operator",
-            "digital_literacy": "Advanced; verifies account/server status and identifies when corporate controls are preventing access.",
-            "character": "Patient explainer who coordinates effectively with external teams.",
-            "experience": "Experienced in guiding agencies to adjust firewall/VPN settings to restore reachability."
+            "role": "AAA保険 サポート/ヘルプデスク オペレーター（アクセス関連の一次対応担当）",
+            "digital_literacy": "代理店ポータルのアクセス要件を理解し、ブラウザ関連の一般的な不具合（キャッシュ/Cookie、証明書など）への対処手順を案内できる",
+            "character": "落ち着いており、状況整理と優先度付けが得意。関係者連携を粘り強く進める。",
+            "experience": "代理店からのアクセス・ログイン関連の問い合わせ対応に継続的に従事。再現確認とローカルIT連携の実務に慣れている。"
           },
           "response_manual": {
-            "guide_title": "Restoring reachability when 'Server not found' appears (firewall/VPN allowlisting)",
-            "steps": "1) Intake: Validate caller identity and agency. Record the exact 'Server not found' message, portal URL, timestamp, and whether others at the site observe the same symptom. Collect a screenshot if available.\n\n2) Quick verification: Confirm the portal is operational and the user’s account is active. If service is normal and the issue persists, proceed to coordination with the agency’s IT.\n\n3) Agency IT action: Request that the agency’s IT adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed. Provide IT with the relevant portal details to allow and attach the user’s evidence (error message, screenshot, timestamps). Ask IT to confirm once changes are applied and policies are propagated.\n\n4) Confirmation and closure: Have the caller retry the portal once IT confirms updates. Verify that the login page loads, document the resolution, and close the ticket."
+            "guide_title": "代理店ポータル接続時のセキュリティ警告発生時（見積り開始不可）の対応フロー",
+            "steps": "1) 受付と状況確認: 代理店名・担当者名・連絡先を確認し、対象ポータルのURLと表示されている警告文（『この接続は安全ではありません』等）を時刻とともに記録する。ログイン前画面で発生していることを確認する。\n2) 端末とブラウザの特定: 影響端末（PC名やOS種別の概要）と使用ブラウザを特定し、現時点で作業継続が困難な旨を確認する。\n3) 解決方針の共有: 本件は端末側のブラウザ環境調整が必要となるため、代理店のローカルIT管理者による対応が必要であることを案内する。\n4) ローカルITへの依頼準備: 代理店側のローカルIT連絡先を入手し、依頼内容（管理者権限で端末にサインインし、ブラウザの構成や状態を更新・最適化すること）を明確にした上で、実施希望時間帯を調整する。影響端末・対象URL・警告内容の記録を共有できるよう準備する。\n5) ローカルIT実施タスク（依頼内容）: ローカルIT管理者に、(a) 管理者権限で対象端末にサインインし、(b) ブラウザの構成や状態を適切に更新・最適化するよう依頼する。具体的には、ブラウザの設定と状態の更新、キャッシュ/Cookieの整理、証明書関連の状態の見直し等、必要な範囲でブラウザ環境を調整することを依頼する。\n6) 動作確認: ローカルITの作業完了後、代理店担当者に対象URLへ再アクセスしてもらい、警告が解消されログイン画面に到達できるかを確認する。結果を記録する。\n7) 継続障害時の次アクション: 警告が継続する場合は、ローカルITが実施した調整内容と時刻を整理し、再度ブラウザ環境の見直し（上記の範囲内）を依頼する。必要に応じ、追加の実施枠を再調整する。\n8) クローズ: 解消後、再発防止のために実施内容の要点（ブラウザ環境の更新・最適化の実施）を記録し、代理店に作業結果の共有と完了連絡を行う。"
           },
           "support_context": {
-            "difficulty_perception": "Low to moderate; typically resolved once allowlisting is applied, but timing depends on agency IT."
+            "difficulty_perception": "端末側の管理者権限が必要なため即時復旧が難しい場合がある。証拠情報（警告文言・発生時刻・対象URL）の不足や、代理店のローカルITとの日程調整がボトルネックになりやすい。"
           },
           "data_reference": {
             "source_call_ids": [
-              "03",
-              "06"
+              "01",
+              "04",
+              "05",
+              "08"
             ]
           }
         }
@@ -198,5 +56,205 @@
     ],
     "status": "success",
     "island_id": 1
+  },
+  {
+    "scenario_pairs": [
+      {
+        "scenario_id": "SCENARIO_01",
+        "context_summary": "代理店ポータルに接続すると「サーバーが見つかりません」と表示されログイン画面に到達できない",
+        "agent_persona": {
+          "persona_id": "AGENT_01",
+          "basic_profile": {
+            "name": "田中 健",
+            "age": 38,
+            "role": "保険代理店担当者",
+            "digital_literacy": "標準的（知識レベルの明示情報なし）",
+            "character": "几帳面で納期に厳しい、落ち着いた対応を心掛ける",
+            "experience": "直近までは問題なく代理店ポータルを利用できていた"
+          },
+          "trouble_narrative": {
+            "situation_story": "午前中、顧客の新規契約を作成するためにCCC代理店ポータルへアクセスしたところ、画面に「サーバーが見つかりません」と表示され、前日まで普通に使えていたログインページにまったく到達できなくなった。別の時間帯にやり直しても状況は変わらず、契約作成の開始すらできないため業務が止まっている。",
+            "emotion": "焦りと困惑（期限が迫る中で原因が分からず不安）"
+          },
+          "action_trigger": "複数回の再試行でも同じエラー表示が続き、契約作成の予定が迫ったためサポートに連絡した。",
+          "data_reference": {
+            "source_call_ids": [
+              "03"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_01",
+          "basic_profile": {
+            "name": "小川 真理",
+            "age": 33,
+            "role": "AAA保険サポート オペレーター（保険会社システム管理者）",
+            "digital_literacy": "標準的（知識レベルの明示情報なし）",
+            "character": "実務的で丁寧、必要事項を確実に確認する",
+            "experience": "代理店のアクセス問題に対する一次切り分けと社外連携の調整を日常的に担当"
+          },
+          "response_manual": {
+            "guide_title": "CCC代理店ポータル接続許可（ホワイトリスト）依頼フロー",
+            "steps": "1. 受付時に症状を確認する。ログインページ到達前に「サーバーが見つかりません」と表示されることを記録する。2. 代理店側のIT部門／サポート窓口の連絡先が分かるかを確認し、社内ファイアウォールやVPNの設定を管理している担当であることを特定する。3. 利用者に対し、代理店のIT部門へCCC代理店ポータルのURLを社内ファイアウォールおよびVPNの設定で許可登録（ホワイトリスト）してもらうよう依頼してもらうことを案内する。4. 代理店ITが許可登録を実施後、利用者に再接続を試行してもらい、ログイン画面に到達できるかを確認する。5. 許可登録実施後も状況が変わらない場合は、代理店IT担当者からヘルプデスクへ直接連絡を依頼し、許可設定の反映状況を含めて継続調整する。"
+          },
+          "support_context": {
+            "difficulty_perception": "比較的容易。代理店ITでURL許可登録が実施されれば解消見込みが高い。"
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "06",
+              "03"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_02",
+        "context_summary": "企業ポリシーによりアクセス拒否され、ログイン画面に到達できない",
+        "agent_persona": {
+          "persona_id": "AGENT_02",
+          "basic_profile": {
+            "name": "佐藤 美咲",
+            "age": 29,
+            "role": "保険代理店担当者",
+            "digital_literacy": "中程度（代理店ポータルの操作には慣れている）",
+            "character": "前向きで段取りよく進めるタイプ",
+            "experience": "代理店ポータルの利用経験があり、手続きの流れを概ね把握している"
+          },
+          "trouble_narrative": {
+            "situation_story": "CCC代理店ポータルにサインインして顧客案件の手続きを開始しようとしたところ、ログイン画面の前で「Corporate Policy によりアクセス拒否」と表示され、認証画面自体が表示されなくなった。通常の手順通りにアクセスしているにもかかわらず前に進めないため、案件の準備が止まっている。",
+            "emotion": "困惑と焦り（手順は合っているのに理由が分からない）"
+          },
+          "action_trigger": "アクセス拒否の表示が繰り返し出続け、手続き開始の目処が立たないためサポートに連絡した。",
+          "data_reference": {
+            "source_call_ids": [
+              "06"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_02",
+          "basic_profile": {
+            "name": "山本 悠介",
+            "age": 36,
+            "role": "AAA保険サポート オペレーター（保険会社システム管理者）",
+            "digital_literacy": "標準的（知識レベルの明示情報なし）",
+            "character": "冷静で説明が分かりやすい",
+            "experience": "代理店の社内ポリシー起因のアクセス相談に継続対応"
+          },
+          "response_manual": {
+            "guide_title": "企業ポリシーによるブロック時の接続許可（ホワイトリスト）依頼フロー",
+            "steps": "1. 利用者からの申告内容を確認し、ログイン画面表示前に「Corporate Policy によりアクセス拒否」となることを記録する。2. 代理店のIT部門／サポート窓口の連絡先を確認する。3. 代理店ITに対し、CCC代理店ポータルのURLを社内ファイアウォールやVPNの設定で許可登録（ホワイトリスト）してもらうよう、利用者経由で依頼する案内を行う。4. 代理店ITで許可登録が完了したら、利用者に再度アクセスを試行してもらい、ログイン画面が表示されるかを確認する。5. 依然として拒否される場合は、代理店IT担当者からヘルプデスクへ直接連絡を依頼し、許可設定や反映状況を前提に継続調整する。"
+          },
+          "support_context": {
+            "difficulty_perception": "容易〜中程度。代理店側のセキュリティ設定依存のため、社内調整の時間が読みにくい。"
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "06",
+              "03"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_03",
+        "context_summary": "ポータル読み込み後にタイムアウトが発生し利用できない",
+        "agent_persona": {
+          "persona_id": "AGENT_03",
+          "basic_profile": {
+            "name": "中村 誠",
+            "age": 42,
+            "role": "保険代理店担当者",
+            "digital_literacy": "標準的（知識レベルの明示情報なし）",
+            "character": "慎重で確認を重ねるタイプ",
+            "experience": "業務遂行のために社内ポータルの利用を望む傾向"
+          },
+          "trouble_narrative": {
+            "situation_story": "CCC代理店ポータルを開くと進捗バーが回り続け、約2分後に「接続がタイムアウトしました」と表示されて落ちてしまう。ログインや照会など、必要な作業に入る前の段階で止まってしまい、顧客対応の予定が進められない。",
+            "emotion": "苛立ちと不安（再試行しても改善が見えない）"
+          },
+          "action_trigger": "同じタイムアウトが繰り返し発生し、当日のタスクに支障が出たためサポートに連絡した。",
+          "data_reference": {
+            "source_call_ids": [
+              "07"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_03",
+          "basic_profile": {
+            "name": "井上 香織",
+            "age": 34,
+            "role": "保険会社ヘルプデスク オペレーター（保険会社システム管理者）",
+            "digital_literacy": "高め（サーバー稼働状況やアカウント状態の確認ができ、一般的な接続エラー要因を説明可能）",
+            "character": "素早く要点を押さえる",
+            "experience": "ネットワーク起因の接続不良に関する一次対応と外部調整の経験が豊富"
+          },
+          "response_manual": {
+            "guide_title": "ネットワーク経路の調査・復旧依頼フロー（読み込み後タイムアウト時）",
+            "steps": "1. 症状を確認し、読み込み後に約2分でタイムアウトする事象であることを記録する。2. 代理店のITサポートに対し、ISPのルーティングとオフィス内ネットワーク機器の点検を依頼する。3. 代理店IT／ISP側でルーティングや機器設定の不備を是正するよう案内する。4. 復旧作業が完了した連絡を受けたら、利用者に再度ポータルへアクセスして動作確認を依頼する。5. 再発時は、代理店ITからヘルプデスクへ継続連絡を依頼し、経路・機器設定の修正状況を前提に追加点検を調整する。"
+          },
+          "support_context": {
+            "difficulty_perception": "中程度。外部（ISP）やオフィス内機器の点検・是正に時間を要する場合がある。"
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "07"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_04",
+        "context_summary": "会社支給iPadでポータル利用可否が不明なまま試行し、接続ブロック表示で利用できない",
+        "agent_persona": {
+          "persona_id": "AGENT_04",
+          "basic_profile": {
+            "name": "高橋 直人",
+            "age": 31,
+            "role": "外回り中心の保険代理店担当者",
+            "digital_literacy": "中程度（MDMなどの管理制限の理解は不足）",
+            "character": "行動的で現場志向、決断が早い",
+            "experience": "外回り業務で会社支給のモバイル端末を使用している。支給から日が浅い。"
+          },
+          "trouble_narrative": {
+            "situation_story": "外出先で会社支給のiPadからCCC代理店ポータルを使えるのか分からないまま試してみたところ、「接続がブロックされている」と表示され、アカウント自体は有効なはずなのにポータルが開けなかった。外での確認・入力を想定していたため、現場での対応計画が崩れてしまった。",
+            "emotion": "戸惑いと焦り（端末自体は新しく、何が前提条件なのか分からない）"
+          },
+          "action_trigger": "現場での業務開始直前にブロック表示が出て進めなくなり、至急の確認が必要になったためサポートに連絡した。",
+          "data_reference": {
+            "source_call_ids": [
+              "10"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_04",
+          "basic_profile": {
+            "name": "藤田 彩",
+            "age": 37,
+            "role": "保険会社サポートオペレーター（保険会社システム管理者）",
+            "digital_literacy": "高め（アカウント状態とMDMによる接続制限の一般的な挙動を把握）",
+            "character": "親切で段取りが明確",
+            "experience": "モバイル端末のMDM配下でのアクセス制御に関する問い合わせ対応を継続担当"
+          },
+          "response_manual": {
+            "guide_title": "モバイル端末へのアクセス許可ポリシー配信フロー（iPad接続ブロック時）",
+            "steps": "1. 端末が会社支給のiPadであること、および「接続がブロックされている」表示であることを確認する。2. 代理店のローカルIT（MDM管理者）に、端末管理ツールから必要なポリシーや更新を配信し、CCC代理店ポータルへのアクセスを許可する設定を反映してもらうよう依頼する旨を利用者へ案内する。3. 配信完了の連絡を受けたら、利用者にiPadで再度ポータルアクセスを試行してもらい、ブロック表示が解消しているかを確認する。4. 反映待ちやスケジュール都合で配信が遅れる場合は、代理店ITと利用者間で配信予定の再調整を依頼する。"
+          },
+          "support_context": {
+            "difficulty_perception": "中程度。MDMポリシー配信のタイミングに左右され、現場での即時復旧が難しい場合がある。"
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "10"
+            ]
+          }
+        }
+      }
+    ],
+    "status": "success",
+    "island_id": 2
   }
 ]

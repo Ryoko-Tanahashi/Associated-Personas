@@ -3,57 +3,72 @@
     "People": [
       {
         "id": "P1",
-        "type": "Customer",
-        "want": "Wants to sign the insurance contract today",
-        "role": "Customer waiting with the agency representative to sign the contract"
+        "type": "保険代理店担当者",
+        "character": "急いでいる。目の前の顧客の契約手続きを進めている。",
+        "want": "CCC代理店ポータルのアカウントロックを今すぐ解除してログインし、顧客の契約を今日中に完了したい",
+        "knowledgeLevel": "代理店コードや公式アプリの操作はできるが、登録した秘密の質問の答えを覚えていない。",
+        "role": "代理店としてCCC代理店ポータルを利用して契約手続きを行う"
       },
       {
         "id": "P2",
-        "type": "Insurance Agency Representative",
-        "want": "Wants the locked CCC Agency Portal account unlocked immediately to proceed with the client's contract today",
-        "role": "Representative of BBB Agency contacting support to resolve an account lock and continue the contract process"
+        "type": "保険会社システム管理者",
+        "character": "セキュリティポリシーを順守しつつ迅速に代替手段を提案する。",
+        "want": "本人確認を満たした上で代理店のアカウントロックを迅速に解除したい",
+        "experience": "サポートデスクでの認証・アカウント管理対応に従事している。",
+        "knowledgeLevel": "認証手順（秘密の質問、プッシュ通知）やロック解除・パスワードリセットの操作に精通している。",
+        "role": "オペレーターとして代理店の認証とアカウント管理を行う"
       },
       {
         "id": "P3",
-        "type": "Insurance Company System Administrator",
-        "want": "Wants to verify identity per security policy and unlock the account securely",
-        "role": "AAA Insurance support desk operator who authenticates and unlocks accounts"
+        "type": "顧客",
+        "want": "今日中に契約を完了したい",
+        "role": "代理店窓口で契約手続きの完了を待っている"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Want to sign the insurance contract today",
-        "description": "The customer is present and wants to sign immediately, and the agency representative wants to close the deal today"
+        "title": "CCC代理店ポータルにログインできない",
+        "description": "ログイン時にアカウントがロックされていると表示され、目の前の顧客対応中のため今すぐ解除したい。"
       },
       {
         "id": "I2",
-        "title": "Cannot log in to the CCC Agency Portal due to account lock",
-        "description": "When attempting to log in, the agency representative received an 'account is locked' message and requested immediate unlocking to proceed with the client"
+        "title": "登録済みの秘密の質問の答えがわからない",
+        "description": "電話での本人確認に必要な『最初に乗った車の車種』の回答を思い出せず、解除手続きが進められない。今日中の契約完了を目指しているため代替の確認方法を求めている。"
       },
       {
         "id": "I3",
-        "title": "Cannot answer the registered secret question for identity verification",
-        "description": "The agency representative does not remember the answer to the secret question required for unlocking over the phone and asks for another verification method"
+        "title": "今日中に契約を完了したい",
+        "description": "窓口で待っている顧客の契約をその日のうちにまとめたい。"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Use app-based login approval for identity verification",
-        "description": "The operator sends a 'Login Approval' push notification to the AAA Insurance official smartphone app; the agency representative taps 'Approve', after which the operator verifies the identity, unlocks the account, and resets the password"
+        "title": "公式アプリのプッシュ通知でログイン承認を行う",
+        "description": "AAA保険公式アプリに『ログイン承認』のプッシュ通知を送信し、代理店担当者がスマートフォンで「承認」をタップして本人確認を完了する。これにより秘密の質問なしで安全に認証できる。"
+      },
+      {
+        "id": "S2",
+        "title": "本人確認後にアカウントのロック解除とパスワードをリセットする",
+        "description": "プッシュ通知での認証完了を確認後、システム管理者がCCC代理店ポータルのアカウントロックを解除し、パスワードをリセットして即時ログイン可能にする。"
       }
     ]
   },
   "Relations": [
     {"source": "I1", "target": "P1", "type": "isHeldBy"},
-    {"source": "I1", "target": "P2", "type": "isHeldBy"},
-    {"source": "I2", "target": "P2", "type": "isHeldBy"},
-    {"source": "I3", "target": "P2", "type": "isHeldBy"},
-    {"source": "S1", "target": "P3", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "I3", "target": "P1", "type": "isHeldBy"},
+    {"source": "I3", "target": "P3", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I3", "target": "P1", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P1", "type": "isRequiredBy"},
     {"source": "I2", "target": "S1", "type": "isResolvedBy"},
-    {"source": "I3", "target": "S1", "type": "isResolvedBy"},
-    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
-    {"source": "I3", "target": "I2", "type": "isGeneratedBy"}
+    {"source": "I1", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
   ]
 }

@@ -1,0 +1,202 @@
+[
+  {
+    "scenario_pairs": [
+      {
+        "scenario_id": "SCENARIO_01",
+        "context_summary": "Field agent on a company-managed iPad sees 'connection is blocked' when trying to open the CCC Agency Portal while between client visits.",
+        "agent_persona": {
+          "persona_id": "AGENT_01",
+          "basic_profile": {
+            "name": "Maya Torres",
+            "age": "34",
+            "role": "Agency Field Representative",
+            "digital_literacy": "Comfortable using the company-issued iPad and portal features; limited control over managed device settings.",
+            "character": "Practical and patient, but grows tense when field work is delayed.",
+            "experience": "Typically works in the field using a company-issued tablet."
+          },
+          "trouble_narrative": {
+            "situation_story": "Between client appointments, Maya opened her company-issued iPad to pull up the CCC Agency Portal for a quick quote. As soon as she tapped the portal link, a message appeared saying the connection is blocked and the page would not open. She retried the link and refreshed the browser, but the same message kept appearing. With her next client waiting, she could not get the login screen to appear and felt stuck on the road.",
+            "emotion": "Frustration mixed with urgency to keep her schedule."
+          },
+          "action_trigger": "After multiple retries still showed 'connection is blocked' on the managed iPad, she contacted support.",
+          "data_reference": {
+            "source_call_ids": [
+              "10"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_01",
+          "basic_profile": {
+            "name": "Evan Park",
+            "age": "39",
+            "role": "Insurance Company System Administrator (Helpdesk Operator)",
+            "digital_literacy": "Advanced; verifies account status and understands device management restrictions that can block access.",
+            "character": "Methodical, calm communicator who sets clear next steps.",
+            "experience": "Provides system support and guidance, including scenarios impacted by managed device policies."
+          },
+          "response_manual": {
+            "guide_title": "Restoring portal access on a managed iPad showing 'connection is blocked'",
+            "steps": "1) Intake and verification: Confirm the caller’s identity, the agency, and that they are using a company-issued, managed iPad. Ask for the exact wording of the message ('connection is blocked') and a quick screenshot if possible. Capture the time of occurrence and the portal URL being accessed.\n\n2) Quick system checks: Verify the portal service is operational and the user’s account is active. If service and account are normal and the device is managed, proceed.\n\n3) Coordinate the fix via the agency’s IT: Inform the caller that their agency’s device management policy must be updated to permit portal access on the managed device. Open or request the agency open a ticket with their IT to push an MDM approval or policy update that allows the portal. Include in the request: the affected portal URL, the device identifier (if available), iPadOS version, screenshot of the block, and timestamps.\n\n4) Expectations and follow-up: Advise the caller that the change depends on the agency IT’s push of the updated MDM policy. Offer to remain on the ticket or provide a reference number so IT can coordinate directly for confirmation.\n\n5) Confirmation: Once agency IT confirms the MDM approval/policy update has been pushed, ask the caller to retry accessing the portal and confirm the login screen appears. Document the outcome and close the case."
+          },
+          "support_context": {
+            "difficulty_perception": "Low technical complexity once identified; main dependency is the agency IT’s turnaround for the MDM update."
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "10"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_02",
+        "context_summary": "Office user experiences prolonged loading followed by 'Connection Timed Out' when trying to reach the CCC Agency Portal.",
+        "agent_persona": {
+          "persona_id": "AGENT_02",
+          "basic_profile": {
+            "name": "Jordan Lee",
+            "age": "41",
+            "role": "Agency Account Executive",
+            "digital_literacy": "Comfortable reporting exact error messages; not familiar with underlying network routing.",
+            "character": "Calm but concerned about workflow delays.",
+            "experience": "Contacts the insurer helpdesk when access issues disrupt routine work."
+          },
+          "trouble_narrative": {
+            "situation_story": "At the start of the workday, Jordan attempted to open the CCC Agency Portal to review pending tasks. The page spun for an unusually long time before the browser displayed 'Connection Timed Out.' Jordan refreshed and retried, but each attempt ended the same way. With tasks piling up, and still unable to even reach the login screen, Jordan sought help.",
+            "emotion": "Concern and impatience due to lost time."
+          },
+          "action_trigger": "Repeated 'Connection Timed Out' prevented any access to the login page, prompting a support call.",
+          "data_reference": {
+            "source_call_ids": [
+              "07"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_02",
+          "basic_profile": {
+            "name": "Priya Menon",
+            "age": "36",
+            "role": "Insurance Company Helpdesk Operator",
+            "digital_literacy": "Advanced; quickly checks server and account status and explains typical timeout causes.",
+            "character": "Efficient and reassuring, keeps the user informed about next steps.",
+            "experience": "Experienced in guiding agencies through office network or ISP routing issues that affect portal reachability."
+          },
+          "response_manual": {
+            "guide_title": "Handling 'Connection Timed Out' to the portal (office network/ISP routing path)",
+            "steps": "1) Intake and triage: Confirm the caller’s identity, agency, location (office/site), timestamp of the error, and exact 'Connection Timed Out' message. Note the portal URL and whether the issue is affecting other colleagues.\n\n2) Service-side verification: Check that the portal is up and the caller’s account is in good standing. If the service is normal and timeouts persist from the caller’s location, proceed to coordination with the agency’s IT.\n\n3) Open an agency IT ticket for network/ISP routing diagnosis: Request the agency’s IT to investigate and resolve local network or ISP routing problems reaching the service. Provide them with: the portal domain/URL, timestamps, user’s office location, and contact details. Ask them to validate routing from the office network and engage the ISP as needed to correct the path.\n\n4) Communication plan: Provide a reference number and offer to share findings from any internal checks. Ask the agency IT to confirm once routing is corrected.\n\n5) Resolution confirmation: After IT confirms remediation, have the caller retry the portal and verify the login screen loads normally. Record the resolution and close the case."
+          },
+          "support_context": {
+            "difficulty_perception": "Moderate due to reliance on the agency’s IT/ISP, but the triage path is straightforward."
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "07"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_03",
+        "context_summary": "Agency user is blocked by 'Access Denied by Corporate Policy' when attempting to reach the portal to issue a policy.",
+        "agent_persona": {
+          "persona_id": "AGENT_03",
+          "basic_profile": {
+            "name": "Sofia Nguyen",
+            "age": "29",
+            "role": "Agency Producer",
+            "digital_literacy": "Able to accurately relay on-screen messages; does not handle corporate network policy settings.",
+            "character": "Goal-oriented and polite, focused on getting the policy issued.",
+            "experience": "Contacts support when portal access is blocked during policy issuance."
+          },
+          "trouble_narrative": {
+            "situation_story": "Sofia needed to access the CCC Agency Portal to issue a policy for a client who was ready to proceed. Upon navigating to the portal, the screen displayed 'Access Denied by Corporate Policy,' and the login page never appeared. She refreshed and tried again from the same workstation, but the message persisted, leaving her unable to move forward with the policy.",
+            "emotion": "Anxious about delaying the client’s policy and eager to resolve the block."
+          },
+          "action_trigger": "Seeing 'Access Denied by Corporate Policy' repeatedly, Sofia reached out to support for help.",
+          "data_reference": {
+            "source_call_ids": [
+              "06"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_03",
+          "basic_profile": {
+            "name": "Marcus Holt",
+            "age": "45",
+            "role": "Insurance Company System Support Operator",
+            "digital_literacy": "Advanced; can verify account/server status and identify likely firewall/VPN causes but cannot alter the agency’s controls.",
+            "character": "Direct and supportive, sets clear expectations about coordination steps.",
+            "experience": "Regularly guides agencies on network policy changes needed to restore portal access."
+          },
+          "response_manual": {
+            "guide_title": "Clearing corporate policy blocks to the portal (firewall/VPN allowlisting)",
+            "steps": "1) Intake and evidence: Confirm the caller’s identity and agency. Capture the exact 'Access Denied by Corporate Policy' message, a screenshot if possible, the portal URL, time of occurrence, and whether peers in the same office are impacted.\n\n2) Service/account verification: Confirm the portal is operational and the user’s account is active. If both are normal and the corporate policy message persists, proceed to agency IT coordination.\n\n3) Coordinate with agency IT to adjust controls: Instruct the agency’s IT to adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed. Provide IT with the official portal details they should allow and the user’s evidence (screenshot, timestamps). Request confirmation once the policy is updated and propagated to affected users.\n\n4) Follow-up and confirmation: When IT reports completion, ask the caller to retry accessing the portal and confirm the login screen appears. Document the fix and close the ticket."
+          },
+          "support_context": {
+            "difficulty_perception": "Common scenario; resolution depends on timely firewall/VPN allowlist updates by the agency’s IT."
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "03",
+              "06"
+            ]
+          }
+        }
+      },
+      {
+        "scenario_id": "SCENARIO_04",
+        "context_summary": "User receives 'Server not found' when trying to open the portal and cannot reach the login screen.",
+        "agent_persona": {
+          "persona_id": "AGENT_04",
+          "basic_profile": {
+            "name": "Daniel Ortiz",
+            "age": "38",
+            "role": "Customer Service Representative",
+            "digital_literacy": "Familiar with portal operations; limited awareness of how network/security changes impact access.",
+            "character": "Cooperative and straightforward when reporting issues.",
+            "experience": "Regularly works in the portal to create policies and reports detailed error messages to support."
+          },
+          "trouble_narrative": {
+            "situation_story": "Preparing to create a policy, Daniel entered the CCC Agency Portal’s address in the browser. Instead of the login page, the browser returned 'Server not found.' He carefully retyped the address and refreshed, but the same error kept appearing. With the portal unreachable, his work came to a halt.",
+            "emotion": "Confused but calm, focused on getting access restored."
+          },
+          "action_trigger": "Persistent 'Server not found' prevented any progress, prompting a call to support.",
+          "data_reference": {
+            "source_call_ids": [
+              "03"
+            ]
+          }
+        },
+        "admin_persona": {
+          "persona_id": "ADMIN_04",
+          "basic_profile": {
+            "name": "Elaine Brooks",
+            "age": "33",
+            "role": "Insurance Company System Support Operator",
+            "digital_literacy": "Advanced; verifies account/server status and identifies when corporate controls are preventing access.",
+            "character": "Patient explainer who coordinates effectively with external teams.",
+            "experience": "Experienced in guiding agencies to adjust firewall/VPN settings to restore reachability."
+          },
+          "response_manual": {
+            "guide_title": "Restoring reachability when 'Server not found' appears (firewall/VPN allowlisting)",
+            "steps": "1) Intake: Validate caller identity and agency. Record the exact 'Server not found' message, portal URL, timestamp, and whether others at the site observe the same symptom. Collect a screenshot if available.\n\n2) Quick verification: Confirm the portal is operational and the user’s account is active. If service is normal and the issue persists, proceed to coordination with the agency’s IT.\n\n3) Agency IT action: Request that the agency’s IT adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed. Provide IT with the relevant portal details to allow and attach the user’s evidence (error message, screenshot, timestamps). Ask IT to confirm once changes are applied and policies are propagated.\n\n4) Confirmation and closure: Have the caller retry the portal once IT confirms updates. Verify that the login page loads, document the resolution, and close the ticket."
+          },
+          "support_context": {
+            "difficulty_perception": "Low to moderate; typically resolved once allowlisting is applied, but timing depends on agency IT."
+          },
+          "data_reference": {
+            "source_call_ids": [
+              "03",
+              "06"
+            ]
+          }
+        }
+      }
+    ],
+    "status": "success",
+    "island_id": 1
+  }
+]

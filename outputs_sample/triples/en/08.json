@@ -1,0 +1,63 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "character": "Expresses frustration when blocked by device restrictions.",
+        "want": "Wants to access the CCC Agency Portal login screen and use the portal.",
+        "knowledgeLevel": "Can use the portal but cannot change browser settings due to organization-managed restrictions.",
+        "role": "Agency staff user at III Agency contacting support for portal access."
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "character": "Helpful and provides step-by-step technical guidance.",
+        "want": "Wants to resolve the agency user's portal access issue efficiently.",
+        "knowledgeLevel": "Understands common browser-related causes (cache/cookies) and support limitations; cannot perform changes remotely.",
+        "role": "AAA Insurance Dealer Support operator providing technical support and guidance."
+      },
+      {
+        "id": "P3",
+        "type": "Insurance Agency Representative",
+        "want": "Wants to assist agency staff by performing the necessary admin actions to enable portal access.",
+        "knowledgeLevel": "Has admin rights to manage browser settings on agency laptops.",
+        "role": "Local IT administrator at III Agency who can clear browser cache/cookies on managed devices."
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Cannot access the CCC Agency Portal login screen due to constant refreshing",
+        "description": "When attempting to open the CCC Agency Portal, the page refreshes endlessly and never reaches the login screen."
+      },
+      {
+        "id": "I2",
+        "title": "Cannot clear browser cache/cookies due to organization-managed settings",
+        "description": "The browser settings controls are grayed out with a message 'Settings are managed by your organization,' preventing the user from clearing history/cookies as instructed."
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Clear browser history and cookies, then restart the browser",
+        "description": "In the browser settings, clear history and cookies to remove potentially corrupted cache data, then close and reopen the browser before accessing the CCC Agency Portal again."
+      },
+      {
+        "id": "S2",
+        "title": "Have the local IT administrator clear the cache with admin rights",
+        "description": "Because settings are locked by the organization, contact III Agency's local IT administrator to log in with admin privileges, clear the browser cache/cookies, and then retry accessing the portal; this cannot be done remotely by company support."
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P3", "type": "isHeldBy"},
+    {"source": "I1", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I2", "target": "S1", "type": "isGeneratedBy"}
+  ]
+}

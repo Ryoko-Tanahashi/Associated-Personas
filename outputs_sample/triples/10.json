@@ -3,49 +3,73 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "want": "Wants to access the CCC Agency Portal on a company-issued tablet while working in the field",
-        "experience": "Using a KKK Agency-issued iPad in the field",
-        "role": "Agency representative contacting AAA Insurance Support to resolve portal access problem"
+        "type": "保険代理店担当者",
+        "want": "会社支給のタブレットからCCC代理店ポータルに問題なくアクセスしたい",
+        "experience": "外回りで会社支給のiPadを使用している（先月支給）",
+        "knowledgeLevel": "端末のMDM制限については把握していない",
+        "role": "KKK代理店の現場担当者としてCCC代理店ポータルを利用しようとしている"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "want": "Wants to identify the cause of the portal access problem and guide next steps",
-        "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
-        "role": "Provides system support and guidance from AAA Insurance Support"
+        "type": "保険会社システム管理者",
+        "want": "代理店担当者の接続問題の原因を特定し適切な対処方法を案内したい",
+        "experience": "代理店からの問い合わせ対応に従事",
+        "knowledgeLevel": "アカウント状態の確認やMDMによる接続制限の一般的な挙動を把握している",
+        "role": "AAA保険サポートのオペレーターとして原因説明と対応先の案内を行う"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Cannot open CCC Agency Portal on company tablet",
-        "description": "On a KKK Agency-issued iPad in the field, attempting to access the CCC Agency Portal shows 'connection is blocked' and the portal will not open."
+        "title": "会社支給タブレットでCCC代理店ポータルにアクセスしたい",
+        "description": "外回りで会社支給のiPadを使用しており、端末からCCC代理店ポータルを利用したい。"
+      },
+      {
+        "id": "I2",
+        "title": "CCC代理店ポータルにアクセスできない",
+        "description": "会社支給のiPadでCCC代理店ポータルを開こうとすると「接続がブロックされている」と表示され、ポータルが開けない。アカウント自体は有効と確認済み。"
+      },
+      {
+        "id": "I3",
+        "title": "接続ブロックの原因がわからない",
+        "description": "なぜ会社支給タブレットで接続がブロックされるのか原因が分からない。"
+      },
+      {
+        "id": "I4",
+        "title": "誰に依頼すればアクセス許可が得られるかわからない",
+        "description": "どこに連絡すれば端末の制限解除や設定更新を行ってもらえるのかが分からない。"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Contact agency IT to have MDM allow the portal via an update",
-        "description": "Because the block is enforced by KKK Agency's mobile device management on the tablet and cannot be overridden by AAA support, contact KKK Agency's local IT to push an update or approval that permits access to the CCC Agency Portal."
+        "title": "接続ブロックの原因を把握する",
+        "description": "AAA保険サポートがアカウントに問題がないことを確認のうえ、会社支給タブレットのMDM（モバイルデバイス管理）による外部Webポータルのブロックが原因である可能性が高いと説明する。"
+      },
+      {
+        "id": "S2",
+        "title": "ローカルITにMDM設定の許可更新を依頼する",
+        "description": "KKK代理店のローカルITサポートに連絡し、会社支給タブレットにCCC代理店ポータルへのアクセスを許可するポリシーや更新を配信してもらう。AAAのサポートでは端末側の制限解除は行えない旨を案内する。"
       }
     ]
   },
   "Relations": [
-    {
-      "source": "I1",
-      "target": "P1",
-      "type": "isHeldBy"
-    },
-    {
-      "source": "S1",
-      "target": "P2",
-      "type": "isHeldBy"
-    },
-    {
-      "source": "I1",
-      "target": "S1",
-      "type": "isResolvedBy"
-    }
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "I3", "target": "P1", "type": "isHeldBy"},
+    {"source": "I4", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I3", "target": "P2", "type": "isHandledBy"},
+    {"source": "I4", "target": "P2", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P1", "type": "isRequiredBy"},
+    {"source": "I2", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I3", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I4", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
+    {"source": "I3", "target": "I2", "type": "isGeneratedBy"},
+    {"source": "I4", "target": "I3", "type": "isGeneratedBy"}
   ]
 }

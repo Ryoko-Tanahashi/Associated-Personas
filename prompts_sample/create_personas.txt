@@ -1,92 +1,92 @@
-You are an expert in business analysis and thought simulation for the insurance industry.
-Based on the provided data (Island Data), create **"one-to-one pairs of an agency representative and a system administrator in a specific trouble scenario."**
+あなたは保険業界の業務分析と思考シミュレーションの専門家です。
+提供されたデータ（Island Data）に基づき、**「特定のトラブル状況における代理店担当者とシステム管理者の1対1のペア」**を作成してください。
 
-# Input Data
+# 入力データ
 {island_data}
 
-# Creation Process and Rules
+# 作成プロセスとルール
 
-## STEP 1: Extract Trouble Scenarios (Graph Analysis)
-Analyze the input Issues and Relations, and split the data into **"independent trouble scenarios."**
+## STEP 1: トラブルシナリオの切り出し（グラフ解析）
+入力されたIssue（課題）とRelations（関係性）を分析し、データを**「独立したトラブルシナリオ」**に分割してください。
 
-* **Chain Merging (`isGeneratedBy`)**:
-    * If Issue A is connected from Issue B by `isGeneratedBy`, treat this as a sequence of events happening to one agency representative. Group them into a single scenario.
-    * Example: "Account locked" → "Unlock email does not arrive" = **one scenario**
-* **Separate Unrelated Cases**:
-    * Issues without a direct causal relationship (e.g., "forgot password" and "certificate error") must be treated as **different scenarios**.
+* **チェーンの結合 (`isGeneratedBy`)**:
+    * あるIssue AがIssue Bから`isGeneratedBy`で繋がっている場合、それは「一人の代理店担当者に起きている連続した事象」です。これらを1つのシナリオとしてまとめてください。
+    * 例：「ロックされた」→「解除メールが来ない」＝ **1つのシナリオ**
+* **別件の分離**:
+    * 直接的な因果関係がないIssue同士（例：「パスワード忘れ」と「証明書エラー」）は、**別のシナリオ**として扱ってください。
 
-## STEP 2: Create Paired Personas
-For each extracted scenario, create the following **1:1 pair**.
-Also collect the data basis `source_call_ids` used to build each persona.
+## STEP 2: ペア・ペルソナの作成
+切り出した「シナリオ」ごとに、以下の**1対1のペア**を作成してください。
+また、各ペルソナを作成する根拠となったデータの `source_call_ids` を収集してください。
 
-### [User Side: Insurance Agency Representative]
-* **Role**: The person directly facing that specific trouble scenario, whose work is blocked and who is in difficulty.
-* **Knowledge Constraint**: They only know `abstract_issues` (problems) and `grouped_people` (emotions/background). **They do not know the solutions (`abstract_solutions`).**
-* **Writing Policy (Narrative Style)**:
-    * Do not list issues as simple bullet points. Instead, describe them as a coherent story (situation narrative): **"during what work, what happened, and what they tried next before getting stuck."**
-    * If multiple Issues are included, express how they are intertwined over time or in combination to trouble this person.
-* **Data Basis**: List `source_call_ids` linked to `abstract_issues` and corresponding `grouped_people` included in this scenario.
+### 【User Side: 保険代理店担当者】
+* **役割**: その特定のトラブルシナリオに直面し、業務が止まって困っている当事者。
+* **知識制約**: `abstract_issues`（困りごと）と`grouped_people`（感情・背景）のみを知っています。**解決策（abstract_solutions）は知りません。**
+* **記述方針（ストーリー化）**:
+    * 課題を単なる箇条書きにするのではなく、**「どのような業務中に、何が起きて、次にどうしようとして詰まったのか」**という一連のストーリー（状況描写）として記述してください。
+    * 複数のIssueが含まれる場合、それらが時系列または複合的にどう絡み合ってその人を困らせているかを表現してください。
+* **データ根拠**: このシナリオに含まれる `abstract_issues` および対応する `grouped_people` に紐付く `source_call_ids` をリスト化してください。
 
-### [Support Side: Insurance Company System Administrator]
-* **Role**: The person (operator/help desk) who receives that specific inquiry and leads it to resolution.
-* **Granularity**: Do not depict a "super administrator who knows everything." Describe them as **"the specific person currently taking this call and handling the relevant Issue."**
-* **Knowledge**: They know the concrete `abstract_solutions` (resolution procedures) for the Issues in that scenario.
-* **Writing Policy (Manual Style)**:
-    * Do not just enumerate solutions. Structure it as a **concrete response manual (or script) from receiving the inquiry to resolving it.**
-    * If there are multiple Solutions, organize them into a **logical flow**, such as "first check A, if that fails guide B," or "let them choose C depending on the situation."
-    * **Prohibited**: Do not include source IDs (e.g., AS1, AS19) inside the manual body. Also do not add solutions based on assumptions or general knowledge.
-* **Data Basis**: List `source_call_ids` linked to `abstract_solutions` and corresponding `grouped_people` included in this scenario.
+### 【Support Side: 保険会社システム管理者】
+* **役割**: その特定の問い合わせを受け、解決に導く担当者（オペレーターやヘルプデスク）。
+* **粒度**: 「全ての業務を知るスーパー管理者」ではなく、**「今まさにその電話を受けて、当該Issueに対応している担当者」**として描写してください。
+* **知識**: そのシナリオに含まれるIssueに対する、具体的な`abstract_solutions`（解決手順）を知っています。
+* **記述方針（マニュアル化）**:
+    * 解決策を単に羅列するのではなく、**「問い合わせを受けてから解決に至るまでの具体的な対応マニュアル（またはスクリプト）」**として構成してください。
+    * 複数のSolutionがある場合、「まずAを確認し、ダメならBを案内する」「状況に応じてCを選択させる」といった**論理的なフロー**にまとめて記述してください。
+    * **禁止事項**: マニュアル本文中に、参照元のID（例: AS1, AS19など）は記載しないでください。また推測や一般知識で、解決策を追加しないでください。
+* **データ根拠**: このシナリオに含まれる `abstract_solutions` および対応する `grouped_people` に紐付く `source_call_ids` をリスト化してください。
 
-# Output Format (JSON)
-Add objects to the array according to the number of extracted scenarios.
+# 出力形式 (JSON)
+切り出したシナリオの数だけ、配列にオブジェクトを追加してください。
 
 ```json
 {
   "scenario_pairs": [
     {
       "scenario_id": "SCENARIO_01",
-      "context_summary": "(Summary of the situation this pair is facing. Example: Handling uncertainty about how to submit an insurance application)",
+      "context_summary": "（このペアが直面している状況の要約。例：保険申込方法不明への対応）",
       "agent_persona": {
         "persona_id": "AGENT_01",
         "basic_profile": {
-          "name": "(Fictional full name)",
-          "age": "(Estimated age)",
-          "role": "(Job title)",
-          "digital_literacy": "(Estimated from knowledgeLevel)"
-          "character": personality
-          "experience": experience
+          "name": "（架空の氏名）",
+          "age": "（推定年齢）",
+          "role": "（役職）",
+          "digital_literacy": "（knowledgeLevelから推定）"
+          "character": 性格
+          "experience": 経験
         },
         "trouble_narrative": {
-          "situation_story": "(Integrate multiple Issues and describe them as a concrete difficulty faced by one person. Example: The customer’s birthday is approaching and the representative is rushing to submit an application, but cannot proceed because they do not know whether paper documents are required for in-person applications)",
-          "emotion": "(e.g., panic, anger, confusion)"
+          "situation_story": "（複数のIssueを統合し、一人の人間が直面している具体的な困りごととして記述。例：顧客の誕生日が迫り申込を急いでいたが、対面の場合の申し込みで紙の書類を使うのかどうかがわからず、進められない状況）",
+          "emotion": "（焦り、怒り、困惑など）"
         },
-        "action_trigger": "(The direct trigger that led them to contact support)",
+        "action_trigger": "（サポートに連絡することになった直接のきっかけ）",
         "data_reference": {
           "source_call_ids": [
-            "(List without duplicates the source_call_ids from Issues and GroupedPeople used to build this persona)"
+            "（このペルソナの構築に使用したIssueやGroupedPeopleのsource_call_idsを重複なくリスト化）"
           ]
         }
       },
       "admin_persona": {
         "persona_id": "ADMIN_01",
         "basic_profile": {
-          "name": "(Fictional full name)",
-          "age": "(Estimated age)",
-          "role": "(Job title)",
-          "digital_literacy": "(Estimated from knowledgeLevel)"
-          "character": personality
-          "experience": experience
+          "name": "（架空の氏名）",
+          "age": "（推定年齢）",
+          "role": "（役職）",
+          "digital_literacy": "（knowledgeLevelから推定）"
+          "character": 性格
+          "experience": 経験
         },
         "response_manual": {
-          "guide_title": "(Title of the response manual. Example: In-person application response flow)",
-          "steps": "(Integrate abstract_solutions and describe them as a full flow: cause triage -> solution guidance.\nExample: If the customer wants to apply in person, explain that only paperless submission is supported. If they want to proceed online, ... describe in a naturally structured format)"
+          "guide_title": "（対応のマニュアル名。例：対面申し込み時の対応フロー）",
+          "steps": "（abstract_solutionsを統合し、原因切り分け→解決策の提示という一連の流れとして記述。\n例：顧客が対面で申し込みを行いたい場合は、ペーパーレスにのみ対応していることを説明。もしオンラインで行いたい場合は...のように自然な文章で構造化して記述）"
         },
         "support_context": {
-          "difficulty_perception": "(Perceived difficulty level or concerns regarding this inquiry)"
+          "difficulty_perception": "（この問い合わせに対して感じる難易度や懸念点）"
         },
         "data_reference": {
           "source_call_ids": [
-            "(List without duplicates the source_call_ids from Solutions and GroupedPeople used to build this persona)"
+            "（このペルソナの構築に使用したSolutionやGroupedPeopleのsource_call_idsを重複なくリスト化）"
           ]
         }
       }
@@ -100,7 +100,7 @@ Add objects to the array according to the number of extracted scenarios.
   ]
 }
 
-# Notes
-- No solution leakage: Do not include resolution procedures or causes (Solution content) in `agent_persona`. They are in a state where they "do not know why it is not working." Also do not include descriptions that imply solutions. They are always acting based on what they believe is correct.
-- Manual specificity: `admin_persona.response_manual` must be readable as an actual operator procedure, not just a feature list. However, do not add steps by assumption; construct it only from the provided `abstract_solutions`. Also, do not write a verbatim dialogue script—describe procedures only.
-- Number of scenarios: Split into an appropriate number based on the input graph structure. Do not force everything into one pair.
+# 注意事項
+- 解決策の漏洩禁止: agent_personaの中に、解決手順や原因（Solutionの内容）を含めないでください。彼らは「なぜ動かないのか分からない」状態です。また、解決策を示唆するような状況の説明も含めないでください。彼らは常に正しいと思っていることを行動しています。
+- マニュアルの具体性: admin_personaのresponse_manualは、単なる機能リストではなく、オペレーターが実際に案内する手順書として読めるようにしてください。ただし、推測から手順を追加せず、与えられたabstract_solutionsのみから構成してください。また、具体的な発言内容の原稿を書く形ではなく、手順のみを記載してください。
+- シナリオ数: 入力データのグラフ構造に基づき、適切な数に分割してください。無理に1ペアにまとめないでください。

@@ -1,13 +1,13 @@
-[Operator] Thank you for calling AAA Insurance Dealer Support. My name is Thomas.
-[User] Hi Thomas. King here from III Agency. I can't get to the login screen for the CCC Agency Portal. It just keeps refreshing itself endlessly.
-[Operator] Hello, Mr. King. The page is constantly refreshing? I can certainly help look into that. May I have your agency ID and your date of birth for verification?
-[User] Agency ID 77889900. Birth date is March 5th, 1990.
-[Operator] Thank you. Let me verify... Your account is fully active and ready to use. This refreshing issue usually happens when your browser's cache or cookies are corrupted.
-[User] Okay, how do I fix that?
-[Operator] You just need to go to your browser settings, clear your history and cookies, and restart the browser.
-[User] Let me try... Wait, all those buttons are grayed out. A message says "Settings are managed by your organization." I can't clear anything.
-[Operator] Ah, I see. It appears your office computer is locked down by your IT department, restricting you from changing browser settings.
-[User] Yeah, they are pretty strict about what we can do on these laptops. 
-[Operator] In that case, you will need to contact the local IT administrator at III Agency. They can temporarily log in with admin rights to clear your cache. I cannot do that remotely.
-[User] Unbelievable. Okay, I'll have to wait for them to come down and fix it. Thanks anyway.
-[Operator] You're welcome. Let us know if the issue persists after they clear it.
+[オペレーター] AAA保険ディーラーサポートにお電話いただきありがとうございます。トーマスです。
+[ユーザー] こんにちは、III代理店のキングです。CCC代理店ポータルのログイン画面にたどり着けません。ずっと勝手に更新され続けています。
+[オペレーター] こんにちは、キング様。ページが常に更新されているのですね。確認しますので、まず代理店IDと生年月日を教えていただけますか。
+[ユーザー] 代理店IDは77889900です。生年月日は1990年3月5日です。
+[オペレーター] ありがとうございます。確認します……アカウントは完全に有効で、すぐに利用できます。この更新の問題は、通常、ブラウザのキャッシュやCookieが破損しているときに起こります。
+[ユーザー] わかりました。どう直せばいいですか。
+[オペレーター] ブラウザの設定を開き、履歴とCookieを削除してから、ブラウザを再起動してください。
+[ユーザー] やってみます……待ってください。ボタンが全部グレーアウトしています。「設定は組織によって管理されています」と出ています。何も消せません。
+[オペレーター] なるほど。お使いの社用PCはIT部門によって制限されていて、ブラウザ設定を変更できないようになっているようです。
+[ユーザー] ええ、このノートPCではできることがかなり厳しく制限されています。
+[オペレーター] その場合は、III代理店のローカルIT管理者にご連絡ください。管理者権限で一時的にログインしてキャッシュを削除してもらう必要があります。こちらから遠隔ではできません。
+[ユーザー] 信じられません。じゃあ、来てもらって直してもらうまで待つしかないですね。とりあえずありがとうございます。
+[オペレーター] どういたしまして。削除後も問題が続くようでしたらお知らせください。

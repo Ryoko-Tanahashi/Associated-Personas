@@ -1,0 +1,49 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "character": "Cooperative and straightforward in reporting issues.",
+        "want": "Wants to create a new policy and needs access to the CCC Agency Portal.",
+        "knowledgeLevel": "Can use the CCC Agency Portal and provide account details; was not aware that recent VPN/firewall changes could block access.",
+        "role": "Contacts insurer support about access issues to proceed with policy creation"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "character": "Helpful and methodical in troubleshooting.",
+        "want": "Wants to help the agency regain portal access quickly.",
+        "experience": "Accustomed to verifying account status and system health for agencies.",
+        "knowledgeLevel": "Can check agency account status and server operations; cannot modify the agency's VPN/firewall settings.",
+        "role": "Provides technical support for agency access to insurer systems as an operator"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Want to create a new policy",
+        "description": "The agency representative is attempting to create a new policy via the CCC Agency Portal."
+      },
+      {
+        "id": "I2",
+        "title": "Cannot access the CCC Agency Portal",
+        "description": "The agency representative receives a 'Server not found' error when trying to open the CCC Agency Portal; it worked yesterday, the account is active, and servers are normal. The office VPN software was updated this morning."
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Contact internal IT to whitelist the CCC Agency Portal URL",
+        "description": "Reach out to DDD Agency's IT support to whitelist the CCC Agency Portal URL or adjust VPN/firewall settings that may be blocking access. The insurer cannot change these corporate network settings."
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "I2", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
+  ]
+}

@@ -1,41 +1,41 @@
-Below is a list of data entries (ID and text) with similar content.
-Please classify and organize them according to the following steps.
+以下に、内容が類似しているデータのリスト（IDとテキスト）があります。
+以下の手順で分類・整理を行ってください。
 
-1. Read the texts and create groups for entries that refer to the same solution. “The same solution” means attempting to resolve an issue using the same method. Minor differences in abstraction level may still be treated as the same.
-2. If an entry does not belong to any group (i.e., is isolated), create a group containing only that solution and do not include it in any other group. Each data entry must belong to exactly one group. Do not assign a single entry to multiple groups.
-3. For each group, create a "label" that expresses the solution in a single concise phrase. Do not make it a list of multiple solutions. Also, do not include the underlying issue in the label.
-4. For each group, create a "description" that briefly explains the solution.
-5. For each pair of groups, if the solutions are not identical but one solution fully contains the other, create an `isPartOf` relation.
-6. Summarize the results above and output them in the same format as the output example.
+1. テキストの内容を読み、同じ解決策を指しているもの同士でグループを作ってください。同じ解決策とは、ある課題に対して同一の手段で解決しようとしているものを指します。抽象度が多少異なる場合も同一とみなして構いません。
+2. どのグループにも属さない（孤立している）ものは、その解決策ひとつでグループを作成し、他のどのグループにも含めないでください。一つのデータは、必ずただ一つのグループに属します。複数のグループに重複して属してはいけません。
+3. 各グループに対して、その解決策を一言で表現したを"label"作成してください。複数の解決策の列挙にならないように注意してください。また、その解決策の課題はここに含めないでください。
+4. 各グループに対して、解決策の内容を簡潔に説明した"description"を作成してください。
+5. 各グループに対して、同一ではないが解決策別の解決策を完全に包含している時、`isPartOf`のリレーションを作成してください。
+6. 以上の内容をまとめて、出力例の形式で出力してください。
 
-## Notes
-- Even when entries share the same target, if the solutions differ, do not place them in the same group.
-- Ensure that no single data entry belongs to more than one group.
-- Ensure that label and description do not contain the issue itself.
-- In label and description, do not create expressions that combine multiple solutions (e.g., “Solution 1 or Solution 2”). Each group must represent only one solution.
-- Use `isPartOf` only when one solution fully contains the other; do not use it otherwise.
+## 注意事項
+- 各解決策に対して、同じ対象を持っているものでも、解決策が異なる場合は同一のグループに入れないでください。
+- 一つのデータが複数のグループに属していないことを確認してください。
+- labelおよびdescriptionに課題そのものが含まれないように注意してください。
+- labelおよびdescriptionの中で、「解決策１または解決策２」などのように、複数の解決策に対応したものを作成しないようにし、単一の解決策のみを同じグループにしてください。
+- `isPartOf`は片方がもう一方を完全に包含している時のみに使用し、それ以外では使わないでください。
 
-## Output Example (JSON only)
-Always output in the JSON format below. Do not use a Markdown code block.
+## 出力例（JSONのみ）
+必ず以下のJSON形式で出力してください。Markdownのコードブロックは不要です。
 
 {
   "Nodes": [
     {
       "id": "AS1",
-      "label": "Call the headquarters by phone",
-      "description":"Provide the phone number verbally and instruct them to contact headquarters",
+      "label": "本部へ電話で問い合わせる",
+      "description":"口頭で電話番号を伝え、本部に問い合わせるように伝える",
       "ids": ["id_001", "id_005", "id_006"]
     },
     {
       "id": "AS2",
-      "label": "Log in to the website and contact via the dedicated form",
-      "description":"Log in to the website, access the dedicated form, fill in the required information, and submit",
+      "label": "ホームページにログインし、専用のフォームから連絡する",
+      "description":"ホームページにログインし、そこから専用のフォームにアクセスして必要事項を記入し、送信する",
       "ids": ["id_002"]
     },
     {
       "id": "AS3",
-      "label": "Access the website",
-      "description": "Provide the URL verbally and access the website",
+      "label": "ホームページにアクセスする",
+      "description": "口頭でURLを伝え、ホームページにアクセスする",
       "ids": ["id_003", "id_004"]
     }
   ],
@@ -44,5 +44,5 @@ Always output in the JSON format below. Do not use a Markdown code block.
   ]
 }
 
-## Data List
+## データリスト
 {items_json}

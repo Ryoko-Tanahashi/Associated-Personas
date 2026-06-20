@@ -1,0 +1,11 @@
+[Operator] Thank you for calling AAA Insurance Dealer Support. This is Clark.
+[User] Hi Clark, Garcia here from FFF Agency. The CCC Agency Portal is just spinning on a white screen and won't load the login box.
+[Operator] Hello, Mr. Garcia. A spinning white screen, you said. Let me help you with that. First, could you verify your identity by providing your agency code?
+[User] Sure, it's 11223344.
+[Operator] Thank you. Let me pull up your profile. ... Everything looks good on our end. Your status is active. What web browser are you currently using?
+[User] I think it's Internet Explorer, or maybe an old version of Edge. It's whatever came with this old office laptop.
+[Operator] Ah, I see. We recently updated the CCC Agency Portal, and it no longer supports older browsers for security reasons. You will need to update your browser to the latest version of Chrome or Edge.
+[User] Let me try... wait, a pop-up says I need "Administrator Privileges" to install updates. I don't have the admin password.
+[Operator] In that case, you will need to contact your local IT administrator at FFF Agency. They will need to log in and authorize the browser update for you.
+[User] That makes sense, but it's a hassle. I'll get in touch with them. Thanks for figuring it out.
+[Operator] My pleasure. Let us know if you need anything else once it's updated.

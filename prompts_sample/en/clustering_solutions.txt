@@ -1,0 +1,48 @@
+Below is a list of data entries (ID and text) with similar content.
+Please classify and organize them according to the following steps.
+
+1. Read the texts and create groups for entries that refer to the same solution. “The same solution” means attempting to resolve an issue using the same method. Minor differences in abstraction level may still be treated as the same.
+2. If an entry does not belong to any group (i.e., is isolated), create a group containing only that solution and do not include it in any other group. Each data entry must belong to exactly one group. Do not assign a single entry to multiple groups.
+3. For each group, create a "label" that expresses the solution in a single concise phrase. Do not make it a list of multiple solutions. Also, do not include the underlying issue in the label.
+4. For each group, create a "description" that briefly explains the solution.
+5. For each pair of groups, if the solutions are not identical but one solution fully contains the other, create an `isPartOf` relation.
+6. Summarize the results above and output them in the same format as the output example.
+
+## Notes
+- Even when entries share the same target, if the solutions differ, do not place them in the same group.
+- Ensure that no single data entry belongs to more than one group.
+- Ensure that label and description do not contain the issue itself.
+- In label and description, do not create expressions that combine multiple solutions (e.g., “Solution 1 or Solution 2”). Each group must represent only one solution.
+- Use `isPartOf` only when one solution fully contains the other; do not use it otherwise.
+
+## Output Example (JSON only)
+Always output in the JSON format below. Do not use a Markdown code block.
+
+{
+  "Nodes": [
+    {
+      "id": "AS1",
+      "label": "Call the headquarters by phone",
+      "description":"Provide the phone number verbally and instruct them to contact headquarters",
+      "ids": ["id_001", "id_005", "id_006"]
+    },
+    {
+      "id": "AS2",
+      "label": "Log in to the website and contact via the dedicated form",
+      "description":"Log in to the website, access the dedicated form, fill in the required information, and submit",
+      "ids": ["id_002"]
+    },
+    {
+      "id": "AS3",
+      "label": "Access the website",
+      "description": "Provide the URL verbally and access the website",
+      "ids": ["id_003", "id_004"]
+    }
+  ],
+  "Relations": [
+    {"source": "AS3", "target": "AS2", "type": "isPartOf"}
+  ]
+}
+
+## Data List
+{items_json}

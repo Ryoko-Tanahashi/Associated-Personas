@@ -1,14 +1,14 @@
-[Operator] Thank you for calling AAA Insurance Support Desk. This is Davis speaking.
-[User] Hi, this is Williams from BBB Agency. I have a client right in front of me, but when I tried to log in to the CCC Agency Portal, it said my account is locked! Can you unlock it immediately?
-[Operator] I apologize for the inconvenience, Mr. Williams. I can certainly help you with the account unlock. However, based on our security policy, I need to verify your identity first.
-[User] Okay, okay. My agency code is 87654321. Please hurry up.
-[Operator] Thank you. Next, could you please answer your registered secret question? "What was the make of your first car?"
-[User] What? My first car? That was decades ago, I have no idea what I registered! Can't we skip this? My client is waiting to sign the contract!
-[Operator] I am very sorry, but strict security compliance requires the correct answer to unlock the account over the phone. If you cannot remember it, we will have to mail a temporary password to your registered address.
-[User] Mail?! That will take days! I need to close this deal today. Isn't there any other way to verify it's me?
-[Operator] I cannot bypass the security protocol. However... do you happen to have the AAA Insurance official smartphone app installed on your phone?
-[User] The app? Yes, I have it installed on my smartphone.
-[Operator] Great! I will send a push notification for "Login Approval" to your app right now. If you tap "Approve" on your screen, we can securely authenticate you without the secret question.
-[User] Oh, I just got the notification. I tapped "Approve". That was fast.
-[Operator] Verification confirmed. Thank you for your cooperation. I have successfully unlocked your account and reset your password.
-[User] Wow, that saved me. Thank you so much!
+[オペレーター] AAA保険サポートデスクです。デイビスです。
+[ユーザー] こんにちは、BBB代理店のウィリアムズです。目の前にお客様がいるのですが、CCC代理店ポータルにログインしようとしたらアカウントがロックされていると表示されました。今すぐ解除できますか。
+[オペレーター] ウィリアムズ様、ご不便をおかけして申し訳ありません。アカウントのロック解除は対応できます。ただし、セキュリティポリシーに基づき、まずご本人確認が必要です。
+[ユーザー] わかりました、急いでいます。代理店コードは87654321です。
+[オペレーター] ありがとうございます。次に、登録済みの秘密の質問にお答えいただけますか。「最初に乗った車の車種は何でしたか？」
+[ユーザー] えっ、最初の車ですか？ 何十年も前のことなので、登録した答えなんて覚えていません。これを省略できませんか。お客様が契約を待っているんです。
+[オペレーター] 申し訳ありませんが、厳格なセキュリティ要件により、お電話でアカウントを解除するには正しい回答が必要です。思い出せない場合は、登録住所宛てに一時パスワードを郵送することになります。
+[ユーザー] 郵送ですか？ 何日もかかってしまいます。今日中に契約をまとめたいんです。ほかに本人確認する方法はありませんか。
+[オペレーター] セキュリティ手順を省くことはできません。ただし... お使いのスマートフォンにAAA保険の公式アプリは入っていますか。
+[ユーザー] アプリですか？ はい、スマートフォンに入っています。
+[オペレーター] ありがとうございます。今からアプリに「ログイン承認」のプッシュ通知を送ります。画面で「承認」をタップしていただければ、秘密の質問なしで安全に認証できます。
+[ユーザー] あ、ちょうど通知が来ました。「承認」をタップしました。早いですね。
+[オペレーター] 確認できました。ご協力ありがとうございます。アカウントのロックを解除し、パスワードをリセットしました。
+[ユーザー] すごい、助かりました。本当にありがとうございます。

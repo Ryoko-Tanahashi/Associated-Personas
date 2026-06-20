@@ -1,0 +1,62 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "character": "Expresses urgency and frustration with internal IT delays",
+        "want": "Wants to finish a premium quote on the portal",
+        "knowledgeLevel": "Can attempt quotes on the portal but does not know the cause of the browser privacy error and cannot get past the warning screen",
+        "role": "Contacts the insurance company's helpdesk about a portal access problem while trying to complete a premium quote"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "character": "Apologetic and efficient; confirms account status and provides guidance",
+        "want": "Wants to assist the agency representative by diagnosing and guiding resolution of the access error",
+        "knowledgeLevel": "Can check system/account status and identify that the error typically stems from local browser security certificates",
+        "role": "Provides solutions to agencies as an operator at AAA Insurance Helpdesk"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Want to complete a premium quote on the portal",
+        "description": "The agency representative is trying to do a premium quote and needs to finish it via the portal"
+      },
+      {
+        "id": "I2",
+        "title": "Cannot access the portal due to 'Your connection is not private' warning",
+        "description": "While attempting the premium quote, the browser shows a 'Your connection is not private' message with a red padlock and the representative cannot proceed past that screen"
+      },
+      {
+        "id": "I3",
+        "title": "Do not know why the privacy warning occurs",
+        "description": "After encountering the 'Your connection is not private' message, the representative asks why the error is happening"
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Contact agency IT to update the web browser's security certificates",
+        "description": "Because the error is due to local PC settings, the representative should submit a request to EEE Agency's IT to update/fix the browser security certificates so the portal can be accessed"
+      },
+      {
+        "id": "S2",
+        "title": "Recognize that the issue is due to local browser security certificates, not the portal or account",
+        "description": "The helpdesk confirms the account is active and explains that this specific warning typically results from issues with the web browser's security certificates on the representative's computer"
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "I3", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I2", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I3", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
+    {"source": "I3", "target": "I2", "type": "isGeneratedBy"}
+  ]
+}

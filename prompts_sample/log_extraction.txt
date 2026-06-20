@@ -1,91 +1,97 @@
-# Task Overview
-Your task is to carefully read the following phone conversation about a system inquiry from Insurance Agency A to Insurance Company B, and accurately extract the "relevant people/organizations (People)", the "issues/questions each person or organization has (Issue)", and the "solutions/answers to those issues/questions (Solution)".
+# タスク概要
+あなたのタスクは、以下に与える保険の代理店Aから保険会社Bへのシステムに関するお問い合わせの電話のやり取りを精読し、「関連のある人物・組織（People）」と「各人物・組織が抱えている課題・質問（Issue）」と「課題・質問に対する解決策や回答（Solution）」を正確に抽出することです。
 
-In the conversation, [User] represents Agency A's representative, and [Operator] represents Company B's representative. Insurance Company B provides insurance, and customers use the insurance system managed by B.
-However, because Agency A is the one that provides insurance guidance to customers, customers do not directly communicate with B.
+やり取りの中において、[ユーザ]はAの担当者、[オペレータ]はBの担当者を表します。 保険会社Bは保険を提供しており、顧客はBが管理している保険システムを利用しています。 
+ただし、顧客に対して保険の案内をするのは代理店Aであるため、Bとのやり取りは直接行われていません。 
 
 ---
 
-# Output Targets
+# 出力対象
 
 ## People
-People refers to "relevant people/organizations".
-- Must be one of: "Insurance Agency Representative", "Insurance Company System Administrator", or "Customer"
-- Even if the same person/organization appears multiple times in the conversation, extract them as a single person/organization.
-- Even if they do not directly participate in the conversation, extract them if they are relevant to the content.
-- For extraction fields, `id`, `type`, `want`, and `role` are required. Extract the others as much as possible.
-- Be careful not to put issues or solutions themselves into `knowledgeLevel` or `experience`.
+Peopleは「関連のある人物・組織」を指します。
+- 「保険代理店担当者」または「保険会社システム管理者」または「顧客」
+- 通話内で同じ人物・組織が複数回登場しても、一人・一組織として抽出してください。
+- やり取り自体に参加していない場合でも、内容に関連する場合は抽出してください。
+- 抽出フィールドについては、idとtype, want, roleは必須で、それ以外は可能な限り抽出してください。
+- knowledgeLevelとexperienceには課題や解決策そのものを入れないように注意してください。
 
-**Extraction Fields**
-- `id`: Unique identifier for People (e.g., P1, P2, ...)
-- `type`: Attribute (Customer | Insurance Agency Representative | Insurance Company System Administrator)
-- `age`: Age
-- `gender`: Gender
-- `residence`: Living situation (e.g., lives far away, lives nearby)
-- `medicalHistory`: Medical history (e.g., illness name, treatment history)
-- `character`: Personality (e.g., easily flustered, efficient)
-- `want`: Desire (e.g., "wants to ~", "wants to know ~"; the ultimate need behind the conversation)
-- `experience`: Experience (e.g., work experience, past trouble experiences)
-- `knowledgeLevel`: Knowledge level (e.g., can operate the system, does not know about ~)
-- `role`: Role (the role of the person/organization that becomes clear from the conversation)
+**抽出フィールド**
+- `id`: Peopleの一意な識別子（例: P1, P2, ...）
+- `type`: 属性（顧客|保険代理店担当者|保険会社システム管理者）
+- `age`: 年齢
+- `gender`: 性別
+- `residence`: 居住状況（例：遠方在住、近隣在住など）
+- `medicalHistory`: 既往歴（例：病名、治療歴など）
+- `character`: 性格（例：焦りやすい、効率的など）
+- `want`: 欲求（例：〜したい、〜を知りたいなど、やり取りの背景にあたる最終的に満たしたいニーズ）
+- `experience`: 経験（例：業務経験、過去のトラブル経験など）
+- `knowledgeLevel`: 知識レベル（例：システム操作はできる、〜について知らないなど）
+- `role`: 役割（やり取りの中から明らかになる人物・組織としての役割）
 
 ## Issue
-Issue refers to "requests/challenges/questions that each person or organization has".
-- Examples: "what they want to do", "what they cannot do", "what they do not understand"
-- For one topic, extract one Issue for all People who have that issue.
-- Each Issue must be linked to all People who hold it.
-- `title` must be in a form such as "want to ~", "cannot ~", or "do not know ~".
+Issueは「各人物・組織が抱えている要望・課題・質問」を指します。
+- 例：「やりたいこと」「できないこと」「わからないこと」など
+- 一つの話題に対して、課題を抱えているすべてのPeopleに対して一つのIssueを抽出してください。
+- 各Issueは必ずそれを抱えているすべてのPeopleに紐づく必要があります。
+- titleは必ず「〜したい」「〜できない」「〜がわからない」などの形式にしてください。
 
-**Extraction Fields**
-- `id`: Unique identifier for Issue (e.g., I1, I2, ...)
-- `title`: A concise sentence expressing the request/challenge/question
-- `description`: A concrete and detailed sentence describing the request/challenge/question
+**抽出フィールド**
+- `id`: Issueの一意な識別子（例: I1, I2, ...）
+- `title`: 要望・課題・質問を簡潔に表現する文章
+- `description`: 要望・課題・質問の内容を具体的かつ詳細に表現する文章
 
 ## Solution
-Solution refers to "solutions/answers to issues or questions".
-- Examples: "what action to take", "what guidance to provide"
-- Extract at most one Solution per Issue.
-- Each Solution must be linked to all People who provide it.
-- `title` must be in the perspective of the person facing the issue, in a form such as "do ~" or "carry out ~".
+Solutionは「課題や質問に対する解決策・回答」を指します。
+- 例：「どのような対応を取るか」「どのような案内をするか」など
+- 各Issueに対して、最大一つのSolutionを抽出してください。
+- 各Solutionは必ずそれを提供しているすべてのPeopleに紐づく必要があります。
+- titleは必ず課題に直面している人目線で「〜する」「〜を行う」などの形式にしてください。
 
-**Extraction Fields**
-- `id`: Unique identifier for Solution (e.g., S1, S2, ...)
-- `title`: A concise sentence expressing the solution/answer
-- `description`: A concrete and detailed sentence describing the solution/answer
+**抽出フィールド**
+- `id`: Solutionの一意な識別子（例: S1, S2, ...）
+- `title`: 解決策・回答を簡潔に表現する文章
+- `description`: 解決策・回答の内容を具体的かつ詳細に表す文章
 
 ---
 ## Relations
-### 1. Relationships between People and Issue/Solution
+### 1. PeopleとIssue/Solution間の関係性
 - `Issue → People: isHeldBy`
-    - Indicates the relationship to People who hold a given Issue.
-    - Example: An issue regarding enrollment in disability income insurance held by a customer.
+    - あるIssueを抱えているPeopleとの関係を示します。
+    - 例：顧客が抱えている就業不能保険の加入に関する課題。
 - `Solution → People: isHeldBy`
-    - Indicates the relationship to People who provide a given Solution.
-    - Example: A login issue solution provided by an insurance company system administrator.
+    - あるSolutionを提供しているPeopleとの関係を示します。
+    - 例：保険会社システム管理者が提供するログイン問題の解決策。
+- `Issue → People: isHandledBy`
+    - あるIssueに対して対応しているPeopleとの関係を示します。
+    - 例：保険代理店担当者が対応している顧客の就業不能保険の加入に関する課題。
+- `Solution → People: isRequiredBy`
+    - あるSolutionが必要とされているPeopleとの関係を示します。
+    - 例：保険代理店担当者が必要としている保険会社システム管理者のログイン問題の解決策。
 
-### 2. Relationships between Issues
+### 2. Issue間の関係性
 - `Issue A → Issue B: isGeneratedBy`
-    - Indicates that Issue A is generated by Issue B.
-    - Example: A customer's question generates an issue for the insurance agency representative.
+    - あるIssue Bが原因で発生したIssue Aの関係を示します。
+    - 例：顧客の質問は、保険代理店担当者の課題を引き起こしている。
 
-### 3. Relationships between Issue and Solution
+### 3. IssueとSolution間の関係性
 - `Issue → Solution: isResolvedBy`
-    - Indicates that an Issue is resolved by a specific Solution.
-    - Example: A login issue for an insurance agency representative is resolved by password reset guidance.
+    - あるIssueが特定のSolutionによって解決される関係を示します。
+    - 例：保険代理店担当者のログイン問題は、パスワードリセットの案内によって解決される。
 - `Issue → Solution: isGeneratedBy`
-    - Indicates that a new Issue is generated by providing a Solution.
-    - Example: Guidance on how to order pamphlets generates a login issue.
+    - あるSolutionが提供されたことによって新たに発生したIssueの関係を示します。
+    - 例：パンフレットの発注方法の案内が、ログインの課題を引き起こしている。
 
 ---
 
-# Extraction Rules
-- Use **only information inferable from the call**. Use of general/common knowledge is prohibited.
+# 抽出ルール
+- **通話から推測できる情報のみ**を使用してください。一般知識の使用は禁止です。
 
 ---
 
-# Output Format
-Follow the JSON structure below.
-- The top level is `Nodes`.
+# 出力形式
+出力は以下のJSON構造に従ってください。
+- トップレベルは Nodesです。
 
 ```
 {
@@ -93,58 +99,58 @@ Follow the JSON structure below.
     "People": [
       {
         "id": "P1",
-        "type": "Customer",
+        "type": "顧客",
         "age": "35",
-        "gender": "Female",
-        "residence": "Lives far away",
-        "medicalHistory": "Cervical cancer has been cured",
-        "want": "Wants to enroll in disability income insurance",
+        "gender": "女性",
+        "residence": "遠方在住",
+        "medicalHistory": "子宮頸がんが完治している",
+        "want": "就業不能保険に加入したい",
       },
       {
         "id": "P2",
-        "type": "Insurance Agency Representative",
-        "character": "Easily flustered. Often checks with the support center in real time while responding to customer inquiries.",
-        "want": "Does not want to keep customers waiting",
-        "experience": "A new employee with 3 months of experience. Has contacted support several times in the past for similar login issues.",
-        "knowledgeLevel": "Familiar with system operation. Technical problem-solving ability is still developing. Operates while checking manuals, but cannot understand the meaning of error messages.",
+        "type": "保険代理店担当者",
+        "character": "焦りやすい。顧客からの問い合わせに対応中にリアルタイムでサポートセンターに確認することが多い。",
+        "want": "顧客を待たせたくない",
+        "experience": "入社3ヶ月の新人。過去にも同様のログイン問題で何度かサポートに連絡している。",
+        "knowledgeLevel": "システム操作は慣れている。技術的な問題解決能力は発展途上。マニュアルを見ながら操作しているが、エラーメッセージの意味が理解できない。",
       },
       {
         "id": "P3",
-        "type": "Insurance Company System Administrator",
-        "character": "Efficient. Proposes fundamental solutions to representatives who repeatedly contact about the same issue.",
-        "want": "Wants to resolve login issues quickly",
-        "experience": "Veteran. Accustomed to inquiries from agencies.",
-        "knowledgeLevel": "Can respond while checking system logs.",
-        "role": "Provides solutions to agencies as an operator",
+        "type": "保険会社システム管理者",
+        "character": "効率的。繰り返し同じ問題で連絡してくる担当者に対しては、根本的な解決策を提案する。",
+        "want": "迅速にログイン問題を解決したい",
+        "experience": "ベテラン。代理店からの問い合わせに慣れている。",
+        "knowledgeLevel": "システムのログを確認しながら対応できる。",
+        "role": "オペレーターとして代理店に解決策を提供する",
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Want to enroll in disability income insurance online",
-        "description": "Because the customer lives far away, they want to enroll in disability income insurance online"
+        "title": "オンラインで就業不能保険に加入したい",
+        "description": "遠方在住のため、オンラインで就業不能保険に加入したいと考えている"
       },
       {
         "id": "I2",
-        "title": "Do not know how to complete online enrollment procedures for disability income insurance",
-        "description": "The customer wants to enroll in disability income insurance and lives far away, so online procedures are preferred, but the specific method is unknown"
+        "title": "オンラインで就業不能保険加入の手続きをする方法が分からない",
+        "description": "就業不能保険加入を希望している顧客が遠方在住のため、オンラインでの手続きを希望しているが、具体的な方法がわからない"
       },
       {
         "id": "I3",
-        "title": "Cannot log in to the system",
-        "description": "Cannot log in to the system required for the procedure and is troubled by an error message"
+        "title": "システムにログインできない",
+        "description": "手続きに必要なシステムにログインできず、エラーメッセージが表示されて困っている"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Order a kit from the system",
-        "description": "Log in to the support system and order the kit required for the procedure"
+        "title": "システムからキットを発注する",
+        "description": "サポートシステムにログインし、手続きに必要なキットを発注する"
       },
       {
         "id": "S2",
-        "title": "Check the store-specific ID",
-        "description": "To log in to the system, a store ID issued for each agency is required, so confirm that ID"
+        "title": "店舗ごとのIDを確認する",
+        "description": "システムにログインするためには、代理店ごとに発行される店舗IDが必要であるため、そのIDを確認する"
       },
     ]
   },
@@ -154,6 +160,10 @@ Follow the JSON structure below.
     {"source": "I3", "target": "P2", "type": "isHeldBy"},
     {"source": "S1", "target": "P3", "type": "isHeldBy"},
     {"source": "S2", "target": "P3", "type": "isHeldBy"},
+    {"source": "I2", "target": "P3", "type": "isHandledBy"},
+    {"source": "I3", "target": "P3", "type": "isHandledBy"},
+    {"source": "S1", "target": "P2", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P2", "type": "isRequiredBy"},
     {"source": "I2", "target": "S1", "type": "isResolvedBy"},
     {"source": "I3", "target": "S2", "type": "isResolvedBy"},
     {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
@@ -164,15 +174,15 @@ Follow the JSON structure below.
 
 ---
 
-# Notes
-- Output must be in JSON format only. Output in any non-JSON format is prohibited.
-- The output JSON must strictly follow the structure above. Missing or extra fields are prohibited.
-- Ensure that each People node is linked to **at least one Issue or Solution**.
-- Not all Issues are required to have a linked Solution.
-- **Do not generate relationships that cannot be read from the conversation.**
-- Strictly preserve the direction of `isHeldBy`, `isGeneratedBy`, and `isResolvedBy`.
-- Do not include masked information such as [LOCATION], [ORGANIZATION], [PERSON], etc., in extracted information.
+# 注意事項
+- 出力は必ずJSON形式で行ってください。JSON以外の形式での出力は禁止です。
+- 出力するJSONは必ず上記の構造に従ってください。不足や過剰なフィールドは禁止です。
+- 各Peopleに必ず**少なくとも1つのIssueまたはSolution**が紐づいていることを確認してください。
+- すべてのIssueにSolutionが紐づいている必要はありません。
+- **やり取りから読み取れない関係は生成してはいけません。**
+- isHeldBy, isGeneratedBy, isResolvedByの方向性を正確に守ってください。
+- 抽出した情報にはマスキング処理された情報（[LOCATION]、[ORGANIZATION]、[PERSON]など）は含めないでください。
 
-# Input
-## Conversation Content
+# 入力
+## やり取りの内容
 $conversation

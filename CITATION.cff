@@ -33,6 +33,6 @@ authors:
     affiliation: "PRIMESTYLE Co., Ltd., Shinjuku, Tokyo, Japan"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.20508229
+    value: 10.5281/zenodo.20508104
 repository-code: "https://github.com/Ryoko-Tanahashi/Associated-Personas"
 license: AGPL-3.0-or-later

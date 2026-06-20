@@ -1,0 +1,106 @@
+You are an expert in business analysis and thought simulation for the insurance industry.
+Based on the provided data (Island Data), create **"one-to-one pairs of an agency representative and a system administrator in a specific trouble scenario."**
+
+# Input Data
+{island_data}
+
+# Creation Process and Rules
+
+## STEP 1: Extract Trouble Scenarios (Graph Analysis)
+Analyze the input Issues and Relations, and split the data into **"independent trouble scenarios."**
+
+* **Chain Merging (`isGeneratedBy`)**:
+    * If Issue A is connected from Issue B by `isGeneratedBy`, treat this as a sequence of events happening to one agency representative. Group them into a single scenario.
+    * Example: "Account locked" → "Unlock email does not arrive" = **one scenario**
+* **Separate Unrelated Cases**:
+    * Issues without a direct causal relationship (e.g., "forgot password" and "certificate error") must be treated as **different scenarios**.
+
+## STEP 2: Create Paired Personas
+For each extracted scenario, create the following **1:1 pair**.
+Also collect the data basis `source_call_ids` used to build each persona.
+
+### [User Side: Insurance Agency Representative]
+* **Role**: The person directly facing that specific trouble scenario, whose work is blocked and who is in difficulty.
+* **Knowledge Constraint**: They only know `abstract_issues` (problems) and `grouped_people` (emotions/background). **They do not know the solutions (`abstract_solutions`).**
+* **Writing Policy (Narrative Style)**:
+    * Do not list issues as simple bullet points. Instead, describe them as a coherent story (situation narrative): **"during what work, what happened, and what they tried next before getting stuck."**
+    * If multiple Issues are included, express how they are intertwined over time or in combination to trouble this person.
+* **Data Basis**: List `source_call_ids` linked to `abstract_issues` and corresponding `grouped_people` included in this scenario.
+
+### [Support Side: Insurance Company System Administrator]
+* **Role**: The person (operator/help desk) who receives that specific inquiry and leads it to resolution.
+* **Granularity**: Do not depict a "super administrator who knows everything." Describe them as **"the specific person currently taking this call and handling the relevant Issue."**
+* **Knowledge**: They know the concrete `abstract_solutions` (resolution procedures) for the Issues in that scenario.
+* **Writing Policy (Manual Style)**:
+    * Do not just enumerate solutions. Structure it as a **concrete response manual (or script) from receiving the inquiry to resolving it.**
+    * If there are multiple Solutions, organize them into a **logical flow**, such as "first check A, if that fails guide B," or "let them choose C depending on the situation."
+    * **Prohibited**: Do not include source IDs (e.g., AS1, AS19) inside the manual body. Also do not add solutions based on assumptions or general knowledge.
+* **Data Basis**: List `source_call_ids` linked to `abstract_solutions` and corresponding `grouped_people` included in this scenario.
+
+# Output Format (JSON)
+Add objects to the array according to the number of extracted scenarios.
+
+```json
+{
+  "scenario_pairs": [
+    {
+      "scenario_id": "SCENARIO_01",
+      "context_summary": "(Summary of the situation this pair is facing. Example: Handling uncertainty about how to submit an insurance application)",
+      "agent_persona": {
+        "persona_id": "AGENT_01",
+        "basic_profile": {
+          "name": "(Fictional full name)",
+          "age": "(Estimated age)",
+          "role": "(Job title)",
+          "digital_literacy": "(Estimated from knowledgeLevel)"
+          "character": personality
+          "experience": experience
+        },
+        "trouble_narrative": {
+          "situation_story": "(Integrate multiple Issues and describe them as a concrete difficulty faced by one person. Example: The customer’s birthday is approaching and the representative is rushing to submit an application, but cannot proceed because they do not know whether paper documents are required for in-person applications)",
+          "emotion": "(e.g., panic, anger, confusion)"
+        },
+        "action_trigger": "(The direct trigger that led them to contact support)",
+        "data_reference": {
+          "source_call_ids": [
+            "(List without duplicates the source_call_ids from Issues and GroupedPeople used to build this persona)"
+          ]
+        }
+      },
+      "admin_persona": {
+        "persona_id": "ADMIN_01",
+        "basic_profile": {
+          "name": "(Fictional full name)",
+          "age": "(Estimated age)",
+          "role": "(Job title)",
+          "digital_literacy": "(Estimated from knowledgeLevel)"
+          "character": personality
+          "experience": experience
+        },
+        "response_manual": {
+          "guide_title": "(Title of the response manual. Example: In-person application response flow)",
+          "steps": "(Integrate abstract_solutions and describe them as a full flow: cause triage -> solution guidance.\nExample: If the customer wants to apply in person, explain that only paperless submission is supported. If they want to proceed online, ... describe in a naturally structured format)"
+        },
+        "support_context": {
+          "difficulty_perception": "(Perceived difficulty level or concerns regarding this inquiry)"
+        },
+        "data_reference": {
+          "source_call_ids": [
+            "(List without duplicates the source_call_ids from Solutions and GroupedPeople used to build this persona)"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "SCENARIO_02",
+      "context_summary": "...",
+      "agent_persona": { ... },
+      "admin_persona": { ... }
+    }
+  ]
+}
+
+# Notes
+- No solution leakage: Do not include resolution procedures or causes (Solution content) in `agent_persona`. They are in a state where they "do not know why it is not working." Also do not include descriptions that imply solutions. They are always acting based on what they believe is correct.
+- Manual specificity: `admin_persona.response_manual` must be readable as an actual operator procedure, not just a feature list. However, do not add steps by assumption; construct it only from the provided `abstract_solutions`. Also, do not write a verbatim dialogue script—describe procedures only.
+- Number of scenarios: Split into an appropriate number based on the input graph structure. Do not force everything into one pair.

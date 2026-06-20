@@ -1,0 +1,44 @@
+{
+  "Nodes": {
+    "People": [
+      {
+        "id": "P1",
+        "type": "Insurance Agency Representative",
+        "want": "Wants to calculate an estimate using the AAA Insurance system",
+        "role": "Representative of BBB Agency contacting AAA Insurance Support Desk about access to the CCC Agency Portal"
+      },
+      {
+        "id": "P2",
+        "type": "Insurance Company System Administrator",
+        "want": "Wants to resolve the agency's portal access issue",
+        "role": "Operator at AAA Insurance Support Desk providing system support and guidance"
+      }
+    ],
+    "Issue": [
+      {
+        "id": "I1",
+        "title": "Cannot display CCC Agency Portal login screen",
+        "description": "The agency representative cannot reach the CCC Agency Portal login screen; opening the URL shows a browser security warning \"This connection is not secure\", preventing system access."
+      },
+      {
+        "id": "I2",
+        "title": "Want to calculate an estimate in the AAA Insurance system",
+        "description": "The agency representative called because they need to calculate an estimate, but cannot proceed since the CCC Agency Portal cannot be opened."
+      }
+    ],
+    "Solution": [
+      {
+        "id": "S1",
+        "title": "Contact BBB Agency IT department to address network/security settings",
+        "description": "As there are no outages on AAA Insurance's side and the account status is Active, the browser's \"This connection is not secure\" warning likely stems from local network or security settings. The agency representative should contact BBB Agency headquarters' IT team to adjust settings so the login page can be displayed."
+      }
+    ]
+  },
+  "Relations": [
+    {"source": "I1", "target": "P1", "type": "isHeldBy"},
+    {"source": "I2", "target": "P1", "type": "isHeldBy"},
+    {"source": "S1", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "S1", "type": "isResolvedBy"},
+    {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
+  ]
+}

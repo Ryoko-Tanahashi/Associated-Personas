@@ -1,0 +1,13 @@
+[Operator] AAA Insurance Helpdesk, Anderson speaking. How can I help?
+[User] Hi Anderson. It's Green from HHH Agency. Your CCC portal is completely down. It just loads forever and then crashes.
+[Operator] I am sorry you are experiencing issues, Mr. Green. Could you tell me what the crash screen says?
+[User] It just says "Connection Timed Out." The progress bar spins for two minutes and stops.
+[Operator] Understood. Before we troubleshoot, I need to verify your identity. Could you please provide your agency code and your registered email address?
+[User] It's 33445566, and email is green@hhh-agency.com.
+[Operator] Thank you. Let me check the server status and your account... Okay, I can confirm that your account is active, and our servers are currently operating at 100% capacity with no reported outages.
+[User] So the server is fine? Why is it timing out for me?
+[Operator] A "Connection Timed Out" error usually means your computer cannot reach our server. This is often caused by a routing issue on your internet service provider or your office network switch. 
+[User] Well, my email is working fine.
+[Operator] Yes, sometimes only specific external connections are affected. Please contact the IT support desk at HHH Agency so they can check your network routing. We cannot resolve local network timeouts from our side.
+[User] That's frustrating, but I understand. I'll open a ticket with them. 
+[Operator] I apologize for the inconvenience. Thank you for calling AAA Insurance.

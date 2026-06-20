@@ -1,0 +1,11 @@
+[Operator] Thank you for calling AAA Insurance Support. Robinson speaking.
+[User] Hi Robinson, Adams from KKK Agency. I'm out in the field using my company tablet, but the CCC Agency Portal won't open. It says the connection is blocked.
+[Operator] Hello, Mr. Adams. Let's figure this out. I will need to verify your account first. May I have your agency code and your employee ID number?
+[User] Agency code 66778899, Employee ID is 1045.
+[Operator] Thank you. Your account is perfectly active, so there is no lock on your profile. Are you using a tablet provided by KKK Agency?
+[User] Yes, it's the iPad they issued to us last month.
+[Operator] I see. The error you are seeing is likely due to the Mobile Device Management software installed on your company tablet. Sometimes, it blocks external web portals until they are explicitly approved by your company.
+[User] Seriously? They told us this tablet was ready for field work.
+[Operator] I apologize for the frustration. Since the restriction is placed by KKK Agency's device management system, we cannot override it from our support desk. You will need to contact your local IT support to have them push an update to your tablet.
+[User] Alright, I'll have to call them. This is going to slow me down today. Thanks for the information, Robinson.
+[Operator] I'm sorry I couldn't resolve it directly. Good luck with your IT team.

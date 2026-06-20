@@ -1,0 +1,48 @@
+The following contains information about people related to a common issue or solution.
+Please extract all shared characteristics from these people and create a GroupedPeople node.
+
+**Important instructions:**
+- Extract only characteristics that are common among the given People.
+- Do not include items that are not shared.
+- Avoid adding information based on assumptions.
+- Describe characteristics as ranges or tendencies, not as specific concrete values.
+- If there is no common trend and the data is too diverse, do not include that item.
+
+**GroupedPeople fields**
+- `id`: A unique identifier for the GroupedPeople (e.g., GP1, GP2, ...)
+- `type`: Attribute (customer | insurance agency representative | insurance company system administrator)
+- `age`: Age
+- `residence`: Living situation (e.g., living far away, living nearby)
+- `medicalHistory`: Medical history (e.g., illnesses, treatment history)
+- `character`: Personality traits (e.g., easily panicked, efficient)
+- `want`: Desire (e.g., "wants to ...", "wants to know ..."; the underlying need they ultimately want to satisfy)
+- `experience`: Experience (e.g., work experience, past trouble incidents)
+- `knowledgeLevel`: Knowledge level (e.g., can operate systems, does not know about ...)
+- `role`: Role (the role of the person/organization revealed through the interaction)
+- `source_ids`: List of source People IDs and CALL_IDs
+
+# Output format
+Please follow the JSON structure below.
+
+```json
+{
+  "GroupedPeople": {
+    "id": "GP1",
+    "type": "insurance agency representative",
+    "age": "20s to 30s",
+    "character": "Tends to panic easily. Frequently checks with the support center in real time while responding to customer inquiries.",
+    "want": "Does not want to keep customers waiting",
+    "experience": "New employee. Has contacted support several times in the past for similar login issues.",
+    "knowledgeLevel": "Familiar with system operations. Technical problem-solving skills are still developing. Operates while referring to manuals but does not understand the meaning of error messages.",
+    "source_ids": [
+      {"id": "P001", "call_id": "IR_100108299150231110"},
+      {"id": "P002", "call_id": "IR_100108299150231111"}
+    ]
+  }
+}
+```
+
+## Input
+Please extract common characteristics from the following People information:
+
+{items_json}

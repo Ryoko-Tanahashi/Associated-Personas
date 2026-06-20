@@ -1,13 +1,13 @@
-[Operator] AAA Insurance Helpdesk, Anderson speaking. How can I help?
-[User] Hi Anderson. It's Green from HHH Agency. Your CCC portal is completely down. It just loads forever and then crashes.
-[Operator] I am sorry you are experiencing issues, Mr. Green. Could you tell me what the crash screen says?
-[User] It just says "Connection Timed Out." The progress bar spins for two minutes and stops.
-[Operator] Understood. Before we troubleshoot, I need to verify your identity. Could you please provide your agency code and your registered email address?
-[User] It's 33445566, and email is green@hhh-agency.com.
-[Operator] Thank you. Let me check the server status and your account... Okay, I can confirm that your account is active, and our servers are currently operating at 100% capacity with no reported outages.
-[User] So the server is fine? Why is it timing out for me?
-[Operator] A "Connection Timed Out" error usually means your computer cannot reach our server. This is often caused by a routing issue on your internet service provider or your office network switch. 
-[User] Well, my email is working fine.
-[Operator] Yes, sometimes only specific external connections are affected. Please contact the IT support desk at HHH Agency so they can check your network routing. We cannot resolve local network timeouts from our side.
-[User] That's frustrating, but I understand. I'll open a ticket with them. 
-[Operator] I apologize for the inconvenience. Thank you for calling AAA Insurance.
+[オペレーター] AAA保険ヘルプデスクです。アンダーソンです。どのようなご用件でしょうか。
+[ユーザー] こんにちは、HHH代理店のグリーンです。CCCポータルが完全に落ちています。ずっと読み込み続けたあとにクラッシュします。
+[オペレーター] お困りのことと存じます、グリーン様。クラッシュ画面には何と表示されていますか。
+[ユーザー] 「接続がタイムアウトしました」とだけ出ます。進捗バーが2分ほど回って止まります。
+[オペレーター] 承知しました。トラブルシューティングの前にご本人確認を行います。代理店コードと登録済みのメールアドレスを教えていただけますか。
+[ユーザー] 33445566で、メールアドレスは green@hhh-agency.com です。
+[オペレーター] ありがとうございます。サーバーの状態とアカウントを確認します……はい、アカウントは有効で、当社サーバーも現在100%の稼働容量で、障害報告はありません。
+[ユーザー] ではサーバーは問題ないんですか？ どうして私だけタイムアウトするのでしょう。
+[オペレーター] 「接続がタイムアウトしました」というエラーは、通常、お使いのコンピューターが当社サーバーに到達できていないことを意味します。これはインターネットサービスプロバイダー側のルーティング問題や、オフィスのネットワークスイッチの問題で起きることがあります。
+[ユーザー] でも、メールは普通に使えています。
+[オペレーター] はい、特定の外部接続だけに影響することもあります。HHH代理店のITサポート窓口にご連絡いただき、ネットワークルーティングを確認してもらってください。こちらからローカルネットワークのタイムアウトを解消することはできません。
+[ユーザー] それは困りますが、わかりました。チケットを出します。
+[オペレーター] ご不便をおかけして申し訳ありません。AAA保険にお電話いただきありがとうございました。

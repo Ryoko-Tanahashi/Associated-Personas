@@ -1,80 +1,80 @@
-Below is a list of data entries (ID and text) with similar content.
-Please classify and organize them according to the following steps.
+以下に、内容が類似しているデータのリスト（IDとテキスト）があります。
+以下の手順で分類・整理を行ってください。
 
-1. Read each text and create groups for entries that refer to the same issue. “The same issue” means the same barrier that occurs for the same objective within the same target system or service.
-2. If an entry does not belong to any group (i.e., is isolated), create a group containing only that issue and do not include it in any other group. Each data entry must belong to exactly one group. Do not assign a single entry to multiple groups.
-3. For each group, create a "label" that expresses the issue in a single concise phrase. Do not make it a list of multiple issues. Also, do not include solutions to the issue in the label.
-4. For each group, create a "description" that concretely explains the issue. Include the target system/service, objective, and barrier.
-5. For each pair of groups, if the target and objective are the same and one barrier fully contains the other, create an `isPartOf` relation.
-6. For each set of groups where the target and objective are the same but barriers differ, create an empty parent group (with no data IDs) whose barrier conceptually contains each of those barriers, and create `isPartOf` relations from the original groups to that parent group.
-7. Output the final result in the same format as the output example.
+1. テキストの内容を読み、同じ課題を指しているもの同士でグループを作ってください。同じ課題とは、同一のシステムやサービスを対象とした同一の目的に対して起きた同一の障壁を指します。
+2. どのグループにも属さない（孤立している）ものは、その課題ひとつでグループを作成し、他のどのグループにも含めないでください。一つのデータは、必ずただ一つのグループに属します。複数のグループに重複して属してはいけません。
+3. 各グループに対して、その課題を一言で表現したを"label"作成してください。複数の課題の列挙にならないように注意してください。また、その課題に対する解決策はここに含めないでください。
+4. 各グループに対して、課題の内容を具体的に説明した"description"を作成してください。ここには、課題の対象となるシステムやサービス、目的、障壁を記述してください。
+5. 各グループに対して、対象と目的が同一で、一方の障壁がもう一方の障壁を完全に包含しているとき、`isPartOf`のリレーションを作成してください。
+6. 各グループに対して、対象と目的が同一で、障壁が異なる時、それらと同じ対象と目的を持ち、それぞれの障壁を包含するような障壁を持つ空のグループを作成し、元のグループから`isPartOf`のリレーションを作成してください。
+7. 以上の内容をまとめて、出力例の形式で出力してください。
 
-## Notes
-- Ensure that no single data entry belongs to more than one group.
-- Ensure that neither label nor description includes solutions to the issue.
-- In label and description, do not create expressions that combine multiple issues (e.g., “Issue 1 or Issue 2”). Each group must represent only one issue.
+## 注意事項
+- 一つのデータが複数のグループに属していないことを確認してください。
+- labelおよびdescriptionに課題の解決策が含まれないように注意してください。
+- labelおよびdescriptionの中で、「課題１または課題２」などのように、複数の課題に対応したものを作成しないようにし、単一の課題のみを同じグループにしてください。
 
-## Concrete Examples
-- Example that should belong to different groups (different target systems)
-    - Data:
-        - ID_01: "Tried to log in to the attendance management system, but cannot enter due to a password error."
-        - ID_02: "Tried to log in to the expense reimbursement system, but cannot enter due to a password error."
-    - Explanation:
-        - Both have the exact same objective and barrier (“cannot log in due to a password error”), but the target systems are different (attendance management vs. expense reimbursement).
-        - Because they do not satisfy Step 1’s condition of targeting the same system/service, they must not be merged. Create separate independent groups (e.g., “Cannot log in to attendance system” and “Cannot log in to expense system”).
+## 具体例
+- 別のグループに属する例（対象システムが異なる場合）
+    - データ:
+        - ID_01: 「勤怠管理システムにログインしようとしたが、パスワードエラーで入れない」
+        - ID_02: 「経費精算システムにログインしようとしたが、パスワードエラーで入れない」
+    - 解説:
+        - 両者は「パスワードエラーでログインできない」という目的と障壁は完全に一致していますが、対象となるシステム（勤怠管理と経費精算）が異なります。
+        - 手順1の定義にある「同一のシステムやサービスを対象とした」という条件を満たさないため、これらは混ぜることなく、それぞれ独立した別のグループ（例：「勤怠システムのログイン不可」「経費システムのログイン不可」）として作成します。
 
-- Example where `isPartOf` is created between existing groups (containment relationship)
-    - Data:
-        - ID_03: "In the electronic application system, pressing the submit button gives no response, so the application cannot be completed."
-        - ID_04: "Want to submit in the electronic application system, but cannot complete submission."
-    - Explanation:
-        - Both share the same objective (“complete submission in the electronic application system”) and barrier context (“cannot complete”).
-        - ID_03 has a specific barrier (“button is unresponsive”), while ID_04 has a broader barrier (“cannot complete”).
-        - Since ID_03 is a subset case of ID_04, create an `isPartOf` relation from ID_03’s group to ID_04’s group.
+- 作成したグループ間にisPartOfのリレーションが作成される例（包含関係）
+    - データ:
+        - ID_03: 「電子申請システムで申請ボタンを押しても反応がなく、申請が完了できない」
+        - ID_04: 「電子申請システムで申請を行いたいが、完了できない」
+    - 解説:
+        - 両者とも「電子申請システムでの申請完了」を目的にしており、完了できないという障壁を持っています。
+        - ID_03は「ボタンが反応しない」という具体的な障壁ですが、ID_04は「完了できない」という抽象的・包括的な障壁です。
+        - ID_03の状況はID_04の状況の一種（部分集合）であるため、ID_03のグループからID_04のグループへ向けてisPartOfのリレーションを作成します。
 
-- Example where an empty group should be created (common parent issue required)
-    - Data:
-        - ID_05: "In the product ordering app, tried to pay but cannot purchase due to a credit card expiration error."
-        - ID_06: "In the product ordering app, tried to pay but cannot purchase due to a communication timeout."
-    - Explanation:
-        - ID_05 and ID_06 share the same target and objective (“purchase in the product ordering app”).
-        - However, the barriers are different (“expired card” vs. “communication error”), and neither contains the other.
-        - Therefore, do not place them directly in the same group; keep them as separate groups.
-        - Then create a new empty parent group (with no data IDs) representing an abstract barrier (e.g., “cannot complete purchase due to payment failure”) and add `isPartOf` relations from both groups to that parent group.
+- 空のグループが作成される例（共通の親課題が必要な場合）
+    - データ:
+        - ID_05: 「商品注文アプリで決済しようとしたが、クレジットカードの有効期限切れエラーが出て購入できない」
+        - ID_06: 「商品注文アプリで決済しようとしたが、通信タイムアウトが発生して購入できない」
+    - 解説:
+        - ID_05とID_06は、「商品注文アプリで購入する」という対象と目的は同一です。
+        - しかし、障壁が「クレカ有効期限切れ」と「通信エラー」であり、これらは全く別の事象です（一方が他方を包含しない）。
+        - そのため、これらを直接同じグループにはせず、それぞれ独立したグループとします。
+        - さらに、これらを束ねるために、抽象的な障壁（単に「決済ができず購入できない」）を持つデータを含まない空のグループを新規作成し、ID_05とID_06のグループからその空グループへisPartOfのリレーションを作成します。
 
-## Output Example (JSON only)
-Always output in the JSON format below. Do not use a Markdown code block.
+## 出力例（JSONのみ）
+必ず以下のJSON形式で出力してください。Markdownのコードブロックは不要です。
 
 {
   "Nodes": [
     {
       "id": "AI1",
-      "label": "Cannot log in to My Page because the password is unknown",
-      "description": "The user is trying to log in to a policyholder-only My Page to complete procedures or check contract details, but cannot pass authentication because they forgot the password they set or the entered password is judged incorrect.",
+      "label": "パスワードがわからず、マイページにログインできない",
+      "description": "各種手続きや契約内容の確認を行うために契約者専用のマイページへログインしようとしているが、設定したパスワードを失念してしまった、あるいは入力したパスワードが誤っていると判定されるため、本人認証を通過できずサービスを利用できない状態である。",
       "ids": ["id_001", "id_005"]
     },
     {
       "id": "AI2",
-      "label": "Cannot log in to My Page due to a system error",
-      "description": "Even though the correct ID and password are entered on the policyholder My Page, internal system errors (e.g., \"E-503\") or messages such as \"Cannot connect to server\" appear during login processing, preventing successful login due to technical issues.",
+      "label": "システムエラーによりマイページにログインできない",
+      "description": "契約者用マイページで正しいIDとパスワードを入力しているにもかかわらず、ログイン処理実行時に「E-503」等のシステム内部エラーコードや「サーバーに接続できません」といったメッセージが表示され、技術的な不具合によりログインが完了しない。",
       "ids": ["id_006"]
     },
     {
       "id": "AI3",
-      "label": "Cannot log in to My Page",
-      "description": "A general state in which there is a clear objective to access the policyholder My Page and use services, but login fails due to some barrier such as forgotten password, system error, or unknown loading failure.",
+      "label": "マイページにログインできない",
+      "description": "契約者用マイページにアクセスしてサービスを利用したいという明確な目的があるものの、パスワードの紛失、システムエラー、あるいは原因不明の読み込み不良など、何らかの障壁によってログインプロセスが成功せず、マイページ内に入れない状態の総称。",
       "ids": []
     },
     {
       "id": "AI4",
-      "label": "Cannot reissue a deduction certificate because address change has not been completed",
-      "description": "The user needs to reissue a deduction certificate for year-end tax adjustment documents, but the registered address is still outdated (before moving), which conflicts with system constraints, so the reissue request cannot be completed until the address is updated first.",
+      "label": "住所変更を行なっておらず控除証明書の再発行ができない",
+      "description": "年末調整の提出書類として控除証明書の再発行が必要となり手続きを進めようとしているが、システムに登録されている現住所が引越し前の古い情報のままであることがシステム上の制限に抵触し、先に住所変更を行わないと再発行申請が完了できない状態。",
       "ids": ["id_002", "id_008"]
     },
     {
       "id": "AI5",
-      "label": "Cannot reissue a deduction certificate",
-      "description": "The user needs a deduction certificate for year-end tax adjustment or tax filing and wants a reissue, but does not know the procedure.",
+      "label": "控除証明書の再発行ができない",
+      "description": "年末調整や確定申告の手続きにおいて控除証明書が必要となり再発行を求めているが、手続きのやり方がわからない。",
       "ids": ["id_003", "id_004"]
     }
   ],
@@ -85,5 +85,5 @@ Always output in the JSON format below. Do not use a Markdown code block.
   ]
 }
 
-## Data List
+## データリスト
 {items_json}

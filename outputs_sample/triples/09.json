@@ -3,51 +3,58 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "want": "Wants to access the CCC Agency Portal to complete morning tasks",
-        "knowledgeLevel": "Does not know what a proxy is or what the proxy error means",
-        "role": "Agency representative contacting support about access issues"
+        "type": "保険代理店担当者",
+        "want": "朝の業務を進めるためCCC代理店ポータルへ問題なくアクセスしたい",
+        "knowledgeLevel": "プロキシの意味を知らないが、代理店ポータルへのアクセス操作は行っている",
+        "role": "JJJ代理店の担当者としてAAA保険のCCC代理店ポータル利用者"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "want": "Wants to identify the cause and guide the agency to restore portal access",
-        "knowledgeLevel": "Can check agency profile status and confirm system health; understands proxy-related connectivity issues",
-        "role": "AAA Insurance Support Desk operator providing guidance to agencies"
+        "type": "保険会社システム管理者",
+        "want": "代理店のアクセス問題を迅速に切り分けて適切に案内したい",
+        "experience": "代理店からの問い合わせ対応に従事している",
+        "knowledgeLevel": "システム稼働状況の確認とネットワーク用語（プロキシ等）の説明ができる",
+        "role": "AAA保険サポートデスクのオペレーターとして原因特定と対処案内を行う"
+      },
+      {
+        "id": "P3",
+        "type": "保険代理店担当者",
+        "want": "代理店内のインターネット接続障害を解消したい",
+        "role": "JJJ代理店のIT部門としてプロキシサーバーの再起動や設定修正を行う担当"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Cannot access CCC Agency Portal",
-        "description": "The agency representative cannot access the CCC Agency Portal due to the error 'ERR_PROXY_CONNECTION_FAILED' while trying to perform morning tasks"
+        "title": "CCC代理店ポータルにアクセスできない",
+        "description": "JJJ代理店の担当者がAAA保険のCCC代理店ポータルにアクセスしようとすると「ERR_PROXY_CONNECTION_FAILED」が表示され利用できない"
       },
       {
         "id": "I2",
-        "title": "Do not know what a proxy is",
-        "description": "The agency representative does not understand what a proxy is despite seeing a proxy-related error"
+        "title": "プロキシが何なのかわからない",
+        "description": "表示されたエラーに関連して、プロキシの意味や役割が分からない"
       },
       {
         "id": "I3",
-        "title": "Do not know whether the problem is with the AAA Insurance site",
-        "description": "The agency representative is unsure if the access problem is caused by AAA Insurance systems or by their own network"
+        "title": "AAA保険側の障害かどうか知りたい",
+        "description": "アクセス不能の原因がAAA保険のシステム側にあるのか、社内ネットワーク側なのかを確認したい"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Report to JJJ Agency IT to restart the proxy server",
-        "description": "Because the error indicates the agency's proxy server is down or misconfigured, contact JJJ Agency's IT department to restart the proxy server"
+        "title": "JJJ代理店のITにプロキシサーバーの再起動を依頼する",
+        "description": "このエラーは代理店内のプロキシサーバーの停止または設定不良が原因の可能性が高いため、JJJ代理店のIT部門へ報告し、プロキシサーバーの再起動や設定の修正を実施してもらう"
       },
       {
         "id": "S2",
-        "title": "Understand that a proxy routes company internet traffic and the error indicates the agency proxy is down or misconfigured",
-        "description": "The operator explains that a proxy is a server used by the company to route internet traffic, and the error 'ERR_PROXY_CONNECTION_FAILED' indicates the agency's proxy is down or misconfigured"
+        "title": "プロキシとエラー内容の説明を受ける",
+        "description": "プロキシが社内のインターネット通信を中継するサーバーであり、本エラーは外部サイトに到達できない状態を示すことをオペレーターが説明する"
       },
       {
         "id": "S3",
-        "title": "Confirm that AAA Insurance systems are running normally",
-        "description": "The operator confirms that AAA Insurance systems are operating normally, so the issue is not on their side"
+        "title": "AAA保険システムの稼働状況を確認する",
+        "description": "サポート側でAAA保険のシステムが正常稼働していることを確認し、当社サイト起因ではないと案内する"
       }
     ]
   },
@@ -58,10 +65,16 @@
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
     {"source": "S2", "target": "P2", "type": "isHeldBy"},
     {"source": "S3", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHandledBy"},
+    {"source": "I1", "target": "P3", "type": "isHandledBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I3", "target": "P2", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S3", "target": "P1", "type": "isRequiredBy"},
     {"source": "I1", "target": "S1", "type": "isResolvedBy"},
     {"source": "I2", "target": "S2", "type": "isResolvedBy"},
     {"source": "I3", "target": "S3", "type": "isResolvedBy"},
-    {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
     {"source": "I3", "target": "I1", "type": "isGeneratedBy"}
   ]
 }

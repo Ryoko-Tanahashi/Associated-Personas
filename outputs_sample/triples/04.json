@@ -3,48 +3,52 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "character": "Expresses urgency and frustration with internal IT delays",
-        "want": "Wants to finish a premium quote on the portal",
-        "knowledgeLevel": "Can attempt quotes on the portal but does not know the cause of the browser privacy error and cannot get past the warning screen",
-        "role": "Contacts the insurance company's helpdesk about a portal access problem while trying to complete a premium quote"
+        "type": "保険代理店担当者",
+        "character": "急いでいる。IT対応に時間がかかることに不満がある。",
+        "want": "見積りを早く完了したい",
+        "experience": "過去にも修理対応に時間がかかる経験があると発言している。",
+        "knowledgeLevel": "ブラウザ証明書やプライバシーエラーの原因には詳しくない。",
+        "role": "BBB代理店の担当者としてポータルで見積りを作成する利用者"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "character": "Apologetic and efficient; confirms account status and provides guidance",
-        "want": "Wants to assist the agency representative by diagnosing and guiding resolution of the access error",
-        "knowledgeLevel": "Can check system/account status and identify that the error typically stems from local browser security certificates",
-        "role": "Provides solutions to agencies as an operator at AAA Insurance Helpdesk"
+        "type": "保険会社システム管理者",
+        "character": "丁寧に原因を切り分ける。",
+        "want": "問い合わせの問題を迅速に解決し案内したい",
+        "experience": "ヘルプデスクとして代理店からの問い合わせ対応に従事している。",
+        "knowledgeLevel": "アカウント状態の確認やブラウザ証明書に関する知見がある。",
+        "role": "AAA保険ヘルプデスクのオペレーター"
+      },
+      {
+        "id": "P3",
+        "type": "保険代理店担当者",
+        "want": "代理店端末のセキュリティ設定を適正に保ち、エラーを解消したい",
+        "knowledgeLevel": "ブラウザ証明書の更新作業を担当できる。",
+        "role": "EEE代理店のIT部門"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Want to complete a premium quote on the portal",
-        "description": "The agency representative is trying to do a premium quote and needs to finish it via the portal"
+        "title": "見積りを作成したい",
+        "description": "代理店ポータルで顧客向け見積りを出そうとしており、業務上急いで完了したい。"
       },
       {
         "id": "I2",
-        "title": "Cannot access the portal due to 'Your connection is not private' warning",
-        "description": "While attempting the premium quote, the browser shows a 'Your connection is not private' message with a red padlock and the representative cannot proceed past that screen"
+        "title": "ポータルにアクセスしても先に進めない",
+        "description": "ブラウザに「あなたの接続はプライベートではありません」と赤い南京錠アイコンが表示され、ポータルが壊れているように見えて操作を続行できない。"
       },
       {
         "id": "I3",
-        "title": "Do not know why the privacy warning occurs",
-        "description": "After encountering the 'Your connection is not private' message, the representative asks why the error is happening"
+        "title": "プライバシーエラーの原因がわからない",
+        "description": "エラーの発生源がポータル側かローカルPCかが不明で、対処方法に迷っている。"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Contact agency IT to update the web browser's security certificates",
-        "description": "Because the error is due to local PC settings, the representative should submit a request to EEE Agency's IT to update/fix the browser security certificates so the portal can be accessed"
-      },
-      {
-        "id": "S2",
-        "title": "Recognize that the issue is due to local browser security certificates, not the portal or account",
-        "description": "The helpdesk confirms the account is active and explains that this specific warning typically results from issues with the web browser's security certificates on the representative's computer"
+        "title": "代理店IT部門に連絡してブラウザ証明書を更新してもらう",
+        "description": "アカウント状態は有効でありポータル側の不具合ではない。原因はローカルPCのWebブラウザのセキュリティ証明書にあるため、EEE代理店のIT部門にチケットを出し、ブラウザ証明書を更新してもらうことでエラーを解消し、ポータルに進めるようにする。"
       }
     ]
   },
@@ -53,9 +57,14 @@
     {"source": "I2", "target": "P1", "type": "isHeldBy"},
     {"source": "I3", "target": "P1", "type": "isHeldBy"},
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
-    {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "S1", "target": "P3", "type": "isHeldBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I3", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P3", "type": "isHandledBy"},
+    {"source": "I3", "target": "P3", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
     {"source": "I2", "target": "S1", "type": "isResolvedBy"},
-    {"source": "I3", "target": "S2", "type": "isResolvedBy"},
+    {"source": "I3", "target": "S1", "type": "isResolvedBy"},
     {"source": "I2", "target": "I1", "type": "isGeneratedBy"},
     {"source": "I3", "target": "I2", "type": "isGeneratedBy"}
   ]

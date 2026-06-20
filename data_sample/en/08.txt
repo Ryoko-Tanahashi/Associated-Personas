@@ -1,0 +1,13 @@
+[Operator] Thank you for calling AAA Insurance Dealer Support. My name is Thomas.
+[User] Hi Thomas. King here from III Agency. I can't get to the login screen for the CCC Agency Portal. It just keeps refreshing itself endlessly.
+[Operator] Hello, Mr. King. The page is constantly refreshing? I can certainly help look into that. May I have your agency ID and your date of birth for verification?
+[User] Agency ID 77889900. Birth date is March 5th, 1990.
+[Operator] Thank you. Let me verify... Your account is fully active and ready to use. This refreshing issue usually happens when your browser's cache or cookies are corrupted.
+[User] Okay, how do I fix that?
+[Operator] You just need to go to your browser settings, clear your history and cookies, and restart the browser.
+[User] Let me try... Wait, all those buttons are grayed out. A message says "Settings are managed by your organization." I can't clear anything.
+[Operator] Ah, I see. It appears your office computer is locked down by your IT department, restricting you from changing browser settings.
+[User] Yeah, they are pretty strict about what we can do on these laptops. 
+[Operator] In that case, you will need to contact the local IT administrator at III Agency. They can temporarily log in with admin rights to clear your cache. I cannot do that remotely.
+[User] Unbelievable. Okay, I'll have to wait for them to come down and fix it. Thanks anyway.
+[Operator] You're welcome. Let us know if the issue persists after they clear it.

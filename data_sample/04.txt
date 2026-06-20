@@ -1,13 +1,13 @@
-[Operator] AAA Insurance Helpdesk, Taylor speaking.
-[User] Yes, hello. I'm Brown with EEE Agency. I'm trying to do a premium quote but your portal is broken. It's giving me a scary warning message!
-[Operator] I apologize for the trouble, Mr. Brown. Could you read the exact warning message to me?
-[User] It says "Your connection is not private" and there is a red padlock icon. I can't get past this screen.
-[Operator] I see. Let's look into this. For security purposes, may I have your agency ID and your date of birth, please?
-[User] Agency ID is 45456767. Birth date is October 12, 1985.
-[Operator] Thank you. Let me check the system... Okay, your account is perfectly fine and active. 
-[User] Then why am I getting this privacy error?
-[Operator] This specific error typically happens when there is an issue with the web browser's security certificates on your computer, rather than our portal itself. 
-[User] So what should I do? I need to finish this quote.
-[Operator] I completely understand your urgency. However, since this is a local PC setting, you will need to contact the IT department at EEE Agency to have them update your browser certificates. 
-[User] Oh man, they always take forever to fix things. Alright, I'll submit a ticket to them. 
-[Operator] I am sorry for the inconvenience. Thank you for contacting us.
+[オペレーター] AAA保険ヘルプデスクです。テイラーです。
+[ユーザー] もしもし、BBB代理店のブラウンです。見積りを出そうとしているのですが、ポータルが壊れていて、怖い警告メッセージが表示されます。
+[オペレーター] ご不便をおかけして申し訳ありません、ブラウン様。表示されている警告メッセージをそのまま読んでいただけますか。
+[ユーザー] 「あなたの接続はプライベートではありません」と出ていて、赤い南京錠のアイコンがあります。この画面から先に進めません。
+[オペレーター] なるほど。確認します。セキュリティ上の理由から、代理店IDと生年月日をお伺いできますか。
+[ユーザー] 代理店IDは45456767です。生年月日は1985年10月12日です。
+[オペレーター] ありがとうございます。システムを確認します……はい、お客様のアカウントはまったく問題なく有効です。
+[ユーザー] では、なぜこのプライバシーエラーが出るのでしょうか。
+[オペレーター] このエラーは通常、当社のポータル自体ではなく、お使いのコンピューターのWebブラウザにあるセキュリティ証明書の問題で発生します。
+[ユーザー] ではどうすればいいですか。早く見積りを終わらせたいんです。
+[オペレーター] お急ぎのところ申し訳ありません。ただし、これはローカルPCの設定ですので、EEE代理店のIT部門に連絡してブラウザ証明書を更新してもらう必要があります。
+[ユーザー] もう、いつも直すのに時間がかかるんですよね。まあ、チケットを出します。
+[オペレーター] ご不便をおかけして申し訳ありません。お問い合わせありがとうございました。

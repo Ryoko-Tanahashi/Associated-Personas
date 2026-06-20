@@ -2,308 +2,414 @@
   {
     "abstract_issues": [
       {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:69",
         "properties": {
           "llm_id": "AI1",
-          "description": "A general state where the agency representative intends to open the CCC Agency Portal and reach the login screen to perform tasks, but page loading, network, security, or browser issues prevent the portal from opening or the login screen from appearing.",
+          "description": "代理店向けポータル（例：CCC代理店ポータル）を用いて顧客向けの見積りを作成・提出することを目的としているが、テキストからは作業を妨げている具体的な障壁が明示されておらず、現時点で何が問題となっているかを特定できない状態である。",
           "validity": true,
-          "name": "Cannot access the CCC Agency Portal",
-          "created_at": 1774435139769,
-          "source_call_ids": []
-        },
-        "grouped_people": []
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
-        "properties": {
-          "llm_id": "AI9",
-          "description": "On a KKK Agency–issued iPad used in the field, attempting to open the CCC Agency Portal displays \"connection is blocked,\" and the portal will not open.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
-          "created_at": 1774435139790,
+          "name": "代理店ポータルで見積りを作成したい（障壁不明）",
+          "created_at": 1781939259089,
           "source_call_ids": [
-            "10"
+            "01",
+            "04"
           ]
         },
         "grouped_people": [
           {
-            "abstract_name": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
-            "gp_id": "GP_71547fdc_Insurance_Agency_Representative",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
-            "role": "Agency representative contacting insurance support to resolve portal access issues",
-            "created_at": 1774435228730,
+            "abstract_name": "代理店ポータルで見積りを作成したい（障壁不明）",
+            "gp_id": "GP_c1878efe_保険代理店担当者",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:69",
+            "role": "保険代理店の担当者として、ポータルで見積りを作成する利用者",
+            "created_at": 1781939568751,
             "source_call_ids": [
-              "10"
+              "01",
+              "04"
             ],
-            "experience": "Typically works in the field using a company-issued tablet",
-            "type": "insurance agency representative",
-            "want": "Wants to access the agency portal on a company-issued tablet while working in the field"
+            "type": "保険代理店担当者",
+            "want": "代理店ポータルを用いて見積り作成を完了させたい"
           }
         ]
       },
       {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:70",
         "properties": {
-          "llm_id": "AI8",
-          "description": "The agency representative aims to open the CCC Agency Portal, but the browser shows \"ERR_PROXY_CONNECTION_FAILED,\" so the portal cannot be accessed.",
+          "llm_id": "AI1",
+          "description": "見積りを作成するために対象の業務サイトへアクセスしようとしているが、URLを開くとブラウザで「この接続は安全ではありません」というセキュリティ警告が表示され、ログイン画面や次の手続きに進めず見積り作成に着手できない状態である。",
           "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to proxy connection failure",
-          "created_at": 1774435139789,
-          "source_call_ids": [
-            "09"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to proxy connection failure",
-            "gp_id": "GP_0be52536_Insurance_Agency_Representative",
-            "knowledgeLevel": "Unfamiliar with proxy/network concepts and the meaning of related error messages; needs guidance for resolving such access issues.",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
-            "role": "Agency representative contacting support about access issues",
-            "created_at": 1774435228658,
-            "source_call_ids": [
-              "09"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants to access the agency portal to complete routine work tasks promptly."
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
-        "properties": {
-          "llm_id": "AI7",
-          "description": "Attempting to open the CCC Agency Portal results in the page refreshing repeatedly and never reaching the login screen.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to endless refresh loop",
-          "created_at": 1774435139787,
-          "source_call_ids": [
-            "08"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to endless refresh loop",
-            "gp_id": "GP_9c6ade2b_Insurance_Agency_Representative",
-            "knowledgeLevel": "Can operate the agency portal but cannot change browser settings due to organization-managed restrictions.",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
-            "role": "Agency staff user contacting support for portal access.",
-            "created_at": 1774435228528,
-            "source_call_ids": [
-              "08"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants to access and use the CCC Agency Portal, starting from the login screen.",
-            "character": "Tends to express frustration when blocked by device or browser restrictions."
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
-        "properties": {
-          "llm_id": "AI6",
-          "description": "The agency representative tries to open the CCC Agency Portal, but after a prolonged load the browser shows \"Connection Timed Out,\" preventing access to the login screen.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to connection timeout",
-          "created_at": 1774435139786,
-          "source_call_ids": [
-            "07"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to connection timeout",
-            "gp_id": "GP_029848a9_Insurance_Agency_Representative",
-            "knowledgeLevel": "Able to report exact error messages but unsure about underlying network routing causes",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
-            "role": "Agency representative contacting the insurance helpdesk about portal access",
-            "created_at": 1774435228693,
-            "source_call_ids": [
-              "07"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants to access the CCC portal successfully without timeouts"
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
-        "properties": {
-          "llm_id": "AI5",
-          "description": "While attempting to reach the CCC Agency Portal to log in, a message \"Access Denied by Corporate Policy\" appears and the login page does not load.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to corporate policy block",
-          "created_at": 1774435139784,
-          "source_call_ids": [
-            "06"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to corporate policy block",
-            "gp_id": "GP_e454d721_Insurance_Agency_Representative",
-            "knowledgeLevel": "Can accurately relay on-screen messages and report when the login screen does not appear",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
-            "role": "Agency representative contacting support about a portal login block",
-            "created_at": 1774435228749,
-            "source_call_ids": [
-              "06"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants to log in to the agency portal to issue a policy"
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
-        "properties": {
-          "llm_id": "AI4",
-          "description": "The user wants to reach the CCC Agency Portal login screen, but on an office laptop the page remains a white screen with a spinning loader and the login box never appears.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to infinite loading spinner",
-          "created_at": 1774435139782,
-          "source_call_ids": [
-            "05"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to infinite loading spinner",
-            "gp_id": "GP_7cbdd2d3_Insurance_Agency_Representative",
-            "knowledgeLevel": "Tends to use older office equipment with an outdated browser, is unsure about the exact browser, and lacks administrator privileges to perform updates.",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
-            "role": "Agency user contacting support regarding the CCC Agency Portal.",
-            "created_at": 1774435228680,
-            "source_call_ids": [
-              "05"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants to log in to the CCC Agency Portal without technical barriers."
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
-        "properties": {
-          "llm_id": "AI3",
-          "description": "When attempting to open the CCC Agency Portal, the browser shows a \"Server not found\" error, so the site cannot be located and the login screen cannot be reached.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to 'Server not found' error",
-          "created_at": 1774435139780,
-          "source_call_ids": [
-            "03"
-          ]
-        },
-        "grouped_people": [
-          {
-            "abstract_name": "Cannot access the CCC Agency Portal due to 'Server not found' error",
-            "gp_id": "GP_08521984_Insurance_Agency_Representative",
-            "knowledgeLevel": "Familiar with portal operations and able to provide account details; limited awareness of how network/security changes can impact access.",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
-            "role": "Contacts insurer support regarding access issues to continue policy creation tasks.",
-            "created_at": 1774435228742,
-            "source_call_ids": [
-              "03"
-            ],
-            "type": "insurance agency representative",
-            "want": "Wants reliable access to the agency portal to proceed with policy creation without delays.",
-            "character": "Cooperative and straightforward when reporting issues."
-          }
-        ]
-      },
-      {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
-        "properties": {
-          "llm_id": "AI2",
-          "description": "The agency representative tries to open the CCC Agency Portal to reach the login screen, but the browser displays a warning such as \"This connection is not secure,\" preventing access to the portal.",
-          "validity": true,
-          "name": "Cannot access the CCC Agency Portal due to browser security warning",
-          "created_at": 1774435139778,
+          "name": "ブラウザのセキュリティ警告で見積り作成に進めない",
+          "created_at": 1781939347348,
           "source_call_ids": [
             "01"
           ]
         },
         "grouped_people": [
           {
-            "abstract_name": "Cannot access the CCC Agency Portal due to browser security warning",
-            "gp_id": "GP_8750757d_Insurance_Agency_Representative",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
-            "role": "Insurance agency representative contacting the insurance company's support desk about access to the agency portal",
-            "created_at": 1774435228738,
+            "abstract_name": "ブラウザのセキュリティ警告で見積り作成に進めない",
+            "gp_id": "GP_6de3366d_保険代理店担当者",
+            "knowledgeLevel": "システム名などの基本情報は把握しているが、ログイン画面に到達できていない",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:70",
+            "role": "代理店の担当者としてサポートに問い合わせる立場",
+            "created_at": 1781939568667,
             "source_call_ids": [
               "01"
             ],
-            "type": "insurance agency representative",
-            "want": "Wants to calculate insurance estimates using the system"
+            "type": "保険代理店担当者",
+            "want": "代理店ポータルを介して保険システムでオンライン見積を作成したい"
           }
         ]
       }
     ],
     "abstract_solutions": [
       {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:84",
         "properties": {
-          "llm_id": "AS2",
-          "description": "Ask the agency’s IT to push an MDM approval or policy update that permits portal access on the managed device",
+          "llm_id": "AS1",
+          "description": "ローカルIT管理者が端末に管理者権限でサインインし、ブラウザの構成や状態を適切に更新・最適化する",
           "validity": true,
-          "name": "Update MDM policy to allow the portal",
-          "created_at": 1774435188190,
+          "name": "ブラウザ環境をローカルITが調整する",
+          "created_at": 1781939446474,
           "source_call_ids": [
-            "10"
+            "04",
+            "05",
+            "08",
+            "01"
           ]
         },
         "grouped_people": [
           {
-            "abstract_name": "Update MDM policy to allow the portal",
-            "gp_id": "GP_ea5b1e68_Insurance_Company_System_Administrator",
-            "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
-            "role": "Provides system support and guidance",
-            "created_at": 1774435228757,
+            "abstract_name": "ブラウザ環境をローカルITが調整する",
+            "gp_id": "GP_2df822c9_保険代理店担当者",
+            "knowledgeLevel": "ブラウザ証明書の更新作業を担当可能",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:84",
+            "role": "代理店のIT部門",
+            "created_at": 1781939568778,
             "source_call_ids": [
-              "10"
+              "04"
             ],
-            "type": "insurance company system administrator",
-            "want": "Wants to diagnose portal access issues and guide next steps"
+            "type": "保険代理店担当者",
+            "want": "代理店端末のセキュリティ設定の適正維持と発生エラーの解消を重視する傾向"
+          },
+          {
+            "abstract_name": "ブラウザ環境をローカルITが調整する",
+            "gp_id": "GP_2df822c9_保険会社システム管理者",
+            "knowledgeLevel": "アカウント状態を確認でき、代理店ポータルのブラウザ関連要件や一般的な不具合（キャッシュ/Cookie、証明書など）への対処手順を案内できる",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:84",
+            "role": "AAA保険のサポート/ヘルプデスクのオペレーターとして代理店に案内・トラブルシューティングを提供する",
+            "created_at": 1781939568769,
+            "source_call_ids": [
+              "01",
+              "05",
+              "04",
+              "08"
+            ],
+            "experience": "サポート/ヘルプデスクのオペレーターとして代理店からの問い合わせ対応に継続的に従事している",
+            "type": "保険会社システム管理者",
+            "want": "代理店のポータル/ログインなどのアクセス関連の問題を迅速に解決したい"
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:70",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:69",
+        "type": "isGeneratedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:70",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:84",
+        "type": "isResolvedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      }
+    ],
+    "island_id": 1,
+    "statistics": {
+      "abstract_issue_count": 2,
+      "abstract_solution_count": 1,
+      "relation_count": 2,
+      "total_grouped_people": 4
+    }
+  },
+  {
+    "abstract_issues": [
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:72",
+        "properties": {
+          "llm_id": "AI3",
+          "description": "新しい保険契約を作成するためにCCC代理店ポータルへ接続しようとしているが、「サーバーが見つかりません」と表示され、前日まで利用できていたにもかかわらずポータルに到達できない状態である。",
+          "validity": true,
+          "name": "サーバーが見つからずCCC代理店ポータルに接続できない",
+          "created_at": 1781939347627,
+          "source_call_ids": [
+            "03"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "サーバーが見つからずCCC代理店ポータルに接続できない",
+            "gp_id": "GP_d616f58e_保険代理店担当者",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:72",
+            "role": "代理店の担当者として保険会社サポートにアクセス障害を問い合わせる",
+            "created_at": 1781939568556,
+            "source_call_ids": [
+              "03"
+            ],
+            "experience": "直近までは問題なく代理店ポータルを利用できていた",
+            "type": "保険代理店担当者",
+            "want": "代理店ポータルにアクセスして新しい保険契約を作成したい"
           }
         ]
       },
       {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
         "properties": {
-          "llm_id": "AS3",
-          "description": "Open a ticket with the agency’s IT to diagnose and resolve local network or ISP routing problems reaching the service",
+          "llm_id": "AI13",
+          "description": "CCC代理店ポータルにサインインして業務を開始したいが、ログインページの表示前にエラーや異常挙動が発生し、認証画面を表示できない状態の総称。",
           "validity": true,
-          "name": "Investigate and fix office network/ISP routing",
-          "created_at": 1774435188193,
+          "name": "CCC代理店ポータルのログイン画面に到達できない",
+          "created_at": 1781939347670,
+          "source_call_ids": []
+        },
+        "grouped_people": []
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:74",
+        "properties": {
+          "llm_id": "AI5",
+          "description": "CCC代理店ポータルのログイン画面を表示してサインインしたいが、「Corporate Policy によりアクセス拒否」と表示され、組織のセキュリティポリシーによってアクセスが遮断されログイン画面に到達できない状態である。",
+          "validity": true,
+          "name": "企業ポリシーの制限でCCC代理店ポータルにアクセスできない",
+          "created_at": 1781939347635,
+          "source_call_ids": [
+            "06"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "企業ポリシーの制限でCCC代理店ポータルにアクセスできない",
+            "gp_id": "GP_187a2604_保険代理店担当者",
+            "knowledgeLevel": "代理店ポータルの利用経験があり、手続きの流れを概ね把握している",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:74",
+            "role": "保険代理店の担当者（ユーザー）",
+            "created_at": 1781939568686,
+            "source_call_ids": [
+              "06"
+            ],
+            "type": "保険代理店担当者",
+            "want": "代理店ポータルにログインし、保険手続きを円滑に完了したい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:73",
+        "properties": {
+          "llm_id": "AI4",
+          "description": "CCC代理店ポータルにログインして業務を開始したいが、Internet Explorerや旧Edge等の古いブラウザを使用しているため白い画面のまま読み込みが継続し、ログイン欄が表示されず認証手続きに進めない状態である。",
+          "validity": true,
+          "name": "旧ブラウザによりCCC代理店ポータルのログイン欄が表示されない",
+          "created_at": 1781939347631,
+          "source_call_ids": [
+            "05"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "旧ブラウザによりCCC代理店ポータルのログイン欄が表示されない",
+            "gp_id": "GP_4ace5c04_保険代理店担当者",
+            "knowledgeLevel": "レガシーブラウザを使用しがち。PCの管理者権限を持たない",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:73",
+            "role": "代理店の担当者として保険会社サポートへ問い合わせる立場",
+            "created_at": 1781939568729,
+            "source_call_ids": [
+              "05"
+            ],
+            "experience": "古めの業務用PCを用いる傾向がある",
+            "type": "保険代理店担当者",
+            "want": "業務ポータルに正常にアクセス・ログインして業務を行いたい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:76",
+        "properties": {
+          "llm_id": "AI7",
+          "description": "CCC代理店ポータルにサインインしたいが、ログインページが自動的に更新を繰り返し、入力画面に遷移しないため認証手続きに進めない状態である。",
+          "validity": true,
+          "name": "自動更新ループでCCC代理店ポータルのログイン画面に進めない",
+          "created_at": 1781939347641,
+          "source_call_ids": [
+            "08"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "自動更新ループでCCC代理店ポータルのログイン画面に進めない",
+            "gp_id": "GP_80b255c4_保険代理店担当者",
+            "knowledgeLevel": "ブラウザの基本操作は可能だが、端末設定の変更権限は限定的",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:76",
+            "role": "代理店のエンドユーザーとしてポータルを利用する実務担当",
+            "created_at": 1781939568703,
+            "source_call_ids": [
+              "08"
+            ],
+            "experience": "社用PCにIT部門の機能制限がかかっている環境で業務している",
+            "type": "保険代理店担当者",
+            "want": "業務遂行のため、代理店向けポータルへ円滑かつ安定的にアクセスしたい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:77",
+        "properties": {
+          "llm_id": "AI8",
+          "description": "JJJ代理店の担当者がAAA保険のCCC代理店ポータルへアクセスして業務を行いたいが、「ERR_PROXY_CONNECTION_FAILED」が表示され、プロキシ経由の接続に失敗してポータルを利用できない状態である。",
+          "validity": true,
+          "name": "プロキシ接続失敗でCCC代理店ポータルを利用できない",
+          "created_at": 1781939347644,
+          "source_call_ids": [
+            "09"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "プロキシ接続失敗でCCC代理店ポータルを利用できない",
+            "gp_id": "GP_443e0160_保険代理店担当者",
+            "knowledgeLevel": "代理店ポータルの基本操作はできるが、プロキシなどのネットワーク関連の技術知識は乏しい",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:77",
+            "role": "保険代理店の担当者として、保険会社の代理店ポータルの利用者",
+            "created_at": 1781939568678,
+            "source_call_ids": [
+              "09"
+            ],
+            "type": "保険代理店担当者",
+            "want": "業務を円滑に進めるため、代理店ポータルへ問題なくアクセスしたい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:80",
+        "properties": {
+          "llm_id": "AI11",
+          "description": "CCC代理店ポータルを用いて契約作成や各種手続き・照会を行いたいが、接続エラーやポリシー制限、ブラウザ互換性、端末制限、タイムアウトなど何らかの要因によりポータルの利用に到達できない状態の総称。",
+          "validity": true,
+          "name": "CCC代理店ポータルを利用できない",
+          "created_at": 1781939347658,
+          "source_call_ids": []
+        },
+        "grouped_people": []
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:75",
+        "properties": {
+          "llm_id": "AI6",
+          "description": "CCC代理店ポータルを開いて業務を行いたいが、読み込み後にクラッシュし「接続がタイムアウトしました」と表示され、進捗バーが約2分回った後に停止してポータルを利用できない状態である。",
+          "validity": true,
+          "name": "読み込み後のタイムアウトでCCC代理店ポータルを利用できない",
+          "created_at": 1781939347638,
           "source_call_ids": [
             "07"
           ]
         },
         "grouped_people": [
           {
-            "abstract_name": "Investigate and fix office network/ISP routing",
-            "gp_id": "GP_0bdeaa4f_Insurance_Company_System_Administrator",
-            "knowledgeLevel": "Able to check server and account status and explain typical causes of timeout errors.",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
-            "role": "Helpdesk operator providing system support and guidance.",
-            "created_at": 1774435228774,
+            "abstract_name": "読み込み後のタイムアウトでCCC代理店ポータルを利用できない",
+            "gp_id": "GP_dbec53ad_保険代理店担当者",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:75",
+            "role": "代理店担当者として保険会社のヘルプデスクに障害を問い合わせる立場",
+            "created_at": 1781939568723,
             "source_call_ids": [
               "07"
             ],
-            "type": "insurance company system administrator",
-            "want": "Wants to quickly identify the cause of access issues and guide callers."
+            "type": "保険代理店担当者",
+            "want": "業務遂行のために社内ポータルの利用を望む傾向"
           }
         ]
       },
       {
-        "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:81",
+        "properties": {
+          "llm_id": "AI12",
+          "description": "外出先の会社支給iPadからCCC代理店ポータルを利用したいが、端末やネットワークの制約等によりiPad経由での利用に至らない状態の総称。",
+          "validity": true,
+          "name": "iPadからCCC代理店ポータルを利用できない",
+          "created_at": 1781939347668,
+          "source_call_ids": []
+        },
+        "grouped_people": []
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+        "properties": {
+          "llm_id": "AI9",
+          "description": "会社支給のiPadからCCC代理店ポータルを開いて業務を行いたいが、「接続がブロックされている」と表示され、アカウントは有効であるにもかかわらずポータルを表示できない状態である。",
+          "validity": true,
+          "name": "iPadでの接続ブロックによりCCC代理店ポータルが開けない",
+          "created_at": 1781939347647,
+          "source_call_ids": [
+            "10"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "iPadでの接続ブロックによりCCC代理店ポータルが開けない",
+            "gp_id": "GP_a78399ea_保険代理店担当者",
+            "knowledgeLevel": "端末のMDMなどの管理制限について把握していない",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+            "role": "代理店の現場担当者としてCCC代理店ポータルの利用者",
+            "created_at": 1781939568693,
+            "source_call_ids": [
+              "10"
+            ],
+            "experience": "外回り業務で会社支給のモバイル端末を使用している。支給から日が浅い。",
+            "type": "保険代理店担当者",
+            "want": "会社支給端末からCCC代理店ポータルへ円滑にアクセスしたい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:79",
+        "properties": {
+          "llm_id": "AI10",
+          "description": "外回り業務で会社支給のiPadを用いてCCC代理店ポータルを利用したいが、当該端末や環境での利用可否や前提条件が不明確で、端末からの利用に踏み切れない状態である。",
+          "validity": true,
+          "name": "iPadからCCC代理店ポータルを利用したいが利用可否が不明",
+          "created_at": 1781939347650,
+          "source_call_ids": [
+            "10"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "iPadからCCC代理店ポータルを利用したいが利用可否が不明",
+            "gp_id": "GP_ee16a1ff_保険代理店担当者",
+            "knowledgeLevel": "端末のMDM（モバイルデバイス管理）による制限についての理解が不足している。",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:79",
+            "role": "代理店の現場担当者として代理店ポータルを利用しようとしている",
+            "created_at": 1781939568741,
+            "source_call_ids": [
+              "10"
+            ],
+            "experience": "外回りで会社支給のモバイル端末（タブレット）を主に利用。端末は最近支給された。",
+            "type": "保険代理店担当者",
+            "want": "会社支給のモバイル端末から代理店ポータルへスムーズにアクセスしたい"
+          }
+        ]
+      }
+    ],
+    "abstract_solutions": [
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:83",
         "properties": {
           "llm_id": "AS1",
-          "description": "Have the agency’s IT adjust corporate firewall or VPN configurations, including adding necessary allowlists, so the portal can be accessed",
+          "description": "代理店のIT部門／サポートに連絡し、社内ファイアウォールやVPNの設定でCCC代理店ポータルのURLを許可登録してもらう",
           "validity": true,
-          "name": "Modify corporate firewall/VPN to allow the portal",
-          "created_at": 1774435188099,
+          "name": "IT部門にポータルURLのホワイトリスト登録を依頼する",
+          "created_at": 1781939362355,
           "source_call_ids": [
             "06",
             "03"
@@ -311,109 +417,185 @@
         },
         "grouped_people": [
           {
-            "abstract_name": "Modify corporate firewall/VPN to allow the portal",
-            "gp_id": "GP_388ead36_Insurance_Company_System_Administrator",
-            "knowledgeLevel": "Can verify or check agency account status and server operations, and can identify issues likely caused by the agency's firewall; cannot modify or bypass the agency's VPN/firewall or other local firewalls",
-            "abstract_element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
-            "role": "Provides technical support as an operator, checking agency accounts and giving network-related guidance for agency access to insurer systems",
-            "created_at": 1774435228761,
+            "abstract_name": "IT部門にポータルURLのホワイトリスト登録を依頼する",
+            "gp_id": "GP_4beb9652_保険会社システム管理者",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:83",
+            "role": "AAA保険サポートのオペレーター",
+            "created_at": 1781939568758,
             "source_call_ids": [
-              "03",
-              "06"
+              "06",
+              "03"
             ],
-            "type": "insurance company system administrator",
-            "want": "Wants to help the agency regain portal access quickly"
+            "type": "保険会社システム管理者",
+            "want": "代理店のアクセス問題を解決したい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:86",
+        "properties": {
+          "llm_id": "AS3",
+          "description": "ITサポートがISPのルーティングやオフィス内ネットワーク機器を点検し、経路や機器設定の不備を是正する",
+          "validity": true,
+          "name": "ローカル/ISPのネットワーク経路を調査・復旧する",
+          "created_at": 1781939446632,
+          "source_call_ids": [
+            "07"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "ローカル/ISPのネットワーク経路を調査・復旧する",
+            "gp_id": "GP_2b23cb47_保険会社システム管理者",
+            "knowledgeLevel": "サーバー稼働状況やユーザーアカウント状態の確認ができ、一般的な接続エラーの原因を説明できる",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:86",
+            "role": "保険会社のヘルプデスクのオペレーターとして代理店からの問い合わせに対応する",
+            "created_at": 1781939568764,
+            "source_call_ids": [
+              "07"
+            ],
+            "type": "保険会社システム管理者",
+            "want": "原因を迅速に切り分け、適切な案内を行いたい"
+          }
+        ]
+      },
+      {
+        "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:85",
+        "properties": {
+          "llm_id": "AS2",
+          "description": "ローカルITが端末管理ツールから必要なポリシーや更新を配信し、対象サイトへのアクセスを許可する設定を反映する",
+          "validity": true,
+          "name": "端末管理ポリシーを配信してアクセスを許可する",
+          "created_at": 1781939446520,
+          "source_call_ids": [
+            "10"
+          ]
+        },
+        "grouped_people": [
+          {
+            "abstract_name": "端末管理ポリシーを配信してアクセスを許可する",
+            "gp_id": "GP_d29d5ea1_保険会社システム管理者",
+            "knowledgeLevel": "アカウント状態の確認やMDMによる接続制限の一般的な挙動を把握している",
+            "abstract_element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:85",
+            "role": "保険会社のサポートオペレーターとして原因説明と対応先の案内を行う",
+            "created_at": 1781939568736,
+            "source_call_ids": [
+              "10"
+            ],
+            "experience": "代理店からの技術的な問い合わせ対応を継続的に担当している",
+            "type": "保険会社システム管理者",
+            "want": "代理店担当者の接続問題の原因を特定し、適切な対処方法を案内したい"
           }
         ]
       }
     ],
     "relations": [
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:72",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:83",
         "type": "isResolvedBy",
         "properties": {
           "connection_count": 1
         }
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:72",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:80",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
-        "type": "isPartOf",
-        "properties": {}
-      },
-      {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:74",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:83",
         "type": "isResolvedBy",
         "properties": {
           "connection_count": 1
         }
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:74",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:73",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:76",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:77",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
+        "type": "isPartOf",
+        "properties": {}
+      },
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:75",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:86",
         "type": "isResolvedBy",
         "properties": {
           "connection_count": 1
         }
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:75",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:80",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:81",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:80",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:79",
+        "type": "isGeneratedBy",
+        "properties": {
+          "connection_count": 1
+        }
+      },
+      {
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:85",
         "type": "isResolvedBy",
         "properties": {
           "connection_count": 1
         }
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:81",
         "type": "isPartOf",
         "properties": {}
       },
       {
-        "source": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
-        "target": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+        "source": "4:bff94679-951a-4451-916f-6b40de14ef05:79",
+        "target": "4:bff94679-951a-4451-916f-6b40de14ef05:81",
         "type": "isPartOf",
         "properties": {}
       }
     ],
-    "island_id": 1,
+    "island_id": 2,
     "statistics": {
-      "abstract_issue_count": 9,
+      "abstract_issue_count": 11,
       "abstract_solution_count": 3,
-      "relation_count": 12,
+      "relation_count": 15,
       "total_grouped_people": 11
     }
   }

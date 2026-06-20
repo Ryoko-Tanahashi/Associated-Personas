@@ -1,320 +1,63 @@
 [
   {
-    "timestamp": "2026-03-25T10:39:48.346339",
+    "timestamp": "2026-06-20T07:10:47.039268",
     "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:61",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:72",
+    "llm_id": "AI3",
+    "name": "サーバーが見つからずCCC代理店ポータルに接続できない",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "want": "代理店ポータルにアクセスして新しい保険契約を作成したい",
+          "experience": "直近までは問題なく代理店ポータルを利用できていた",
+          "role": "代理店の担当者として保険会社サポートにアクセス障害を問い合わせる",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "03"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "03",
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルにアクセスして新しい保険契約を作成したい",
+            "experience": "昨日は問題なくCCC代理店ポータルを利用できていた",
+            "role": "DDD代理店の担当者として保険会社サポートにアクセス障害を問い合わせる"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.038169",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:70",
     "llm_id": "AI1",
-    "name": "Cannot access the CCC Agency Portal",
-    "people_count": 0,
-    "status": "no_people",
-    "grouped_people_data": []
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.381882",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:67",
-    "llm_id": "AI7",
-    "name": "Cannot access the CCC Agency Portal due to endless refresh loop",
+    "name": "ブラウザのセキュリティ警告で見積り作成に進めない",
     "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Agency Representative",
+        "people_type": "保険代理店担当者",
         "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance agency representative",
-          "character": "Tends to express frustration when blocked by device or browser restrictions.",
-          "want": "Wants to access and use the CCC Agency Portal, starting from the login screen.",
-          "knowledgeLevel": "Can operate the agency portal but cannot change browser settings due to organization-managed restrictions.",
-          "role": "Agency staff user contacting support for portal access.",
-          "source_ids": [
-            {
-              "id": "P1",
-              "call_id": "08"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P1",
-            "call_id": "08",
-            "type": "Insurance Agency Representative",
-            "character": "Expresses frustration when blocked by device restrictions.",
-            "want": "Wants to access the CCC Agency Portal login screen and use the portal.",
-            "knowledgeLevel": "Can use the portal but cannot change browser settings due to organization-managed restrictions.",
-            "role": "Agency staff user at III Agency contacting support for portal access."
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.385001",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:68",
-    "llm_id": "AI8",
-    "name": "Cannot access the CCC Agency Portal due to proxy connection failure",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to access the agency portal to complete routine work tasks promptly.",
-          "knowledgeLevel": "Unfamiliar with proxy/network concepts and the meaning of related error messages; needs guidance for resolving such access issues.",
-          "role": "Agency representative contacting support about access issues",
-          "source_ids": [
-            {
-              "id": "P1",
-              "call_id": "09"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P1",
-            "call_id": "09",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to access the CCC Agency Portal to complete morning tasks",
-            "knowledgeLevel": "Does not know what a proxy is or what the proxy error means",
-            "role": "Agency representative contacting support about access issues"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.719893",
-    "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:71",
-    "llm_id": "AS1",
-    "name": "Update browser security certificates via IT",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Company System Administrator",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance company system administrator",
-          "character": "Tends to be apologetic and efficient; typically confirms account status and provides guidance.",
-          "want": "Wants to assist agency representatives by diagnosing and guiding resolution of access errors.",
-          "knowledgeLevel": "Can check system/account status; commonly identifies local browser security certificate issues as a frequent cause of access errors.",
-          "role": "Serves as a helpdesk operator providing solutions to agencies.",
-          "source_ids": [
-            {
-              "id": "P2",
-              "call_id": "04"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P2",
-            "call_id": "04",
-            "type": "Insurance Company System Administrator",
-            "character": "Apologetic and efficient; confirms account status and provides guidance",
-            "want": "Wants to assist the agency representative by diagnosing and guiding resolution of the access error",
-            "knowledgeLevel": "Can check system/account status and identify that the error typically stems from local browser security certificates",
-            "role": "Provides solutions to agencies as an operator at AAA Insurance Helpdesk"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Company System Administrator": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.369129",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:64",
-    "llm_id": "AI4",
-    "name": "Cannot access the CCC Agency Portal due to infinite loading spinner",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to log in to the CCC Agency Portal without technical barriers.",
-          "knowledgeLevel": "Tends to use older office equipment with an outdated browser, is unsure about the exact browser, and lacks administrator privileges to perform updates.",
-          "role": "Agency user contacting support regarding the CCC Agency Portal.",
-          "source_ids": [
-            {
-              "id": "P1",
-              "call_id": "05"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P1",
-            "call_id": "05",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to access the CCC Agency Portal to log in",
-            "knowledgeLevel": "Using an old office laptop with an older browser; unsure whether it's Internet Explorer or old Edge; does not have administrator privileges to install updates",
-            "role": "Agency user from FFF Agency calling support about the CCC Agency Portal"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.377648",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:66",
-    "llm_id": "AI6",
-    "name": "Cannot access the CCC Agency Portal due to connection timeout",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to access the CCC portal successfully without timeouts",
-          "knowledgeLevel": "Able to report exact error messages but unsure about underlying network routing causes",
-          "role": "Agency representative contacting the insurance helpdesk about portal access",
-          "source_ids": [
-            {
-              "id": "P1",
-              "call_id": "07"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P1",
-            "call_id": "07",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to access the CCC portal successfully without timeouts",
-            "knowledgeLevel": "Can report the exact error message but is unsure about network routing causes",
-            "role": "Representative from HHH Agency contacting AAA Insurance helpdesk about portal access"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.390715",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:70",
-    "llm_id": "AI10",
-    "name": "Cannot log in to the CCC Agency Portal because the account is locked",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to promptly restore portal access to continue client contract processing without delay",
-          "role": "Agency representative contacting support to resolve an account lock and proceed with a client contract",
-          "source_ids": [
-            {
-              "id": "P2",
-              "call_id": "02"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P2",
-            "call_id": "02",
-            "type": "Insurance Agency Representative",
-            "want": "Wants the locked CCC Agency Portal account unlocked immediately to proceed with the client's contract today",
-            "role": "Representative of BBB Agency contacting support to resolve an account lock and continue the contract process"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.387835",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:69",
-    "llm_id": "AI9",
-    "name": "Cannot access the CCC Agency Portal due to connection blocked on managed iPad",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to access the agency portal on a company-issued tablet while working in the field",
-          "experience": "Typically works in the field using a company-issued tablet",
-          "role": "Agency representative contacting insurance support to resolve portal access issues",
-          "source_ids": [
-            {
-              "id": "P1",
-              "call_id": "10"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P1",
-            "call_id": "10",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to access the CCC Agency Portal on a company-issued tablet while working in the field",
-            "experience": "Using a KKK Agency-issued iPad in the field",
-            "role": "Agency representative contacting AAA Insurance Support to resolve portal access problem"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Agency Representative": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.353502",
-    "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:62",
-    "llm_id": "AI2",
-    "name": "Cannot access the CCC Agency Portal due to browser security warning",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Agency Representative",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to calculate insurance estimates using the system",
-          "role": "Insurance agency representative contacting the insurance company's support desk about access to the agency portal",
+          "type": "保険代理店担当者",
+          "want": "代理店ポータルを介して保険システムでオンライン見積を作成したい",
+          "knowledgeLevel": "システム名などの基本情報は把握しているが、ログイン画面に到達できていない",
+          "role": "代理店の担当者としてサポートに問い合わせる立場",
           "source_ids": [
             {
               "id": "P1",
@@ -326,119 +69,107 @@
           {
             "id": "P1",
             "call_id": "01",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to calculate an estimate using the AAA Insurance system",
-            "role": "Representative of BBB Agency contacting AAA Insurance Support Desk about access to the CCC Agency Portal"
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルを使ってAAA保険システムで見積りを作成したい",
+            "knowledgeLevel": "システム名（CCC代理店ポータル）を把握しているが、ログイン画面に到達できていない",
+            "role": "BBB代理店の担当者としてサポートに問い合わせを行う"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Agency Representative": 1
+      "保険代理店担当者": 1
     }
   },
   {
-    "timestamp": "2026-03-25T10:39:48.358622",
+    "timestamp": "2026-06-20T07:11:07.054976",
     "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:63",
-    "llm_id": "AI3",
-    "name": "Cannot access the CCC Agency Portal due to 'Server not found' error",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:80",
+    "llm_id": "AI11",
+    "name": "CCC代理店ポータルを利用できない",
+    "people_count": 0,
+    "status": "no_people",
+    "grouped_people_data": []
+  },
+  {
+    "timestamp": "2026-06-20T07:11:07.075492",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:81",
+    "llm_id": "AI12",
+    "name": "iPadからCCC代理店ポータルを利用できない",
+    "people_count": 0,
+    "status": "no_people",
+    "grouped_people_data": []
+  },
+  {
+    "timestamp": "2026-06-20T07:11:07.087874",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:82",
+    "llm_id": "AI13",
+    "name": "CCC代理店ポータルのログイン画面に到達できない",
+    "people_count": 0,
+    "status": "no_people",
+    "grouped_people_data": []
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.044804",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:77",
+    "llm_id": "AI8",
+    "name": "プロキシ接続失敗でCCC代理店ポータルを利用できない",
     "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Agency Representative",
+        "people_type": "保険代理店担当者",
         "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance agency representative",
-          "character": "Cooperative and straightforward when reporting issues.",
-          "want": "Wants reliable access to the agency portal to proceed with policy creation without delays.",
-          "knowledgeLevel": "Familiar with portal operations and able to provide account details; limited awareness of how network/security changes can impact access.",
-          "role": "Contacts insurer support regarding access issues to continue policy creation tasks.",
+          "type": "保険代理店担当者",
+          "want": "業務を円滑に進めるため、代理店ポータルへ問題なくアクセスしたい",
+          "knowledgeLevel": "代理店ポータルの基本操作はできるが、プロキシなどのネットワーク関連の技術知識は乏しい",
+          "role": "保険代理店の担当者として、保険会社の代理店ポータルの利用者",
           "source_ids": [
             {
               "id": "P1",
-              "call_id": "03"
+              "call_id": "09"
             }
           ]
         },
         "source_people": [
           {
             "id": "P1",
-            "call_id": "03",
-            "type": "Insurance Agency Representative",
-            "character": "Cooperative and straightforward in reporting issues.",
-            "want": "Wants to create a new policy and needs access to the CCC Agency Portal.",
-            "knowledgeLevel": "Can use the CCC Agency Portal and provide account details; was not aware that recent VPN/firewall changes could block access.",
-            "role": "Contacts insurer support about access issues to proceed with policy creation"
+            "call_id": "09",
+            "type": "保険代理店担当者",
+            "want": "朝の業務を進めるためCCC代理店ポータルへ問題なくアクセスしたい",
+            "knowledgeLevel": "プロキシの意味を知らないが、代理店ポータルへのアクセス操作は行っている",
+            "role": "JJJ代理店の担当者としてAAA保険のCCC代理店ポータル利用者"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Agency Representative": 1
+      "保険代理店担当者": 1
     }
   },
   {
-    "timestamp": "2026-03-25T10:40:00.507587",
-    "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:72",
-    "llm_id": "AS2",
-    "name": "Install browser update with admin rights",
-    "people_count": 1,
-    "status": "success",
-    "grouped_people_data": [
-      {
-        "people_type": "Insurance Company System Administrator",
-        "people_count": 1,
-        "llm_response": {
-          "id": "GP1",
-          "type": "insurance company system administrator",
-          "want": "Wants to resolve agency users' portal access issues quickly",
-          "knowledgeLevel": "Understands the agency portal's browser compatibility requirements and that older browsers are unsupported; guides users to use the latest Chrome or Edge.",
-          "role": "Operator at an insurance dealer support center providing system guidance",
-          "source_ids": [
-            {
-              "id": "P2",
-              "call_id": "05"
-            }
-          ]
-        },
-        "source_people": [
-          {
-            "id": "P2",
-            "call_id": "05",
-            "type": "Insurance Company System Administrator",
-            "want": "Wants to resolve the agency user's portal access issue quickly",
-            "knowledgeLevel": "Knows the CCC Agency Portal no longer supports older browsers and requires the latest Chrome or Edge",
-            "role": "Operator at AAA Insurance Dealer Support providing system guidance"
-          }
-        ]
-      }
-    ],
-    "people_types": {
-      "Insurance Company System Administrator": 1
-    }
-  },
-  {
-    "timestamp": "2026-03-25T10:39:48.375956",
+    "timestamp": "2026-06-20T07:10:47.041517",
     "abstract_type": "AbstractIssue",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:65",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:74",
     "llm_id": "AI5",
-    "name": "Cannot access the CCC Agency Portal due to corporate policy block",
+    "name": "企業ポリシーの制限でCCC代理店ポータルにアクセスできない",
     "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Agency Representative",
+        "people_type": "保険代理店担当者",
         "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance agency representative",
-          "want": "Wants to log in to the agency portal to issue a policy",
-          "knowledgeLevel": "Can accurately relay on-screen messages and report when the login screen does not appear",
-          "role": "Agency representative contacting support about a portal login block",
+          "type": "保険代理店担当者",
+          "want": "代理店ポータルにログインし、保険手続きを円滑に完了したい",
+          "knowledgeLevel": "代理店ポータルの利用経験があり、手続きの流れを概ね把握している",
+          "role": "保険代理店の担当者（ユーザー）",
           "source_ids": [
             {
               "id": "P1",
@@ -450,36 +181,248 @@
           {
             "id": "P1",
             "call_id": "06",
-            "type": "Insurance Agency Representative",
-            "want": "Wants to log into the CCC Agency Portal to issue a policy",
-            "knowledgeLevel": "Can report the exact on-screen message and that the login screen does not appear",
-            "role": "Agency representative from GGG Agency contacting support about a portal login block"
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルにログインして保険発行手続きを完了したい",
+            "knowledgeLevel": "代理店ポータルの利用経験があり、手続きの流れは把握している",
+            "role": "GGG代理店の担当者（ユーザー）"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Agency Representative": 1
+      "保険代理店担当者": 1
     }
   },
   {
-    "timestamp": "2026-03-25T10:40:03.196021",
-    "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:75",
-    "llm_id": "AS2",
-    "name": "Update MDM policy to allow the portal",
+    "timestamp": "2026-06-20T07:10:47.045791",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:78",
+    "llm_id": "AI9",
+    "name": "iPadでの接続ブロックによりCCC代理店ポータルが開けない",
     "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Company System Administrator",
+        "people_type": "保険代理店担当者",
         "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance company system administrator",
-          "want": "Wants to diagnose portal access issues and guide next steps",
-          "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
-          "role": "Provides system support and guidance",
+          "type": "保険代理店担当者",
+          "want": "会社支給端末からCCC代理店ポータルへ円滑にアクセスしたい",
+          "experience": "外回り業務で会社支給のモバイル端末を使用している。支給から日が浅い。",
+          "knowledgeLevel": "端末のMDMなどの管理制限について把握していない",
+          "role": "代理店の現場担当者としてCCC代理店ポータルの利用者",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "10"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "10",
+            "type": "保険代理店担当者",
+            "want": "会社支給のタブレットからCCC代理店ポータルに問題なくアクセスしたい",
+            "experience": "外回りで会社支給のiPadを使用している（先月支給）",
+            "knowledgeLevel": "端末のMDM制限については把握していない",
+            "role": "KKK代理店の現場担当者としてCCC代理店ポータルを利用しようとしている"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.043943",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:76",
+    "llm_id": "AI7",
+    "name": "自動更新ループでCCC代理店ポータルのログイン画面に進めない",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "want": "業務遂行のため、代理店向けポータルへ円滑かつ安定的にアクセスしたい",
+          "experience": "社用PCにIT部門の機能制限がかかっている環境で業務している",
+          "knowledgeLevel": "ブラウザの基本操作は可能だが、端末設定の変更権限は限定的",
+          "role": "代理店のエンドユーザーとしてポータルを利用する実務担当",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "08"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "08",
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルに正常にアクセスして業務を進めたい",
+            "experience": "社用ノートPCはIT部門により機能制限されている",
+            "knowledgeLevel": "ブラウザの基本操作は可能だが、社用PCのため設定変更は不可",
+            "role": "III代理店の担当者（エンドユーザー）"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.038971",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:71",
+    "llm_id": "AI2",
+    "name": "アカウントロックによりログインできない",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "character": "急いでいる。顧客対応中に契約手続きを進めている。",
+          "want": "顧客の契約手続きを迅速に完了したい（アカウントロック解除とログインを早急に実現したい）。",
+          "knowledgeLevel": "基本的なシステム操作は可能だが、認証情報の一部（秘密の質問の回答）を失念している。",
+          "role": "代理店としてポータルを利用して契約手続きを行う。",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "02"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "02",
+            "type": "保険代理店担当者",
+            "character": "急いでいる。目の前の顧客の契約手続きを進めている。",
+            "want": "CCC代理店ポータルのアカウントロックを今すぐ解除してログインし、顧客の契約を今日中に完了したい",
+            "knowledgeLevel": "代理店コードや公式アプリの操作はできるが、登録した秘密の質問の答えを覚えていない。",
+            "role": "代理店としてCCC代理店ポータルを利用して契約手続きを行う"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.043423",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:75",
+    "llm_id": "AI6",
+    "name": "読み込み後のタイムアウトでCCC代理店ポータルを利用できない",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "want": "業務遂行のために社内ポータルの利用を望む傾向",
+          "role": "代理店担当者として保険会社のヘルプデスクに障害を問い合わせる立場",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "07"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "07",
+            "type": "保険代理店担当者",
+            "want": "CCCポータルを利用して業務を行いたい",
+            "role": "HHH代理店の担当者としてAAA保険ヘルプデスクに障害を問い合わせている"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:10:47.040495",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:73",
+    "llm_id": "AI4",
+    "name": "旧ブラウザによりCCC代理店ポータルのログイン欄が表示されない",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "want": "業務ポータルに正常にアクセス・ログインして業務を行いたい",
+          "experience": "古めの業務用PCを用いる傾向がある",
+          "knowledgeLevel": "レガシーブラウザを使用しがち。PCの管理者権限を持たない",
+          "role": "代理店の担当者として保険会社サポートへ問い合わせる立場",
+          "source_ids": [
+            {
+              "id": "P1",
+              "call_id": "05"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P1",
+            "call_id": "05",
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルに正常にアクセス・ログインして業務を行いたい",
+            "experience": "古い業務用ノートPCを使用している",
+            "knowledgeLevel": "Internet Explorerまたは旧Edgeを使用していた。PCの管理者権限は所持していない",
+            "role": "FFF代理店の担当者として保険会社のサポートに問い合わせたユーザー"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険代理店担当者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:11:07.897206",
+    "abstract_type": "AbstractSolution",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:85",
+    "llm_id": "AS2",
+    "name": "端末管理ポリシーを配信してアクセスを許可する",
+    "people_count": 1,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険会社システム管理者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険会社システム管理者",
+          "want": "代理店担当者の接続問題の原因を特定し、適切な対処方法を案内したい",
+          "experience": "代理店からの技術的な問い合わせ対応を継続的に担当している",
+          "knowledgeLevel": "アカウント状態の確認やMDMによる接続制限の一般的な挙動を把握している",
+          "role": "保険会社のサポートオペレーターとして原因説明と対応先の案内を行う",
           "source_ids": [
             {
               "id": "P2",
@@ -491,135 +434,186 @@
           {
             "id": "P2",
             "call_id": "10",
-            "type": "Insurance Company System Administrator",
-            "want": "Wants to identify the cause of the portal access problem and guide next steps",
-            "knowledgeLevel": "Can verify account status and is aware of device management restrictions that can affect portal access",
-            "role": "Provides system support and guidance from AAA Insurance Support"
+            "type": "保険会社システム管理者",
+            "want": "代理店担当者の接続問題の原因を特定し適切な対処方法を案内したい",
+            "experience": "代理店からの問い合わせ対応に従事",
+            "knowledgeLevel": "アカウント状態の確認やMDMによる接続制限の一般的な挙動を把握している",
+            "role": "AAA保険サポートのオペレーターとして原因説明と対応先の案内を行う"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Company System Administrator": 1
+      "保険会社システム管理者": 1
     }
   },
   {
-    "timestamp": "2026-03-25T10:40:02.894976",
-    "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:74",
-    "llm_id": "AS1",
-    "name": "Modify corporate firewall/VPN to allow the portal",
-    "people_count": 2,
+    "timestamp": "2026-06-20T07:11:03.641967",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:79",
+    "llm_id": "AI10",
+    "name": "iPadからCCC代理店ポータルを利用したいが利用可否が不明",
+    "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Company System Administrator",
-        "people_count": 2,
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance company system administrator",
-          "want": "Wants to help the agency regain portal access quickly",
-          "knowledgeLevel": "Can verify or check agency account status and server operations, and can identify issues likely caused by the agency's firewall; cannot modify or bypass the agency's VPN/firewall or other local firewalls",
-          "role": "Provides technical support as an operator, checking agency accounts and giving network-related guidance for agency access to insurer systems",
+          "type": "保険代理店担当者",
+          "want": "会社支給のモバイル端末から代理店ポータルへスムーズにアクセスしたい",
+          "experience": "外回りで会社支給のモバイル端末（タブレット）を主に利用。端末は最近支給された。",
+          "knowledgeLevel": "端末のMDM（モバイルデバイス管理）による制限についての理解が不足している。",
+          "role": "代理店の現場担当者として代理店ポータルを利用しようとしている",
           "source_ids": [
             {
-              "id": "P2",
-              "call_id": "06"
-            },
-            {
-              "id": "P2",
-              "call_id": "03"
+              "id": "P1",
+              "call_id": "10"
             }
           ]
         },
         "source_people": [
           {
-            "id": "P2",
-            "call_id": "06",
-            "type": "Insurance Company System Administrator",
-            "want": "Wants to help the agency regain access to the portal",
-            "knowledgeLevel": "Can verify account status and identify blocks caused by the agency's firewall; cannot bypass local firewalls",
-            "role": "AAA Insurance Support operator who checks accounts and provides network-related guidance"
-          },
-          {
-            "id": "P2",
-            "call_id": "03",
-            "type": "Insurance Company System Administrator",
-            "character": "Helpful and methodical in troubleshooting.",
-            "want": "Wants to help the agency regain portal access quickly.",
-            "experience": "Accustomed to verifying account status and system health for agencies.",
-            "knowledgeLevel": "Can check agency account status and server operations; cannot modify the agency's VPN/firewall settings.",
-            "role": "Provides technical support for agency access to insurer systems as an operator"
+            "id": "P1",
+            "call_id": "10",
+            "type": "保険代理店担当者",
+            "want": "会社支給のタブレットからCCC代理店ポータルに問題なくアクセスしたい",
+            "experience": "外回りで会社支給のiPadを使用している（先月支給）",
+            "knowledgeLevel": "端末のMDM制限については把握していない",
+            "role": "KKK代理店の現場担当者としてCCC代理店ポータルを利用しようとしている"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Company System Administrator": 2
+      "保険代理店担当者": 1
     }
   },
   {
-    "timestamp": "2026-03-25T10:40:01.835611",
-    "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:73",
-    "llm_id": "AS3",
-    "name": "Provide diagnostic communication",
-    "people_count": 1,
+    "timestamp": "2026-06-20T07:10:47.037656",
+    "abstract_type": "AbstractIssue",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:69",
+    "llm_id": "AI1",
+    "name": "代理店ポータルで見積りを作成したい（障壁不明）",
+    "people_count": 2,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Company System Administrator",
-        "people_count": 1,
+        "people_type": "保険代理店担当者",
+        "people_count": 2,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance company system administrator",
-          "character": "Apologetic and efficient; tends to confirm account status and provide guidance during incidents.",
-          "want": "Wants to assist agency representatives by diagnosing and guiding resolution of access errors promptly.",
-          "experience": "Handles agency access issues and provides guidance as part of helpdesk operations.",
-          "knowledgeLevel": "Capable of checking system and account status; typically identifies access errors as arising from local browser security certificate issues.",
-          "role": "Operates as an insurance helpdesk operator providing solutions to agencies.",
+          "type": "保険代理店担当者",
+          "want": "代理店ポータルを用いて見積り作成を完了させたい",
+          "role": "保険代理店の担当者として、ポータルで見積りを作成する利用者",
           "source_ids": [
             {
-              "id": "P2",
+              "id": "P1",
+              "call_id": "01"
+            },
+            {
+              "id": "P1",
               "call_id": "04"
             }
           ]
         },
         "source_people": [
           {
-            "id": "P2",
+            "id": "P1",
+            "call_id": "01",
+            "type": "保険代理店担当者",
+            "want": "CCC代理店ポータルを使ってAAA保険システムで見積りを作成したい",
+            "knowledgeLevel": "システム名（CCC代理店ポータル）を把握しているが、ログイン画面に到達できていない",
+            "role": "BBB代理店の担当者としてサポートに問い合わせを行う"
+          },
+          {
+            "id": "P1",
             "call_id": "04",
-            "type": "Insurance Company System Administrator",
-            "character": "Apologetic and efficient; confirms account status and provides guidance",
-            "want": "Wants to assist the agency representative by diagnosing and guiding resolution of the access error",
-            "knowledgeLevel": "Can check system/account status and identify that the error typically stems from local browser security certificates",
-            "role": "Provides solutions to agencies as an operator at AAA Insurance Helpdesk"
+            "type": "保険代理店担当者",
+            "character": "急いでいる。IT対応に時間がかかることに不満がある。",
+            "want": "見積りを早く完了したい",
+            "experience": "過去にも修理対応に時間がかかる経験があると発言している。",
+            "knowledgeLevel": "ブラウザ証明書やプライバシーエラーの原因には詳しくない。",
+            "role": "BBB代理店の担当者としてポータルで見積りを作成する利用者"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Company System Administrator": 1
+      "保険代理店担当者": 2
     }
   },
   {
-    "timestamp": "2026-03-25T10:40:05.775995",
+    "timestamp": "2026-06-20T07:11:07.105767",
     "abstract_type": "AbstractSolution",
-    "element_id": "4:c3e79dec-1077-4a19-b568-780b132743bd:76",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:83",
+    "llm_id": "AS1",
+    "name": "IT部門にポータルURLのホワイトリスト登録を依頼する",
+    "people_count": 2,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険会社システム管理者",
+        "people_count": 2,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険会社システム管理者",
+          "want": "代理店のアクセス問題を解決したい",
+          "role": "AAA保険サポートのオペレーター",
+          "source_ids": [
+            {
+              "id": "P2",
+              "call_id": "03"
+            },
+            {
+              "id": "P2",
+              "call_id": "06"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P2",
+            "call_id": "03",
+            "type": "保険会社システム管理者",
+            "want": "代理店のポータルアクセス問題を特定し解決に導きたい",
+            "role": "AAA保険サポートのオペレーターとして代理店からの問い合わせに対応する"
+          },
+          {
+            "id": "P2",
+            "call_id": "06",
+            "type": "保険会社システム管理者",
+            "want": "代理店のアクセス問題を迅速に解消したい",
+            "experience": "代理店からのログイン・アクセスに関する問い合わせ対応に慣れている",
+            "knowledgeLevel": "アカウント状態の確認やネットワーク起因の切り分けができる",
+            "role": "AAA保険サポートのオペレーター（保険会社Bの担当者）"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険会社システム管理者": 2
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:11:11.553741",
+    "abstract_type": "AbstractSolution",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:86",
     "llm_id": "AS3",
-    "name": "Investigate and fix office network/ISP routing",
+    "name": "ローカル/ISPのネットワーク経路を調査・復旧する",
     "people_count": 1,
     "status": "success",
     "grouped_people_data": [
       {
-        "people_type": "Insurance Company System Administrator",
+        "people_type": "保険会社システム管理者",
         "people_count": 1,
         "llm_response": {
           "id": "GP1",
-          "type": "insurance company system administrator",
-          "want": "Wants to quickly identify the cause of access issues and guide callers.",
-          "knowledgeLevel": "Able to check server and account status and explain typical causes of timeout errors.",
-          "role": "Helpdesk operator providing system support and guidance.",
+          "type": "保険会社システム管理者",
+          "want": "原因を迅速に切り分け、適切な案内を行いたい",
+          "knowledgeLevel": "サーバー稼働状況やユーザーアカウント状態の確認ができ、一般的な接続エラーの原因を説明できる",
+          "role": "保険会社のヘルプデスクのオペレーターとして代理店からの問い合わせに対応する",
           "source_ids": [
             {
               "id": "P2",
@@ -631,16 +625,126 @@
           {
             "id": "P2",
             "call_id": "07",
-            "type": "Insurance Company System Administrator",
-            "want": "Wants to quickly determine the cause of the access issue and guide the caller",
-            "knowledgeLevel": "Checks server status and account status; explains typical causes of timeout errors",
-            "role": "AAA Insurance helpdesk operator providing system support and guidance"
+            "type": "保険会社システム管理者",
+            "want": "原因を迅速に切り分けて適切な案内を行いたい",
+            "knowledgeLevel": "サーバー稼働状況やユーザーアカウント状態の確認ができ、一般的な接続エラーの原因を説明できる",
+            "role": "AAA保険ヘルプデスクのオペレーターとして代理店からの問い合わせに対応する"
           }
         ]
       }
     ],
     "people_types": {
-      "Insurance Company System Administrator": 1
+      "保険会社システム管理者": 1
+    }
+  },
+  {
+    "timestamp": "2026-06-20T07:11:07.653256",
+    "abstract_type": "AbstractSolution",
+    "element_id": "4:bff94679-951a-4451-916f-6b40de14ef05:84",
+    "llm_id": "AS1",
+    "name": "ブラウザ環境をローカルITが調整する",
+    "people_count": 5,
+    "status": "success",
+    "grouped_people_data": [
+      {
+        "people_type": "保険会社システム管理者",
+        "people_count": 4,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険会社システム管理者",
+          "want": "代理店のポータル/ログインなどのアクセス関連の問題を迅速に解決したい",
+          "experience": "サポート/ヘルプデスクのオペレーターとして代理店からの問い合わせ対応に継続的に従事している",
+          "knowledgeLevel": "アカウント状態を確認でき、代理店ポータルのブラウザ関連要件や一般的な不具合（キャッシュ/Cookie、証明書など）への対処手順を案内できる",
+          "role": "AAA保険のサポート/ヘルプデスクのオペレーターとして代理店に案内・トラブルシューティングを提供する",
+          "source_ids": [
+            {
+              "id": "P2",
+              "call_id": "01"
+            },
+            {
+              "id": "P2",
+              "call_id": "05"
+            },
+            {
+              "id": "P2",
+              "call_id": "08"
+            },
+            {
+              "id": "P2",
+              "call_id": "04"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P2",
+            "call_id": "01",
+            "type": "保険会社システム管理者",
+            "want": "代理店のアクセス問題を迅速に解決したい",
+            "experience": "サポートデスクのオペレーターとして代理店からの問い合わせ対応に従事",
+            "knowledgeLevel": "システム障害状況やアカウント状態を確認できる",
+            "role": "AAA保険サポートデスクのオペレーターとして代理店に案内を提供する"
+          },
+          {
+            "id": "P2",
+            "call_id": "05",
+            "type": "保険会社システム管理者",
+            "want": "代理店のポータルアクセス問題を迅速に解決したい",
+            "knowledgeLevel": "CCC代理店ポータルのブラウザ要件やアカウント状態を確認・案内できる",
+            "role": "AAA保険ディーラーサポートのオペレーターとして解決策を案内する"
+          },
+          {
+            "id": "P2",
+            "call_id": "08",
+            "type": "保険会社システム管理者",
+            "want": "代理店のログイントラブルを迅速に解決したい",
+            "experience": "代理店からの問い合わせ対応を行っている",
+            "knowledgeLevel": "CCC代理店ポータルの一般的な不具合原因（キャッシュ/Cookie破損）を把握し、対処手順を案内できる",
+            "role": "AAA保険ディーラーサポートのオペレーター（トラブルシューティング担当）"
+          },
+          {
+            "id": "P2",
+            "call_id": "04",
+            "type": "保険会社システム管理者",
+            "character": "丁寧に原因を切り分ける。",
+            "want": "問い合わせの問題を迅速に解決し案内したい",
+            "experience": "ヘルプデスクとして代理店からの問い合わせ対応に従事している。",
+            "knowledgeLevel": "アカウント状態の確認やブラウザ証明書に関する知見がある。",
+            "role": "AAA保険ヘルプデスクのオペレーター"
+          }
+        ]
+      },
+      {
+        "people_type": "保険代理店担当者",
+        "people_count": 1,
+        "llm_response": {
+          "id": "GP1",
+          "type": "保険代理店担当者",
+          "want": "代理店端末のセキュリティ設定の適正維持と発生エラーの解消を重視する傾向",
+          "knowledgeLevel": "ブラウザ証明書の更新作業を担当可能",
+          "role": "代理店のIT部門",
+          "source_ids": [
+            {
+              "id": "P3",
+              "call_id": "04"
+            }
+          ]
+        },
+        "source_people": [
+          {
+            "id": "P3",
+            "call_id": "04",
+            "type": "保険代理店担当者",
+            "want": "代理店端末のセキュリティ設定を適正に保ち、エラーを解消したい",
+            "knowledgeLevel": "ブラウザ証明書の更新作業を担当できる。",
+            "role": "EEE代理店のIT部門"
+          }
+        ]
+      }
+    ],
+    "people_types": {
+      "保険会社システム管理者": 4,
+      "保険代理店担当者": 1
     }
   }
 ]

@@ -1,0 +1,14 @@
+[Operator] Thank you for calling AAA Insurance Support Desk. This is Davis speaking.
+[User] Hi, this is Williams from BBB Agency. I have a client right in front of me, but when I tried to log in to the CCC Agency Portal, it said my account is locked! Can you unlock it immediately?
+[Operator] I apologize for the inconvenience, Mr. Williams. I can certainly help you with the account unlock. However, based on our security policy, I need to verify your identity first.
+[User] Okay, okay. My agency code is 87654321. Please hurry up.
+[Operator] Thank you. Next, could you please answer your registered secret question? "What was the make of your first car?"
+[User] What? My first car? That was decades ago, I have no idea what I registered! Can't we skip this? My client is waiting to sign the contract!
+[Operator] I am very sorry, but strict security compliance requires the correct answer to unlock the account over the phone. If you cannot remember it, we will have to mail a temporary password to your registered address.
+[User] Mail?! That will take days! I need to close this deal today. Isn't there any other way to verify it's me?
+[Operator] I cannot bypass the security protocol. However... do you happen to have the AAA Insurance official smartphone app installed on your phone?
+[User] The app? Yes, I have it installed on my smartphone.
+[Operator] Great! I will send a push notification for "Login Approval" to your app right now. If you tap "Approve" on your screen, we can securely authenticate you without the secret question.
+[User] Oh, I just got the notification. I tapped "Approve". That was fast.
+[Operator] Verification confirmed. Thank you for your cooperation. I have successfully unlocked your account and reset your password.
+[User] Wow, that saved me. Thank you so much!

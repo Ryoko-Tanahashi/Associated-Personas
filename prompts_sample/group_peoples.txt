@@ -1,39 +1,39 @@
-The following contains information about people related to a common issue or solution.
-Please extract all shared characteristics from these people and create a GroupedPeople node.
+以下は、共通の課題または解決策に関連する人物（People）の情報です。
+これらの人物から共通する特徴をすべて抽出し、GroupedPeopleノードを作成してください。
 
-**Important instructions:**
-- Extract only characteristics that are common among the given People.
-- Do not include items that are not shared.
-- Avoid adding information based on assumptions.
-- Describe characteristics as ranges or tendencies, not as specific concrete values.
-- If there is no common trend and the data is too diverse, do not include that item.
+**重要な指示:**
+- 与えられたPeopleの中で共通している特徴のみを抽出してください
+- 共通していない項目は記載しないでください
+- 推測による情報の追加は避けてください
+- 具体的な値ではなく、範囲や傾向などの特徴で記述してください
+- 共通の傾向がなく、バラバラな場合は、その項目を記載しないでください
 
-**GroupedPeople fields**
-- `id`: A unique identifier for the GroupedPeople (e.g., GP1, GP2, ...)
-- `type`: Attribute (customer | insurance agency representative | insurance company system administrator)
-- `age`: Age
-- `residence`: Living situation (e.g., living far away, living nearby)
-- `medicalHistory`: Medical history (e.g., illnesses, treatment history)
-- `character`: Personality traits (e.g., easily panicked, efficient)
-- `want`: Desire (e.g., "wants to ...", "wants to know ..."; the underlying need they ultimately want to satisfy)
-- `experience`: Experience (e.g., work experience, past trouble incidents)
-- `knowledgeLevel`: Knowledge level (e.g., can operate systems, does not know about ...)
-- `role`: Role (the role of the person/organization revealed through the interaction)
-- `source_ids`: List of source People IDs and CALL_IDs
+**GroupedPeopleのフィールド**
+- `id`: GroupedPeopleの一意な識別子（例: GP1, GP2, ...）
+- `type`: 属性（顧客|保険代理店担当者|保険会社システム管理者）
+- `age`: 年齢
+- `residence`: 居住状況（例：遠方在住、近隣在住など）
+- `medicalHistory`: 既往歴（例：病名、治療歴など）
+- `character`: 性格（例：焦りやすい、効率的など）
+- `want`: 欲求（例：〜したい、〜を知りたいなど、やり取りの背景にあたる最終的に満たしたいニーズ）
+- `experience`: 経験（例：業務経験、過去のトラブル経験など）
+- `knowledgeLevel`: 知識レベル（例：システム操作はできる、〜について知らないなど）
+- `role`: 役割（やり取りの中から明らかになる人物・組織としての役割）
+- `source_ids`: 元となったPeopleのIDとCALL_IDのリスト
 
-# Output format
-Please follow the JSON structure below.
+# 出力形式
+出力は以下のJSON構造に従ってください。
 
 ```json
 {
   "GroupedPeople": {
     "id": "GP1",
-    "type": "insurance agency representative",
-    "age": "20s to 30s",
-    "character": "Tends to panic easily. Frequently checks with the support center in real time while responding to customer inquiries.",
-    "want": "Does not want to keep customers waiting",
-    "experience": "New employee. Has contacted support several times in the past for similar login issues.",
-    "knowledgeLevel": "Familiar with system operations. Technical problem-solving skills are still developing. Operates while referring to manuals but does not understand the meaning of error messages.",
+    "type": "保険代理店担当者",
+    "age": "20代～30代",
+    "character": "焦りやすい。顧客からの問い合わせに対応中にリアルタイムでサポートセンターに確認することが多い。",
+    "want": "顧客を待たせたくない",
+    "experience": "新人。過去にも同様のログイン問題で何度かサポートに連絡している。",
+    "knowledgeLevel": "システム操作は慣れている。技術的な問題解決能力は発展途上。マニュアルを見ながら操作しているが、エラーメッセージの意味が理解できない。",
     "source_ids": [
       {"id": "P001", "call_id": "IR_100108299150231110"},
       {"id": "P002", "call_id": "IR_100108299150231111"}
@@ -42,7 +42,7 @@ Please follow the JSON structure below.
 }
 ```
 
-## Input
-Please extract common characteristics from the following People information:
+## 入力
+以下のPeople情報から共通する特徴を抽出してください：
 
 {items_json}

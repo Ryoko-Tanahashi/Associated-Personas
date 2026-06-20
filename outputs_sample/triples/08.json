@@ -3,50 +3,50 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "character": "Expresses frustration when blocked by device restrictions.",
-        "want": "Wants to access the CCC Agency Portal login screen and use the portal.",
-        "knowledgeLevel": "Can use the portal but cannot change browser settings due to organization-managed restrictions.",
-        "role": "Agency staff user at III Agency contacting support for portal access."
+        "type": "保険代理店担当者",
+        "want": "CCC代理店ポータルに正常にアクセスして業務を進めたい",
+        "knowledgeLevel": "ブラウザの基本操作は可能だが、社用PCのため設定変更は不可",
+        "experience": "社用ノートPCはIT部門により機能制限されている",
+        "role": "III代理店の担当者（エンドユーザー）"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "character": "Helpful and provides step-by-step technical guidance.",
-        "want": "Wants to resolve the agency user's portal access issue efficiently.",
-        "knowledgeLevel": "Understands common browser-related causes (cache/cookies) and support limitations; cannot perform changes remotely.",
-        "role": "AAA Insurance Dealer Support operator providing technical support and guidance."
+        "type": "保険会社システム管理者",
+        "want": "代理店のログイントラブルを迅速に解決したい",
+        "knowledgeLevel": "CCC代理店ポータルの一般的な不具合原因（キャッシュ/Cookie破損）を把握し、対処手順を案内できる",
+        "experience": "代理店からの問い合わせ対応を行っている",
+        "role": "AAA保険ディーラーサポートのオペレーター（トラブルシューティング担当）"
       },
       {
         "id": "P3",
-        "type": "Insurance Agency Representative",
-        "want": "Wants to assist agency staff by performing the necessary admin actions to enable portal access.",
-        "knowledgeLevel": "Has admin rights to manage browser settings on agency laptops.",
-        "role": "Local IT administrator at III Agency who can clear browser cache/cookies on managed devices."
+        "type": "保険代理店担当者",
+        "want": "端末の管理者権限で必要な設定変更を行い、業務継続を支援したい",
+        "knowledgeLevel": "管理者権限でブラウザ設定の変更やキャッシュ/Cookie削除を実施できる",
+        "role": "III代理店のローカルIT管理者"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Cannot access the CCC Agency Portal login screen due to constant refreshing",
-        "description": "When attempting to open the CCC Agency Portal, the page refreshes endlessly and never reaches the login screen."
+        "title": "代理店ポータルのログイン画面に到達できない",
+        "description": "CCC代理店ポータルのログインページが自動的に更新を繰り返し、ログイン画面に進めない"
       },
       {
         "id": "I2",
-        "title": "Cannot clear browser cache/cookies due to organization-managed settings",
-        "description": "The browser settings controls are grayed out with a message 'Settings are managed by your organization,' preventing the user from clearing history/cookies as instructed."
+        "title": "ブラウザの履歴とCookieを削除できない",
+        "description": "社用PCのブラウザ設定が『組織によって管理』され、履歴/Cookie削除ボタンがグレーアウトして操作できない"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Clear browser history and cookies, then restart the browser",
-        "description": "In the browser settings, clear history and cookies to remove potentially corrupted cache data, then close and reopen the browser before accessing the CCC Agency Portal again."
+        "title": "ブラウザの履歴とCookieを削除しブラウザを再起動する",
+        "description": "ブラウザ設定から閲覧履歴およびCookie/キャッシュを削除し、ブラウザを再起動してからCCC代理店ポータルへ再アクセスする"
       },
       {
         "id": "S2",
-        "title": "Have the local IT administrator clear the cache with admin rights",
-        "description": "Because settings are locked by the organization, contact III Agency's local IT administrator to log in with admin privileges, clear the browser cache/cookies, and then retry accessing the portal; this cannot be done remotely by company support."
+        "title": "ローカルIT管理者に依頼して管理者権限でキャッシュ/Cookieを削除してもらう",
+        "description": "III代理店のローカルIT管理者に連絡し、管理者権限で端末にサインインしてブラウザの履歴・Cookie/キャッシュを削除し、問題解消を確認する（遠隔では対応不可）"
       }
     ]
   },
@@ -55,7 +55,11 @@
     {"source": "I2", "target": "P1", "type": "isHeldBy"},
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
     {"source": "S2", "target": "P2", "type": "isHeldBy"},
-    {"source": "S2", "target": "P3", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P3", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P1", "type": "isRequiredBy"},
     {"source": "I1", "target": "S1", "type": "isResolvedBy"},
     {"source": "I2", "target": "S2", "type": "isResolvedBy"},
     {"source": "I2", "target": "S1", "type": "isGeneratedBy"}

@@ -1,11 +1,11 @@
-[Operator] Thank you for calling AAA Insurance Support. Robinson speaking.
-[User] Hi Robinson, Adams from KKK Agency. I'm out in the field using my company tablet, but the CCC Agency Portal won't open. It says the connection is blocked.
-[Operator] Hello, Mr. Adams. Let's figure this out. I will need to verify your account first. May I have your agency code and your employee ID number?
-[User] Agency code 66778899, Employee ID is 1045.
-[Operator] Thank you. Your account is perfectly active, so there is no lock on your profile. Are you using a tablet provided by KKK Agency?
-[User] Yes, it's the iPad they issued to us last month.
-[Operator] I see. The error you are seeing is likely due to the Mobile Device Management software installed on your company tablet. Sometimes, it blocks external web portals until they are explicitly approved by your company.
-[User] Seriously? They told us this tablet was ready for field work.
-[Operator] I apologize for the frustration. Since the restriction is placed by KKK Agency's device management system, we cannot override it from our support desk. You will need to contact your local IT support to have them push an update to your tablet.
-[User] Alright, I'll have to call them. This is going to slow me down today. Thanks for the information, Robinson.
-[Operator] I'm sorry I couldn't resolve it directly. Good luck with your IT team.
+[オペレーター] AAA保険サポートです。ロビンソンです。
+[ユーザー] こんにちは、KKK代理店のアダムスです。外回りで会社支給のタブレットを使っているのですが、CCC代理店ポータルが開きません。接続がブロックされていると表示されます。
+[オペレーター] アダムス様、こんにちは。状況を確認します。まずアカウントを確認する必要があります。代理店コードと社員IDを教えていただけますか。
+[ユーザー] 代理店コードは66778899で、社員IDは1045です。
+[オペレーター] ありがとうございます。アカウントはまったく問題なく有効ですので、プロフィールのロックはかかっていません。お使いのタブレットはKKK代理店支給のものですか。
+[ユーザー] はい、先月支給されたiPadです。
+[オペレーター] なるほど。表示されているエラーは、会社支給タブレットに入っているモバイルデバイス管理ソフトウェアが原因の可能性が高いです。企業によって明示的に許可されるまで、外部のWebポータルをブロックすることがあります。
+[ユーザー] 本当ですか？ このタブレットは現場用に準備済みだと聞いていました。
+[オペレーター] ご不便をおかけして申し訳ありません。制限はKKK代理店の端末管理システムによるものですので、こちらのサポートデスクでは解除できません。ローカルITサポートに連絡して、タブレットに更新を配信してもらう必要があります。
+[ユーザー] わかりました、連絡します。今日はかなり手間取りそうです。教えてくれてありがとうございます、ロビンソンさん。
+[オペレーター] こちらで直接解決できず申し訳ありません。ITチームとうまく進むことを願っています。

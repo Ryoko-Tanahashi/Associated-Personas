@@ -3,41 +3,40 @@
     "People": [
       {
         "id": "P1",
-        "type": "Insurance Agency Representative",
-        "want": "Wants to access the CCC portal successfully without timeouts",
-        "knowledgeLevel": "Can report the exact error message but is unsure about network routing causes",
-        "role": "Representative from HHH Agency contacting AAA Insurance helpdesk about portal access"
+        "type": "保険代理店担当者",
+        "want": "CCCポータルを利用して業務を行いたい",
+        "role": "HHH代理店の担当者としてAAA保険ヘルプデスクに障害を問い合わせている"
       },
       {
         "id": "P2",
-        "type": "Insurance Company System Administrator",
-        "want": "Wants to quickly determine the cause of the access issue and guide the caller",
-        "knowledgeLevel": "Checks server status and account status; explains typical causes of timeout errors",
-        "role": "AAA Insurance helpdesk operator providing system support and guidance"
+        "type": "保険会社システム管理者",
+        "want": "原因を迅速に切り分けて適切な案内を行いたい",
+        "knowledgeLevel": "サーバー稼働状況やユーザーアカウント状態の確認ができ、一般的な接続エラーの原因を説明できる",
+        "role": "AAA保険ヘルプデスクのオペレーターとして代理店からの問い合わせに対応する"
       }
     ],
     "Issue": [
       {
         "id": "I1",
-        "title": "Cannot access the CCC portal due to connection timeout",
-        "description": "The agency representative reports that the CCC portal loads for about two minutes and then shows a 'Connection Timed Out' message."
+        "title": "CCCポータルにアクセスできない",
+        "description": "CCCポータルが読み込み後にクラッシュし、「接続がタイムアウトしました」と表示される。進捗バーが約2分回ってから止まり、利用できない。"
       },
       {
         "id": "I2",
-        "title": "Do not know whether the timeout is caused by AAA servers or the local network",
-        "description": "The agency representative is unsure if the problem is an AAA server outage or an issue with their office/ISP network and asks why it is timing out."
+        "title": "サーバー側に障害があるかがわからない",
+        "description": "自分だけがタイムアウトする理由を知りたく、AAAのサーバーや自身のアカウント状態に問題がないかを確認したい。"
       }
     ],
     "Solution": [
       {
         "id": "S1",
-        "title": "Contact HHH Agency IT to check network routing for access to the CCC portal",
-        "description": "Open a ticket with HHH Agency's IT support so they can investigate office network or ISP routing issues preventing the computer from reaching AAA's servers; AAA cannot resolve local network timeouts."
+        "title": "代理店のITサポートにネットワークルーティングの確認を依頼する",
+        "description": "HHH代理店のITサポート窓口に連絡し、ISP側のルーティングやオフィスのネットワークスイッチ等のローカルネットワーク要因を調査・解消してもらう。AAA側からはローカルのタイムアウトを解消できない旨を案内する。"
       },
       {
         "id": "S2",
-        "title": "Confirm servers and account are normal to rule out an AAA-side outage",
-        "description": "Verify the caller’s account is active and confirm AAA servers are fully operational; explain that 'Connection Timed Out' typically indicates a local network or ISP routing issue rather than a server outage."
+        "title": "AAAのサーバー稼働状況とアカウント状態を確認する",
+        "description": "AAA側で障害報告がなくサーバーは100%稼働、ユーザーアカウントも有効であることを確認して通知する。これによりサーバー側起因ではない可能性が高いことを伝える。"
       }
     ]
   },
@@ -46,6 +45,10 @@
     {"source": "I2", "target": "P1", "type": "isHeldBy"},
     {"source": "S1", "target": "P2", "type": "isHeldBy"},
     {"source": "S2", "target": "P2", "type": "isHeldBy"},
+    {"source": "I1", "target": "P2", "type": "isHandledBy"},
+    {"source": "I2", "target": "P2", "type": "isHandledBy"},
+    {"source": "S1", "target": "P1", "type": "isRequiredBy"},
+    {"source": "S2", "target": "P1", "type": "isRequiredBy"},
     {"source": "I1", "target": "S1", "type": "isResolvedBy"},
     {"source": "I2", "target": "S2", "type": "isResolvedBy"},
     {"source": "I2", "target": "I1", "type": "isGeneratedBy"}
