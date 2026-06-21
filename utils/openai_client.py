@@ -27,7 +27,7 @@ class OpenAIClient:
         Raises:
             ValueError: If any of system_message, text, or prompt is missing.
         """
-        # 上書きする場合は引数の値をインスタンス変数に設定
+
         if system_message is not None:
             self.system_message = system_message
         if text is not None:
@@ -35,17 +35,13 @@ class OpenAIClient:
         if prompt is not None:
             self.prompt = prompt
 
-        # 必須値が設定されていない場合はエラーを出す
         if not self.system_message or not self.text or not self.prompt:
             raise ValueError("system_message, text, and prompt are required")
 
-        # テキストを辞書にセットして format_map で置き換える
         formatted_prompt = self.prompt.format_map({"text": self.text})
 
-        # OpenAI クライアントを作成
         client = OpenAI(api_key=self.api_key)
 
-        # OpenAI API へのリクエスト
         completion = client.chat.completions.create(
             model=self.model,
             messages=[

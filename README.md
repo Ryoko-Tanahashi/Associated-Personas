@@ -141,3 +141,9 @@ To enable this feature, follow these steps:
 4. Click "Save" to finish the setup.
 
 _Warning: By enabling this setting, the data exchanged via the API will be sent to OpenAI for model training. If you plan to run the pipeline with your own proprietary, sensitive, or confidential datasets, we strongly recommend keeping this setting disabled._
+
+---
+
+## Limitations and Future Work: Open-Source LLM Support
+
+While the framework is designed to be extensible (users can modify `utils/openai_client.py` to point to local open-source models like Llama 3 or Mistral), guaranteeing the exact structural reproducibility with these models currently requires substantial prompt re-engineering. Therefore, providing full, out-of-the-box support and optimized prompt templates for open-source LLMs is acknowledged as a limitation of this artifact and remains an immediate future work.
