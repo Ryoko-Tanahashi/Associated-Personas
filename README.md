@@ -35,6 +35,7 @@ software, datasets, generated outputs, or evaluation materials.
 - Naoyasu Ubayashi, Waseda University, Tokyo, Japan
   (<ubayashi@aoni.waseda.jp>)
 - Ryota Sugiyama, Waseda University, Tokyo, Japan
+  (<r07_2329@akane.waseda.jp>)
 - Satoshi Okuda, PRIMESTYLE Co., Ltd., Shinjuku, Tokyo, Japan
   (<okuda@primestyle.co.jp>)
 - Ken Toriumi, PRIMESTYLE Co., Ltd., Shinjuku, Tokyo, Japan
